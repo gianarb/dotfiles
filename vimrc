@@ -6,6 +6,15 @@ set term=screen-256color
 " Make sure that unrecognized files are still indented
 set autoindent
 
+" Purge previous auto commands (in case vimrc is run twice)
+autocmd!
+
+" Show (partial) commands (or size of selection in Visual mode) in the status
+set showcmd
+
+" When a bracket is inserted, briefly jump to a matching one
+set showmatch
+
 "Install vundle
 let shouldInstallBundles = 0
 
@@ -83,6 +92,19 @@ set statusline+=%*
 set backupdir=/tmp
 set directory=/tmp " Don't clutter my dirs up with swp and tmp files
 
+" PHP
+au FileType php set omnifunc=phpcomplete#CompletePHP
+" LESS
+au BufNewFile,BufRead *.less set filetype=less
+" WSGI
+au BufNewFile,BufRead *wsgi set filetype=python
+" HTML
+au BufRead,BufNewFile *.twig set filetype=html
+
+" Syntastic check
+let g:syntastic_html_checkers=['jshint']
+let g:syntastic_php_checkers=['php']
+
 " git
     map <Leader>gs :Gstatus<CR>
     map <Leader>gd :Gdiff<CR>
@@ -94,8 +116,14 @@ set directory=/tmp " Don't clutter my dirs up with swp and tmp files
 
 " Motion keys for tabs ctrl+t <direction>
     map <C-t> :tabnew<cr>
-    map <C-w> :tablose<cr>
+    map <C-w> :tabclose<cr>
     map <C-t><up> :tabr<cr>
     map <C-t><down> :tabl<cr>
     map <C-t><left> :tabp<cr>
     map <C-t><right> :tabn<cr>
+
+" Use local vimrc if available
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
+
