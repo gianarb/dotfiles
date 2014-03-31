@@ -15,15 +15,25 @@ set showcmd
 " When a bracket is inserted, briefly jump to a matching one
 set showmatch
 
+set backspace+=start,eol,indent
+
 "Install vundle
 let shouldInstallBundles = 0
 
 if !filereadable($HOME . "/.vim/bundle/vundle/README.md")
-    echo "~â‰¥ Installing Vundle \n"
-    silent !mkdir -p $HOME/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle $HOME/.vim/bundle/vundle
-    let shouldInstallBundles = 1
+        echo "~â‰¥ Installing Vundle \n"
+        silent !mkdir -p $HOME/.vim/bundle
+        silent !git clone https://github.com/gmarik/vundle $HOME/.vim/bundle/vundle
+        let shouldInstallBundles = 1
 endif
+
+" Cntrl + Space for autocomplete
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+                        \ "\<lt>C-n>" :
+                        \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+                        \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+                        \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
@@ -34,25 +44,35 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/syntastic'
 Bundle 'mattn/gist-vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'vim-php/tagbar-phpctags.vim'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
 Bundle 'othree/html5.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'mattn/webapi-vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'gianarb/notify.vim'
 
 if shouldInstallBundles == 1
-    echo "~> Installing vundle bundles"
-    :BundleInstall
+        echo "~> Installing vundle bundles"
+        :BundleInstall
 endif
+
+" Generate PHPCtags
+func! g:generatePhpCtags()
+        echo "Generate PHP Ctags"
+        silent execute 'ctags -R --languages=PHP'
+        set tags=./tags
+endfunc
+command PhpCTags <CR>:exec g:generatePhpCTags()<CR>
+
+if filereadable("./tags")
+        set tags=./tags
+endif   
 
 " Turn syntax highlighting on
 syntax on
@@ -101,29 +121,36 @@ au BufNewFile,BufRead *wsgi set filetype=python
 " HTML
 au BufRead,BufNewFile *.twig set filetype=html
 
+" Generate and reload php ctags 
+function! GeneratePhpCTags()
+        silent call system('ctags -R --languages=PHP')
+        set tags=./tags
+endfunction
+map <C-o> :call GeneratePhpCTags()
+
 " Syntastic check
 let g:syntastic_html_checkers=['jshint']
 let g:syntastic_php_checkers=['php']
 
 " git
-    map <Leader>gs :Gstatus<CR>
-    map <Leader>gd :Gdiff<CR>
-    map <Leader>ge :Gedit<CR>
-    map <Leader>gc :Gcommit<CR>
-    map <Leader>ga :Gcommit -a<CR>
-    map <Leader>gw :Gwrite<CR>
-    map <Leader>gl :Gitv<CR>
+map <Leader>gs :Gstatus<CR>
+map <Leader>gd :Gdiff<CR>
+map <Leader>ge :Gedit<CR>
+map <Leader>gc :Gcommit<CR>
+map <Leader>ga :Gcommit -a<CR>
+map <Leader>gw :Gwrite<CR>
+map <Leader>gl :Gitv<CR>
 
 " Motion keys for tabs ctrl+t <direction>
-    map <C-t> :tabnew<cr>
-    map <C-w> :tabclose<cr>
-    map <C-t><up> :tabr<cr>
-    map <C-t><down> :tabl<cr>
-    map <C-t><left> :tabp<cr>
-    map <C-t><right> :tabn<cr>
+map <C-n> :tabnew<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
+
+map <C-a> ggVG
+imap <C-Space> <C-x><C-o>
 
 " Use local vimrc if available
 if filereadable(expand("~/.vimrc.local"))
-    source ~/.vimrc.local
+        source ~/.vimrc.local
 endif
-
