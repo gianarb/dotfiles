@@ -62,14 +62,6 @@ if shouldInstallBundles == 1
         :BundleInstall
 endif
 
-" Generate PHPCtags
-func! g:generatePhpCtags()
-        echo "Generate PHP Ctags"
-        silent execute 'ctags -R --languages=PHP'
-        set tags=./tags
-endfunc
-command PhpCTags <CR>:exec g:generatePhpCTags()<CR>
-
 if filereadable("./tags")
         set tags=./tags
 endif   
