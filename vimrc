@@ -135,9 +135,6 @@ map <Leader>gl :Gitv<CR>
 
 " Motion keys for tabs ctrl+t <direction>
 map <C-n> :tabnew<cr>
-map <C-t><down> :tabl<cr>
-map <C-t><left> :tabp<cr>
-map <C-t><right> :tabn<cr>
 
 map <C-a> ggVG
 imap <C-Space> <C-x><C-o>
