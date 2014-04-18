@@ -49,6 +49,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-dispatch'
 Bundle 'othree/html5.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'godlygeek/tabular'
@@ -71,8 +72,6 @@ syntax on
 
 set hlsearch
 set incsearch
-
-colorscheme jellybeans
 
 filetype plugin indent on     " required
 
@@ -117,6 +116,7 @@ au BufRead,BufNewFile *.twig set filetype=html
 function! GeneratePhpCTags()
         silent call system('ctags -R --languages=PHP')
         set tags=./tags
+        call Notify("VIM", "Ctags generated")
 endfunction
 map <C-o> :call GeneratePhpCTags()
 
