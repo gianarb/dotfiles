@@ -132,6 +132,14 @@ map <C-n> :tabnew<cr>
 map <C-a> ggVG
 imap <C-Space> <C-x><C-o>
 
+function! Ctags()
+    system('ctags -R --language=PHP')
+    set tags=./tags
+    call Notify("VIM", "Ctags Generated")
+endfunction
+nmap <Leader>t :call Ctags()<CR>
+
+
 " Use local vimrc if available
 if filereadable(expand("~/.vimrc.local"))
         source ~/.vimrc.local
