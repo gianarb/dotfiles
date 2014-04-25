@@ -117,6 +117,7 @@ au BufRead,BufNewFile *.twig set filetype=html
 function! GeneratePhpCTags()
         silent call system('ctags -R --languages=PHP')
         set tags=./tags
+        call Notify("VIM", "Ctags generated");
 endfunction
 map <C-o> :call GeneratePhpCTags()
 
