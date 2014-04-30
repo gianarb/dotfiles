@@ -2,6 +2,10 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set number                    " enable line number
 set term=screen-256color
+" enable 256 colors in screen
+set t_Co=256
+" make sure that mouse is disabled
+set mouse=""
 
 " Make sure that unrecognized files are still indented
 set autoindent
@@ -90,6 +94,49 @@ set nowrap
 " Use menu to show command-line completion (in 'full' case)
 set wildmenu
 
+" Enable incremental search
+set incsearch
+
+" Highlight results of a search
+set hlsearch
+
+" Ignore case when searching
+set ignorecase
+
+" Ignore case only if seach string is all lowercase
+set smartcase
+
+" Make sure that tabline is always present
+set showtabline=2
+
+" Always show status line, even for one window
+set laststatus=2
+
+" Jump to matching bracket for 2/10th of a second (works with showmatch)
+set matchtime=2
+
+" Round indent to multiple of 'shiftwidth' for > and < commands
+set shiftround
+
+" Use 4 spaces for (auto)indent
+set shiftwidth=4
+
+" Show (partial) commands (or size of selection in Visual mode) in the status line
+set showcmd
+
+" When a bracket is inserted, briefly jump to a matching one
+set showmatch
+
+" Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
+set nrformats=octal,hex,alpha
+
+" Use F4 to toggle 'paste' mode
+"
+nnoremap <F4> :set invpaste paste?<CR>
+set pastetoggle=<F4>
+set showmode
+
+
 "display a warning if fileformat isnt unix
 set statusline+=%#warningmsg#
 set statusline+=%{&ff!='unix'?'['.&ff.']':''}
@@ -125,6 +172,17 @@ map <Leader>gc :Gcommit<CR>
 map <Leader>ga :Gcommit -a<CR>
 map <Leader>gw :Gwrite<CR>
 map <Leader>gl :Gitv<CR>
+
+" easy split resize
+map + :vertical resize +5<cr>
+map - :vertical resize -5<cr>
+map = <c-w>=
+
+" open a new vertical split
+map <Leader>\| :vnew<cr>
+
+" format table
+noremap <Leader>tab :Tabularize /\|<CR>
 
 " Motion keys for tabs ctrl+t <direction>
 map <C-n> :tabnew<cr>
