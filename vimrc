@@ -7,6 +7,9 @@ set t_Co=256
 " make sure that mouse is disabled
 set mouse=""
 
+" Set the <Leader> for combo commands
+let mapleader = ","
+
 " Make sure that unrecognized files are still indented
 set autoindent
 
@@ -202,3 +205,8 @@ nmap <Leader>t :call Ctags()<CR>
 if filereadable(expand("~/.vimrc.local"))
         source ~/.vimrc.local
 endif
+
+map <Leader>tree :NERDTreeToggle<CR>
+map <Leader>, :w<CR>
+imap <Leader>, <ESC>:w<CR>
+vmap <Leader>, <ESC><ESC>:w<CR>
