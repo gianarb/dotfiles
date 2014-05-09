@@ -65,6 +65,10 @@ Bundle 'mattn/webapi-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'gianarb/notify.vim'
 
+syntax on
+colorscheme molokai
+let g:molokai_original = 1
+
 if shouldInstallBundles == 1
         echo "~> Installing vundle bundles"
         :BundleInstall
@@ -73,9 +77,6 @@ endif
 if filereadable("./tags")
         set tags=./tags
 endif   
-
-" Turn syntax highlighting on
-syntax on
 
 set hlsearch
 set incsearch
@@ -138,8 +139,6 @@ set nrformats=octal,hex,alpha
 nnoremap <F4> :set invpaste paste?<CR>
 set pastetoggle=<F4>
 set showmode
-
-
 "display a warning if fileformat isnt unix
 set statusline+=%#warningmsg#
 set statusline+=%{&ff!='unix'?'['.&ff.']':''}
@@ -200,13 +199,28 @@ function! Ctags()
 endfunction
 nmap <Leader>t :call Ctags()<CR>
 
+" BDD
+map <Leader>pdesc :!bin/phpspec describe<SPACE>
+au FileType php noremap <Leader>tau <ESC>:!phpunit --configuration tests/ <CR>
+au FileType php noremap <Leader>tu <ESC>:!phpunit --configuration tests/ %<CR>
+au FileType php noremap <Leader>ts <ESC>:!bin/phpspec run -fpretty %<CR>
+au FileType php noremap <Leader>tas <ESC>:!bin/phpspec run<CR>
+
+map <Leader>tree :NERDTreeToggle<CR>
+
+" Open my vimrc
+map <Leader>my :e ~/.vimrc<CR>
+
+map <Leader>, :w<CR>
+imap <Leader>, <ESC>:w<CR>
+vmap <Leader>, <ESC><ESC>:w<CR>
+
+nmap <Leader>bar :TagbarToggle<CR>
+
+nmap <Leader>m :MBEToggle<CR>
 
 " Use local vimrc if available
 if filereadable(expand("~/.vimrc.local"))
         source ~/.vimrc.local
 endif
 
-map <Leader>tree :NERDTreeToggle<CR>
-map <Leader>, :w<CR>
-imap <Leader>, <ESC>:w<CR>
-vmap <Leader>, <ESC><ESC>:w<CR>
