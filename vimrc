@@ -52,12 +52,15 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
+Bundle 'groenewege/vim-less'
 Bundle 'mattn/gist-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'othree/html5.vim'
+Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -165,6 +168,8 @@ au BufRead,BufNewFile *.twig set filetype=html
 let g:syntastic_html_checkers=['jshint']
 let g:syntastic_php_checkers=['php']
 let g:syntastic_c_checkers=['c']
+let g:syntastic_css_checkers=['csslint, phpcs']
+let g:syntastic_less_checkers=['lessc']
 
 " git
 map <Leader>gs :Gstatus<CR>
@@ -192,8 +197,12 @@ map <C-n> :tabnew<cr>
 map <C-a> ggVG
 imap <C-Space> <C-x><C-o>
 
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/](report|bin|cache|vendor|node_modules|dist|bower_components|build)$',
+    \ }
+
 function! Ctags()
-    system('ctags -R --language=PHP')
+    execute "ctags -R --language=PHP"
     set tags=./tags
     call Notify("VIM", "Ctags Generated")
 endfunction
