@@ -24,6 +24,9 @@ set showmatch
 
 set backspace+=start,eol,indent
 
+" Highlight current line - allows you to track cursor position more easily
+set cursorline
+
 "Install vundle
 let shouldInstallBundles = 0
 
@@ -73,12 +76,12 @@ colorscheme molokai
 let g:molokai_original = 1
 
 if shouldInstallBundles == 1
-        echo "~> Installing vundle bundles"
-        :BundleInstall
+    echo "~> Installing vundle bundles"
+    :BundleInstall
 endif
 
 if filereadable("./tags")
-        set tags=./tags
+    set tags=./tags
 endif   
 
 set hlsearch
@@ -163,6 +166,13 @@ au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *wsgi set filetype=python
 " HTML
 au BufRead,BufNewFile *.twig set filetype=html
+
+" Show line, column number, and relative position within a file in the status
+" line
+set ruler
+
+" Scroll when cursor gets within 10 characters of top/bottom edge
+set scrolloff=999
 
 " Syntastic check
 let g:syntastic_html_checkers=['jshint']
