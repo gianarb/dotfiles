@@ -211,12 +211,12 @@ let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/](report|bin|cache|vendor|node_modules|dist|bower_components|build)$',
     \ }
 
-function! Ctags()
-    execute "ctags -R --language=PHP"
-    set tags=./tags
-    call Notify("VIM", "Ctags Generated")
-endfunction
-nmap <Leader>t :call Ctags()<CR>
+" UltiSnips
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["mysnippet"]
+let g:UltiSnipsExpandTrigger="<C-b>"
+let g:UltiSnipsJumpForwardTrigger="<C-n>"
+let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 
 " BDD
 map <Leader>pdesc :!bin/phpspec describe<SPACE>
