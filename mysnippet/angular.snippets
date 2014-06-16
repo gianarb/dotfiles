@@ -1,0 +1,8 @@
+snippet composer "Angular module bootstrap"
+angular.module("$1", [])
+    .provider("$", function(){
+        this.$get = function(){};
+    })
+    .factory("DeezerFactory", [function(){ 
+    }]);
+endsnippet
