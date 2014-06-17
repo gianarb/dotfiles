@@ -70,7 +70,6 @@ Bundle 'godlygeek/tabular'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'mattn/webapi-vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'gianarb/notify.vim'
 
 syntax on
 colorscheme molokai
@@ -79,6 +78,7 @@ let g:molokai_original = 1
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
     :BundleInstall
+    silent $HOME/bundle/YouCompleteMe/install.sh --clang-completer
 endif
 
 if filereadable("./tags")
