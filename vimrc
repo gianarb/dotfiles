@@ -176,6 +176,13 @@ set ruler
 " Scroll when cursor gets within 10 characters of top/bottom edge
 set scrolloff=999
 
+" Round indent to multiple of 'shiftwidth' for > and < commands
+set shiftround
+
+" Use 4 spaces for (auto)indent
+set shiftwidth=4
+
+
 " Syntastic check
 let g:syntastic_html_checkers=['jshint']
 let g:syntastic_php_checkers=['php']
