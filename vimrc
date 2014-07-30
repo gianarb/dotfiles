@@ -174,6 +174,10 @@ set shiftround
 " Use 4 spaces for (auto)indent
 set shiftwidth=4
 
+" cloe buffer explorer on select
+let g:miniBufExplAutoStart = 0
+let g:miniBufExplCloseOnSelect = 1
+let g:miniBufExplVSplit = 35
 
 " Syntastic check
 let g:syntastic_html_checkers=['jshint']
@@ -263,15 +267,16 @@ let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 
 " BDD
 map <Leader>pdesc :!bin/phpspec describe<SPACE>
-au FileType php noremap <Leader>tau <ESC>:!phpunit --configuration tests/ <CR>
-au FileType php noremap <Leader>tu <ESC>:!phpunit --configuration tests/ %<CR>
-au FileType php noremap <Leader>ts <ESC>:!bin/phpspec run -fpretty %<CR>
-au FileType php noremap <Leader>tas <ESC>:!bin/phpspec run<CR>
+au FileType php noremap <Leader>tau :!./bin/phpunit <CR>
+au FileType php noremap <Leader>tu :!./bin/phpunit %<CR>
+au FileType php noremap <Leader>ts :!./bin/phpspec run -fpretty %<CR>
+au FileType php noremap <Leader>tas :!./bin/phpspec run<CR>
 
 map <Leader>tree :NERDTreeToggle<CR>
 
 " Open my vimrc
-map <Leader>my :e ~/.vimrc<CR>
+map <Leader>my :vsplit ~/.vimrc<CR>
+map <Leader>l :set nohlsearch<CR>
 
 map <Leader>, :w<CR>
 imap <Leader>, <ESC>:w<CR>
