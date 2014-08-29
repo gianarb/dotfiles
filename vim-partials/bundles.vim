@@ -34,6 +34,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'dgryski/vim-godef'
+Bundle 'saltstack/salt-vim'
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
