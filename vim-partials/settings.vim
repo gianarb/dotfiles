@@ -69,6 +69,16 @@ set shiftround
 " Use 4 spaces for (auto)indent
 set shiftwidth=4
 
+" highlight trailing space
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" Remove trailing spaces
+au FileType vim,php,html,yml,xml,js,sls,go,twig au BufWritePre *.* :%s/\s\+$//e
 
 " easy split manager
 map <Leader>v :vsplit<cr>
