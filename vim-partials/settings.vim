@@ -77,8 +77,11 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Use 2 space on specific files
+autocmd Filetype scheme,coffee,javascript setlocal ts=2 sts=2 sw=2
+
 " Remove trailing spaces
-au FileType vim,php,html,yml,xml,js,sls,go,twig au BufWritePre *.* :%s/\s\+$//e
+au FileType vim,php,c,python,html,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
 
 " easy split manager
 map <Leader>v :vsplit<cr>
