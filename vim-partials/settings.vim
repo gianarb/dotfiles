@@ -1,4 +1,6 @@
-filetype off                  " required
+autocmd!
+set nocompatible
+filetype off
 set number                    " enable line number
 set term=screen-256color
 
@@ -12,7 +14,6 @@ autocmd!
 set showcmd
 " When a bracket is inserted, briefly jump to a matching one
 set showmatch
-filetype plugin indent on     " required
 set backspace+=start,eol,indent
 
 syntax on
@@ -78,7 +79,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Use 2 space on specific files
-autocmd Filetype scheme,coffee,javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype sls,coffee,js setlocal ts=2 sts=2 sw=2
 
 " Remove trailing spaces
 au FileType vim,php,c,python,html,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e

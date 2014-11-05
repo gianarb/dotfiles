@@ -3,8 +3,8 @@ set nocompatible              " be iMproved, required
 if executable("git") != 1 && !filereadable($HOME."/.dotfiles/bundle/vundle/README.md")
     echo "GIT is required to install bundles:"
 else
-    source $HOME/.dotfiles/vim-partials/settings.vim
     source $HOME/.dotfiles/vim-partials/bundles.vim
+    source $HOME/.dotfiles/vim-partials/settings.vim
     source $HOME/.dotfiles/vim-partials/status-line.vim
     source $HOME/.dotfiles/vim-partials/autocomplete.vim
     source $HOME/.dotfiles/vim-partials/php.vim
