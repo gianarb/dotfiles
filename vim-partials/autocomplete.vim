@@ -16,9 +16,9 @@ if filereadable("./tags")
 endif
 
 " Generate ctags while editing
-autocmd BufWritePost * if filereadable('tags') | call system('ctags -a '.expand('%')) | endif 
+autocmd BufWritePost * if filereadable('tags') | exec ':silent ! ctags -a %' | endif
 
 " Autocomplete ctrl-space
 imap <C-Space> <C-x><C-o>
 
-
+map <Leader>tags :!ctags -R --languages= .<LEFT><LEFT>

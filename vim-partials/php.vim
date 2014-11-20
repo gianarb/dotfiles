@@ -32,6 +32,7 @@ au FileType php let g:tagbar_type_php = {
                 \ }
             \ }
 " BDD
+au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType php map <Leader>pdesc :!bin/phpspec describe<SPACE>
 au FileType php noremap <Leader>tau :!./bin/phpunit <CR>
 au FileType php noremap <Leader>tu :!./bin/phpunit %<CR>
@@ -41,3 +42,6 @@ au FileType php noremap <Leader>tas :!./bin/phpspec run<CR>
 au FileType php autocmd BufNewFile,BufRead *.phpt call SyntaxRange#Include('<?php', '?>', 'php')
 " array() -> []
 au FileType php nnoremap <silent> <Leader>a /\<array\>\s*(<CR>:nohl<CR>dwmp%r]`pr[
+
+inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+au FileType php noremap <Leader>u :call PhpInsertUse()<CR>
