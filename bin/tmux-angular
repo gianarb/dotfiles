@@ -1,0 +1,15 @@
+#!/bin/sh
+PROJECT_NAME=$1
+
+tmux has-session -t $PROJECT_NAME
+tmux new-session -s $PROJECT_NAME -n home -d
+tmux new-window -t $PROJECT_NAME:1 -c ./ 
+tmux rename-window -t $PROJECT_NAME:1 'editor'
+tmux send-keys 'vim' 'C-m'
+tmux splitw -h -p 20 -c ./ 'grunt watch'
+tmux splitw -v -p 15 -c ./ 'http-server build -p9000'
+tmux selectp -t 0
+tmux new-window -t $PROJECT_NAME:2  -c ./ 
+tmux rename-window -t $PROJECT_NAME:2 'console'
+tmux select-window -t $PROJECT_NAME:1                                 
+tmux -2 attach-session -t $PROJECT_NAME

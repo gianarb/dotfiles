@@ -1,0 +1,39 @@
+#!/bin/sh
+PROJECT_NAME="digitalbees"
+PROJECTPATH="/home/gianarb/corley/digitalbees/digitalbees"
+CMSPATH="/home/gianarb/corley/digitalbees/console-digitalbees"
+JSPATH="/home/gianarb/corley/digitalbees/jssdk"
+DEPLOYPATH="/home/gianarb/corley/digitalbees/deployer"
+
+tmux -S /tmp/pair has-session -t $PROJECT_NAME
+
+tmux -S /tmp/pair new-session -s $PROJECT_NAME -n home -d
+chmod 777 /tmp/pair
+tmux -S /tmp/pair new-window -t $PROJECT_NAME:1 -c $PROJECTPATH
+tmux -S /tmp/pair rename-window -t $PROJECT_NAME:1 'vim-api'
+tmux -S /tmp/pair send-keys 'vim' 'C-m'
+tmux -S /tmp/pair selectp -t 0
+
+tmux -S /tmp/pair new-window -t $PROJECT_NAME:2  -c $PROJECTPATH
+tmux -S /tmp/pair rename-window -t $PROJECT_NAME:2 'console-api'
+
+tmux -S /tmp/pair new-window -t $PROJECT_NAME:3  -c $CMSPATH
+tmux -S /tmp/pair rename-window -t $PROJECT_NAME:3 'vim-cms'
+tmux -S /tmp/pair send-keys 'vim' 'C-m'
+
+tmux -S /tmp/pair new-window -t $PROJECT_NAME:4  -c $CMSPATH
+tmux -S /tmp/pair rename-window -t $PROJECT_NAME:4 'console-cms'
+
+tmux -S /tmp/pair new-window -t $PROJECT_NAME:5  -c $JSPATH
+tmux -S /tmp/pair rename-window -t $PROJECT_NAME:5 'server-jssdk'
+tmux -S /tmp/pair send-keys 'php -S 0.0.0.0:8090 -t public' 'C-m'
+
+tmux -S /tmp/pair new-window -t $PROJECT_NAME:6  -c $JSPATH
+tmux -S /tmp/pair rename-window -t $PROJECT_NAME:6 'vim-jssdk'
+tmux -S /tmp/pair send-keys 'vim' 'C-m'
+
+tmux -S /tmp/pair new-window -t $PROJECT_NAME:7  -c $DEPLOYPATH
+tmux -S /tmp/pair rename-window -t $PROJECT_NAME:7 'deployer'
+
+tmux -S /tmp/pair select-window -t $PROJECT_NAME:1
+tmux -2 -S /tmp/pair attach-session -t $PROJECT_NAME
