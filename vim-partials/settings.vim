@@ -155,7 +155,7 @@ let g:UltiSnipsSnippetDirectories=["mysnippet"]
 let g:UltiSnipsExpandTrigger="<C-b>"
 let g:UltiSnipsJumpForwardTrigger="<C-n>"
 let g:UltiSnipsJumpBackwardTrigger="<C-p>"
-nmap <Leader>bar :TagbarToggle<CR>
+nmap <Leader>b :TagbarToggle<CR>
 map <Leader>tree :NERDTreeToggle<CR>
 nmap <Leader>m :MBEToggle<CR>
 
