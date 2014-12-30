@@ -82,7 +82,7 @@ autocmd BufWinLeave * call clearmatches()
 autocmd Filetype sls,coffee,js setlocal ts=2 sts=2 sw=2
 
 " Remove trailing spaces
-au FileType vim,php,c,python,html,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
+au FileType vim,php,c,python,html,javascript,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
 
 " easy split manager
 map <Leader>v :vsplit<cr>
