@@ -8,3 +8,5 @@
     excludesfile = ~/.gitignore_global
 [color]
 	ui = true
+[github]
+	user = gianarb
