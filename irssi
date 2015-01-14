@@ -105,6 +105,7 @@ channels = (
   { name = "#gianarb-dev"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#zftalk"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#zftalk.dev"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#influxdb"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#doctrine"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#symfony"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#docker"; chatnet = "freenode"; autojoin = "yes"; },
