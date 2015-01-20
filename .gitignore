@@ -3,3 +3,4 @@ bundle/
 *.sw*
 *~
 .vimrc.local
+vendor
