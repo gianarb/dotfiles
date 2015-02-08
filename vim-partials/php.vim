@@ -32,18 +32,24 @@ au FileType php let g:tagbar_type_php = {
                 \ }
             \ }
 au FileType php set omnifunc=phpcomplete#CompletePHP
+
 au FileType php map <Leader>pdesc :!bin/phpspec describe<SPACE>
 au FileType php noremap <Leader>ts :!./bin/phpspec run -fpretty %<CR>
 au FileType php noremap <Leader>tas :!./bin/phpspec run<CR>
+
+" phpunit
 au FileType php noremap <Leader>tau <ESC>:let g:phpunit_args_append=""<ESC>:Test <CR>
 au FileType php noremap <Leader>tu  <ESC>:Test %<CR>
 au FileType php noremap <Leader>tt <ESC>:let g:phpunit_args_append="--filter " . @t<ESC>:Test<CR>
+au FileType php noremap <Leader>to  <ESC>:TestOutput<CR>
 
 au FileType php autocmd BufNewFile,BufRead *.phpt call SyntaxRange#Include('<?php', '?>', 'php')
 " array() -> []
 au FileType php nnoremap <silent> <Leader>a /\<array\>\s*(<CR>:nohl<CR>dwmp%r]`pr[
 
-let g:phpunit_cmd = "~/.dotfiles/bin/phpunit"
+let g:phpunit_cmd = "~/.dotfiles/vendor/bin/phpunit"
 
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 au FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+au FileType php noremap <Leader>j :call phpcomplete#JumpToDefinition('vsplit')<CR>
+
