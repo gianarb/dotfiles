@@ -1,6 +1,6 @@
 " PHP RELATED SETTINGS
 au FileType php let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-
+au FileType php let g:phpcomplete_parse_docblock_comments=1
 au FileType php let g:tagbar_type_php = {
                 \ 'kinds'     : [
                     \ 'd:Constants:0:0',
@@ -31,17 +31,19 @@ au FileType php let g:tagbar_type_php = {
                     \ 'trait'     : 't',
                 \ }
             \ }
-" BDD
 au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType php map <Leader>pdesc :!bin/phpspec describe<SPACE>
-au FileType php noremap <Leader>tau :!./bin/phpunit <CR>
-au FileType php noremap <Leader>tu :!./bin/phpunit %<CR>
 au FileType php noremap <Leader>ts :!./bin/phpspec run -fpretty %<CR>
 au FileType php noremap <Leader>tas :!./bin/phpspec run<CR>
-" PHP EXTENSION DEVELOPMENT RELATED SETTINGS
+au FileType php noremap <Leader>tau <ESC>:let g:phpunit_args_append=""<ESC>:Test <CR>
+au FileType php noremap <Leader>tu  <ESC>:Test %<CR>
+au FileType php noremap <Leader>tt <ESC>:let g:phpunit_args_append="--filter " . @t<ESC>:Test<CR>
+
 au FileType php autocmd BufNewFile,BufRead *.phpt call SyntaxRange#Include('<?php', '?>', 'php')
 " array() -> []
 au FileType php nnoremap <silent> <Leader>a /\<array\>\s*(<CR>:nohl<CR>dwmp%r]`pr[
+
+let g:phpunit_cmd = "~/.dotfiles/bin/phpunit"
 
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 au FileType php noremap <Leader>u :call PhpInsertUse()<CR>
