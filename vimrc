@@ -8,7 +8,6 @@ else
     source $HOME/.dotfiles/vim-partials/status-line.vim
     source $HOME/.dotfiles/vim-partials/autocomplete.vim
     source $HOME/.dotfiles/vim-partials/php.vim
-    source $HOME/.dotfiles/vim-partials/javascript.vim
     source $HOME/.dotfiles/vim-partials/html.vim
 
     " Use local vimrc if available

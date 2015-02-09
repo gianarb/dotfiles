@@ -79,7 +79,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Use 2 space on specific files
-autocmd Filetype sls,coffee,js setlocal ts=2 sts=2 sw=2
+autocmd Filetype sls,coffee,js,javascript setlocal ts=2 sts=2 sw=2
 
 " Remove trailing spaces
 au FileType vim,php,c,python,html,javascript,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
