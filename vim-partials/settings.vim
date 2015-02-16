@@ -36,8 +36,6 @@ set wildmenu
 set incsearch
 " Highlight results of a search
 set hlsearch
-" Ignore case when searching
-set ignorecase
 " Ignore case only if seach string is all lowercase
 set smartcase
 " Make sure that tabline is always present
@@ -46,10 +44,6 @@ set showtabline=2
 set laststatus=2
 " Jump to matching bracket for 2/10th of a second (works with showmatch)
 set matchtime=2
-" Show (partial) commands (or size of selection in Visual mode) in the status line
-set showcmd
-" When a bracket is inserted, briefly jump to a matching one
-set showmatch
 "display a warning if fileformat isnt unix
 set statusline+=%#warningmsg#
 set statusline+=%{&ff!='unix'?'['.&ff.']':''}
