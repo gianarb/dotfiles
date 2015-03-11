@@ -51,5 +51,5 @@ let g:phpunit_cmd = "~/.dotfiles/vendor/bin/phpunit"
 
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 au FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-au FileType php noremap <Leader>j :call phpcomplete#JumpToDefinition('vsplit')<CR>
+au FileType php noremap <Leader>i :call phpcomplete#JumpToDefinition('vsplit')<CR>
 
