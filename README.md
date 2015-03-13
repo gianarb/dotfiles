@@ -1,5 +1,5 @@
 # ~ conf
-I use this configuration is Linux and Mac OS.
+I use this configuration in Linux and Mac OS.
 
 ## Boot
 ```sh
