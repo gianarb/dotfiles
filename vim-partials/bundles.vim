@@ -30,6 +30,7 @@ Plugin 'joonty/vdebug'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'wdalmut/vim-phpunit.git'
 Plugin 'wdalmut/vim-relatedtest'
+Plugin 'docker/docker', { 'rtp': 'contrib/syntax/vim' }
 Plugin 'StanAngeloff/php.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdtree'
@@ -41,4 +42,3 @@ if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
     :BundleInstall
 endif
-
