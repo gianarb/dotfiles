@@ -14,10 +14,4 @@ else
     if filereadable(expand("~/.vimrc.local"))
         source $HOME/.vimrc.local
     endif
-
-    " Use local vimrc if available
-    if filereadable(expand("./.vimpj.vim"))
-        source ./.vimpj.vim
-    endif
-
 endif

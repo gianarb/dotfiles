@@ -153,3 +153,6 @@ nmap <Leader>b :TagbarToggle<CR>
 map <Leader>tree :NERDTreeToggle<CR>
 nmap <Leader>m :MBEToggle<CR>
 
+" Specific settings per Project
+set exrc                                " Enable project specific .vimrc
+set secure                              " Enable secure mode
