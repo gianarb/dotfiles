@@ -17,8 +17,6 @@ set showmatch
 set backspace+=start,eol,indent
 
 syntax on
-colorscheme molokai
-let g:molokai_original = 1
 
 " Highlight current line - allows you to track cursor position more easily
 set cursorline
@@ -44,14 +42,6 @@ set showtabline=2
 set laststatus=2
 " Jump to matching bracket for 2/10th of a second (works with showmatch)
 set matchtime=2
-"display a warning if fileformat isnt unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-" display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
 set backupdir=/tmp
 set directory=/tmp " Don't clutter my dirs up with swp and tmp files
 " Show line, column number, and relative position within a file in the status
@@ -59,8 +49,6 @@ set directory=/tmp " Don't clutter my dirs up with swp and tmp files
 set ruler
 " Scroll when cursor gets within 10 characters of top/bottom edge
 set scrolloff=999
-" Round indent to multiple of 'shiftwidth' for > and < commands
-set shiftround
 " Use 4 spaces for (auto)indent
 set shiftwidth=4
 
@@ -72,11 +60,11 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" Use 2 space on specific files
-autocmd Filetype sls,coffee,js,javascript setlocal ts=2 sts=2 sw=2
-
 " Remove trailing spaces
 au FileType vim,php,c,python,html,javascript,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
+
+" Use 2 space on specific files
+autocmd Filetype sls,coffee,js,javascript setlocal ts=2 sts=2 sw=2
 
 " easy split manager
 map <Leader>v :vsplit<cr>
@@ -145,13 +133,13 @@ let g:ctrlp_custom_ignore = {
 
 " UltiSnips
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=["mysnippet"]
+let g:UltiSnipsSnippetDirectories=["~/.dotfiles/mysnippet"]
 let g:UltiSnipsExpandTrigger="<C-b>"
 let g:UltiSnipsJumpForwardTrigger="<C-n>"
 let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 nmap <Leader>b :TagbarToggle<CR>
 map <Leader>tree :NERDTreeToggle<CR>
-nmap <Leader>m :MBEToggle<CR>
+nmap <Leader>m :MBEToggle<CR> :MBEFocus<CR>
 
 " Specific settings per Project
 set exrc                                " Enable project specific .vimrc
