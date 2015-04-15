@@ -16,7 +16,9 @@ set showcmd
 set showmatch
 set backspace+=start,eol,indent
 
-syntax on
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Highlight current line - allows you to track cursor position more easily
 set cursorline
@@ -140,6 +142,9 @@ let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 nmap <Leader>b :TagbarToggle<CR>
 map <Leader>tree :NERDTreeToggle<CR>
 nmap <Leader>m :MBEToggle<CR> :MBEFocus<CR>
+
+let g:VimuxOrientation = "h"
+map <Leader>rb :VimuxRunCommand  "<LEFT>"
 
 " Specific settings per Project
 set exrc                                " Enable project specific .vimrc
