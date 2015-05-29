@@ -1,60 +1,34 @@
-autocmd!
-set nocompatible
-filetype off
-set number                    " enable line number
+filetype plugin indent on
+set number                               " enable line number
 set term=screen-256color
-
-" Set the <Leader> for combo commands
-let mapleader = ","
-" Make sure that unrecognized files are still indented
-set autoindent
-" Purge previous auto commands (in case vimrc is run twice)
-autocmd!
-" Show (partial) commands (or size of selection in Visual mode) in the status
-set showcmd
-" When a bracket is inserted, briefly jump to a matching one
-set showmatch
+set exrc                                " Enable project specific .vimrc
+set secure                              " Enable secure mode
+let mapleader = ","                     " Set the <Leader> for combo commands
+set autoindent                          " Make sure that unrecognized files are still indented
+set showcmd                             " Show (partial) commands (or size of selection in Visual mode) in the status
+set showmatch                           " When a bracket is inserted, briefly jump to a matching one
 set backspace+=start,eol,indent
-
-syntax enable
+syntax on
 set background=dark
 colorscheme solarized
-
-" Highlight current line - allows you to track cursor position more easily
-set cursorline
-" Use UTF-8 as the default buffer encoding
+set cursorline                          " Highlight current line - allows you to track cursor position more easily
 set enc=utf-8
-" Use 4 spaces for <Tab> and :retab
-set tabstop=4
-" Expand tabs to spaces
-set expandtab
-" do not wrap lines by default
-set nowrap
-" Use menu to show command-line completion (in 'full' case)
-set wildmenu
-" Enable incremental search
-set incsearch
-" Highlight results of a search
-set hlsearch
-" Search ignore case
-set ic
-" Ignore case only if seach string is all lowercase
-set smartcase
-" Make sure that tabline is always present
-set showtabline=2
-" Always show status line, even for one window
-set laststatus=2
-" Jump to matching bracket for 2/10th of a second (works with showmatch)
-set matchtime=2
+set tabstop=4                           " Use 4 spaces for <Tab> and :retab
+set expandtab                           " Expand tabs to spaces
+set nowrap                              " do not wrap lines by default
+set wildmenu                            " Use menu to show command-line completion (in 'full' case)
+set incsearch                           " Enable incremental search
+set hlsearch                            " Highlight results of a search
+set ic                                  " Search ignore case
+set smartcase                           " Ignore case only if seach string is all lowercase
+set showtabline=2                       " Make sure that tabline is always present
+set laststatus=2                        " Always show status line, even for one window
+set matchtime=2                         " Jump to matching bracket for 2/10th of a second (works with showmatch)
 set backupdir=/tmp
-set directory=/tmp " Don't clutter my dirs up with swp and tmp files
-" Show line, column number, and relative position within a file in the status
-" line
-set ruler
-" Scroll when cursor gets within 10 characters of top/bottom edge
-set scrolloff=999
-" Use 4 spaces for (auto)indent
-set shiftwidth=4
+set directory=/tmp                      " Don't clutter my dirs up with swp and tmp files
+set ruler                               " Show line, column number, and relative position within a file in the status
+set scrolloff=999                       " Scroll when cursor gets within 10 characters of top/bottom edge
+set shiftwidth=4                        " Use 4 spaces for (auto)indent
 
 " highlight trailing space
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -144,7 +118,3 @@ nmap <Leader>m :MBEToggle<CR> :MBEFocus<CR>
 let g:VimuxOrientation = "h"
 map <Leader>rb :VimuxRunCommand  "<LEFT>"
 map <Leader>rc :VimuxCloseRunner<CR>
-
-" Specific settings per Project
-set exrc                                " Enable project specific .vimrc
-set secure                              " Enable secure mode
