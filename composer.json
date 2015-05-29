@@ -1,6 +1,8 @@
 {
     "require": {
         "phpunit/phpunit": "~4",
-        "phpspec/phpspec": "~2"
+        "phpspec/phpspec": "~2",
+        "squizlabs/php_codesniffer": "^2.3",
+        "phpmd/phpmd": "^2.2"
     }
 }

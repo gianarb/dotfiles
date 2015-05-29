@@ -15,4 +15,7 @@ echo "GIT_PROMPT_ONLY_IN_REPO=1" >> ~/.bashrc
 echo "source ~/.dotfiles/bash-git-prompt/gitprompt.sh" >> ~/.bashrc
 
 cd ~/.dotfiles/mongo-hacker
+
+npm install -g csslint jshint
+
 make

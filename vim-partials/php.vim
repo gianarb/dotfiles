@@ -37,6 +37,9 @@ au FileType php map <Leader>pdesc :!bin/phpspec describe<SPACE>
 au FileType php noremap <Leader>ts :!./bin/phpspec run -fpretty %<CR>
 au FileType php noremap <Leader>tas :!./bin/phpspec run<CR>
 
+let g:syntastic_php_checkers = ["php", "phpcs", "phpmd"]
+let g:syntastic_php_phpcs_args="--standard=PSR2 -n --report=csv"
+
 " phpunit
 au FileType php noremap <Leader>tau <ESC>:let g:phpunit_args_append=""<ESC>:Test <CR>
 au FileType php noremap <Leader>tu  <ESC>:Test %<CR>

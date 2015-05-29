@@ -4,12 +4,12 @@ if executable("git") != 1 && !filereadable($HOME."/.dotfiles/bundle/vundle/READM
     echo "GIT is required to install bundles:"
 else
     source $HOME/.dotfiles/vim-partials/bundles.vim
-    source $HOME/.dotfiles/vim-partials/settings.vim
     source $HOME/.dotfiles/vim-partials/status-line.vim
     source $HOME/.dotfiles/vim-partials/autocomplete.vim
     source $HOME/.dotfiles/vim-partials/php.vim
     source $HOME/.dotfiles/vim-partials/xml.vim
     source $HOME/.dotfiles/vim-partials/html.vim
+    source $HOME/.dotfiles/vim-partials/settings.vim
 
     " Use local vimrc if available
     if filereadable(expand("~/.vimrc.local"))

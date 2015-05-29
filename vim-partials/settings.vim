@@ -36,6 +36,8 @@ set wildmenu
 set incsearch
 " Highlight results of a search
 set hlsearch
+" Search ignore case
+set ic
 " Ignore case only if seach string is all lowercase
 set smartcase
 " Make sure that tabline is always present
@@ -114,11 +116,13 @@ let g:miniBufExplAutoStart = 0
 let g:miniBufExplCloseOnSelect = 1
 let g:miniBufExplVSplit = 35
 
-" Syntastic check
-let g:syntastic_html_checkers=['jshint']
 let g:syntastic_c_checkers=['c']
-let g:syntastic_css_checkers=['csslint']
-let g:syntastic_less_checkers=['lessc']
+" Syntastic
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_style_error_symbol = '✠'
+let g:syntastic_warning_symbol = '∆'
+let g:syntastic_style_warning_symbol = '≈'
+let g:syntastic_cursor_column = 0
 
 " git
 map <Leader>gs :Gstatus<CR>
@@ -130,21 +134,16 @@ map <Leader>gw :Gwrite<CR>
 map <Leader>gl :Gitv<CR>
 
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](report|bin|cache|vendor|node_modules|dist|bower_components|build)$',
+    \ 'dir': '\v[\/](report|cache|vendor|node_modules|dist|bower_components|build)$',
     \ }
 
-" UltiSnips
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=["~/.dotfiles/mysnippet"]
-let g:UltiSnipsExpandTrigger="<C-b>"
-let g:UltiSnipsJumpForwardTrigger="<C-n>"
-let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 nmap <Leader>b :TagbarToggle<CR>
 map <Leader>tree :NERDTreeToggle<CR>
 nmap <Leader>m :MBEToggle<CR> :MBEFocus<CR>
 
 let g:VimuxOrientation = "h"
 map <Leader>rb :VimuxRunCommand  "<LEFT>"
+map <Leader>rc :VimuxCloseRunner<CR>
 
 " Specific settings per Project
 set exrc                                " Enable project specific .vimrc
