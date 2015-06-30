@@ -11,7 +11,6 @@ set backspace+=start,eol,indent
 syntax on
 set background=dark
 colorscheme solarized
-set cursorline                          " Highlight current line - allows you to track cursor position more easily
 set enc=utf-8
 set tabstop=4                           " Use 4 spaces for <Tab> and :retab
 set expandtab                           " Expand tabs to spaces
