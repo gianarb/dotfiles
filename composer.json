@@ -2,6 +2,7 @@
     "require": {
         "phpunit/phpunit": "~4",
         "phpspec/phpspec": "~2",
+        "techlivezheng/phpctags": "0.6.0",
         "squizlabs/php_codesniffer": "^2.3",
         "phpmd/phpmd": "^2.2"
     }

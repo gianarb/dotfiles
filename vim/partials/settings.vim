@@ -41,7 +41,7 @@ autocmd BufWinLeave * call clearmatches()
 au FileType vim,php,c,python,html,javascript,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
 
 " Use 2 space on specific files
-autocmd Filetype sls,coffee,js,javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype html,sls,coffee,js,javascript setlocal ts=2 sts=2 sw=2
 
 " easy split manager
 map <Leader>v :vsplit<cr>
@@ -83,6 +83,8 @@ au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *wsgi set filetype=python
 " HTML
 au BufRead,BufNewFile *.twig set filetype=html
+" JSON
+au BufRead,BufNewFile *.json set filetype=json
 
 " cloe buffer explorer on select
 let g:miniBufExplAutoStart = 0
@@ -90,6 +92,10 @@ let g:miniBufExplCloseOnSelect = 1
 let g:miniBufExplVSplit = 35
 
 let g:syntastic_c_checkers=['c']
+let g:syntastic_html_checkers=['jshint']
+let g:syntastic_json_checkers=['jsonlint']
+let g:syntastic_css_checkers=['csslint']
+
 " Syntastic
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_style_error_symbol = '✠'
