@@ -13,35 +13,27 @@ else
 
 	call plug#begin('~/.vim/plugged')
 
-	Plug 'gmarik/Vundle.vim'
-	Plug 'fholgado/minibufexpl.vim'
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+	Plug 'junegunn/fzf.vim'
+	Plug 'benekastah/neomake', { 'on': 'Neomake' }
 	Plug 'tpope/vim-fugitive'
-	Plug 'scrooloose/nerdcommenter'
-	Plug 'scrooloose/syntastic'
-	Plug 'groenewege/vim-less'
-	Plug 'pangloss/vim-javascript'
 	Plug 'mattn/gist-vim'
-	Plug 'gregsexton/gitv'
-	Plug 'majutsushi/tagbar'
-	Plug 'shawncplus/phpcomplete.vim'
-	Plug 'kien/ctrlp.vim'
+	Plug 'jaxbot/github-issues.vim'
 	Plug 'vim-scripts/LanguageTool'
 	Plug 'flazz/vim-colorschemes'
 	Plug 'mattn/webapi-vim.git'
-	Plug 'jaxbot/github-issues.vim'
 	Plug 'othree/html5.vim'
 	Plug 'joonty/vdebug'
 	Plug 'benmills/vimux'
-	Plug 'arnaud-lb/vim-php-namespace'
-	Plug 'wdalmut/vim-phpunit.git'
+	Plug 'arnaud-lb/vim-php-namespace', { 'for': 'go' }
+	Plug 'wdalmut/vim-phpunit.git', { 'for': 'php' }
+	Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+	Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 	Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim' }
-	Plug 'StanAngeloff/php.vim'
-	Plug 'jistr/vim-nerdtree-tabs'
 	Plug 'scrooloose/nerdtree'
-	Plug 'vim-php/vim-composer'
+	Plug 'scrooloose/nerdcommenter'
 	Plug 'saltstack/salt-vim'
-	Plug 'kchmck/vim-coffee-script'
-	Plug 'fatih/vim-go'
+	Plug 'fatih/vim-go', { 'for': 'go' }
 
 	call plug#end()
 
