@@ -1,6 +1,5 @@
 filetype plugin indent on
 set number                               " enable line number
-set term=screen-256color
 set exrc                                " Enable project specific .vimrc
 set secure                              " Enable secure mode
 let mapleader = ","                     " Set the <Leader> for combo commands
