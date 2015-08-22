@@ -1,4 +1,4 @@
-map <Leader>t :NERDTreeToggle<CR>
+map <Leader>tree :NERDTreeToggle<CR>
 
 let g:VimuxOrientation = "h"
 map <Leader>rb :VimuxRunCommand  "<LEFT>"
