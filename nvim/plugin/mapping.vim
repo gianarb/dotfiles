@@ -31,3 +31,6 @@ vno <up> <Nop>
 map <C-p> :FZF<cr>
 map <C-t> :Tags<cr>
 map <C-b> :Buffers<cr>
+
+" atags.vim
+map <Leader>t :call atags#generate()<cr>

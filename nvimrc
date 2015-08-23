@@ -11,18 +11,19 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
+Plug 'fntlnz/atags.vim'
 Plug 'benekastah/neomake', { 'on': 'Neomake' }
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/gist-vim'
 Plug 'jaxbot/github-issues.vim'
 Plug 'vim-scripts/LanguageTool'
 Plug 'flazz/vim-colorschemes'
-Plug 'mattn/webapi-vim.git'
+Plug 'mattn/webapi-vim'
 Plug 'othree/html5.vim'
 Plug 'joonty/vdebug'
 Plug 'benmills/vimux'
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'go' }
-Plug 'wdalmut/vim-phpunit.git', { 'for': 'php' }
+Plug 'wdalmut/vim-phpunit', { 'for': 'php' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'docker/docker', { 'rtp': 'contrib/syntax/vim' }
