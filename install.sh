@@ -6,8 +6,8 @@ mkdir ~/.irssi
 cd ~/
 ln -s ~/.dotfiles/tmux.conf .tmux.conf
 ln -s ~/.dotfiles/irssi ~/.irssi/config
-ln -s ~/.dotfiles/vimrc ~/.vimrc
-ln -s ~/.dotfiles/vim ~/.vim
+ln -s ~/.dotfiles/nvimrc ~/.nvimrc
+ln -s ~/.dotfiles/nvim ~/.nvim
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 

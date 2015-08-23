@@ -5,3 +5,4 @@ bundle/
 .vimrc.local
 vendor
 /vim/bundle
+/nvim/autoload/
