@@ -5,3 +5,5 @@ map <Leader>rb :VimuxRunCommand  "<LEFT>"
 map <Leader>rc :VimuxCloseRunner<CR>
 
 set rtp+=~/.fzf
+
+let g:go_fmt_command = "goimports"
