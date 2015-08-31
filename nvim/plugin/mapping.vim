@@ -1,6 +1,5 @@
 let mapleader = ","                     " Set the <Leader> for combo commands
 
-set rnu
 
 map <Leader>l :set nohlsearch<CR>
 
@@ -34,3 +33,5 @@ map <C-b> :Buffers<cr>
 
 " atags.vim
 map <Leader>t :call atags#generate()<cr>
+
+nnoremap <Leader>a :%y+<cr>
