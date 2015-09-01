@@ -1,12 +1,12 @@
 let mapleader = ","                     " Set the <Leader> for combo commands
 
-
+" reset seatch key
 map <Leader>l :set nohlsearch<CR>
 
+" save
 map <Leader>, :w<CR>
 imap <Leader>, <ESC>:w<CR>
 vmap <Leader>, <ESC><ESC>:w<CR>
-
 " Use F4 to toggle 'paste' mode"
 nnoremap <F4> :set invpaste paste?<CR>
 set pastetoggle=<F4>
@@ -34,4 +34,5 @@ map <C-b> :Buffers<cr>
 " atags.vim
 map <Leader>t :call atags#generate()<cr>
 
-nnoremap <Leader>a :%y+<cr>
+"  select all
+map <C-a> <esc>ggVG<CR>
