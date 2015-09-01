@@ -36,3 +36,10 @@ map <Leader>t :call atags#generate()<cr>
 
 "  select all
 map <C-a> <esc>ggVG<CR>
+
+map <Leader>tree :NERDTreeToggle<CR>
+
+let g:VimuxOrientation = "h"
+map <Leader>rb :VimuxRunCommand  "<LEFT>"
+map <Leader>rc :VimuxCloseRunner<CR>
+
