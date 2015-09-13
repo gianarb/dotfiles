@@ -18,7 +18,7 @@ Plug 'mattn/gist-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'joonty/vdebug'
 Plug 'benmills/vimux'
-Plug 'arnaud-lb/vim-php-namespace', { 'for': 'go' }
+Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
 Plug 'wdalmut/vim-phpunit', { 'for': 'php' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
