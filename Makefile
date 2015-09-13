@@ -1,3 +1,4 @@
+all: tmux irssi nvim
 irssi:
 	ln -s ~/.dotfiles/irssi ~/.irssi/config
 tmux:
