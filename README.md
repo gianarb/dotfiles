@@ -1,5 +1,14 @@
 # ~ conf
-I use this configuration in Linux and Mac OS.
+This repository contains my workstation configurations.  
+I use it on Ubuntu and MacOS.
+
+## Chapters
+* neovim
+* IRSSI
+* git
+* tmux
+* bash
+* mongodb
 
 ## Boot
 ```sh
@@ -7,14 +16,3 @@ git clone git@github.com:gianarb/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./install.sh
 ```
-## Install Bundle
-Now you can enter in vim to start "bundle install" function
-
-## Compile YCM
-See [YCM](https://github.com/Valloric/YouCompleteMe)
-
-## Requirment
-* VIM
-* IRSSI
-* git
-* tmux
