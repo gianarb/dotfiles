@@ -17,6 +17,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'mattn/gist-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'joonty/vdebug'
+Plug 'mattn/webapi-vim'
 Plug 'benmills/vimux'
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
 Plug 'wdalmut/vim-phpunit', { 'for': 'php' }
