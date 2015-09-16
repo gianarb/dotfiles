@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'fntlnz/atags.vim'
-Plug 'benekastah/neomake', { 'on': 'Neomake' }
+Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/gist-vim'
 Plug 'flazz/vim-colorschemes'
