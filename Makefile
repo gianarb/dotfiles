@@ -1,18 +1,18 @@
 all: tmux irssi nvim
 irssi:
-	ln -s ~/.dotfiles/irssi ~/.irssi/config
+	ln -s ./irssi ~/.irssi/config
 tmux:
-	ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+	ln -s ./tmux.conf ~/.tmux.conf
 vim:
-	ln -s ~/.dotfiles/nvimrc ~/.nvimrc
-	ln -s ~/.dotfiles/nvim ~/.nvim
+	ln -s ./nvimrc ~/.nvimrc
+	ln -s ./nvim ~/.nvim
 git:
-	ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-	ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
+	ln -s ~/gitconfig ~/.gitconfig
+	ln -s ~/gitignore_global ~/.gitignore_global
 bash:
-	echo "source ~/.dotfiles/bashrc" >> ~/.bashrc
+	echo "source ${PWD}/bashrc" >> ~/.bashrc
 mongo:
-	cd ~/.dotfiles/mongo-hacker &&
+	cd ./mongo-hacker &&
 	make
 npm:
 	npm install -g csslint jshint
