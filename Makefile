@@ -3,7 +3,7 @@ irssi:
 	ln -s ~/.dotfiles/irssi ~/.irssi/config
 tmux:
 	ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-nvim:
+vim:
 	ln -s ~/.dotfiles/nvimrc ~/.nvimrc
 	ln -s ~/.dotfiles/nvim ~/.nvim
 git:
