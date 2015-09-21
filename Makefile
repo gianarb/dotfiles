@@ -1,14 +1,14 @@
 all: tmux irssi nvim
 irssi:
-	ln -s ./irssi ~/.irssi/config
+	ln -s ${PWD}/irssi ~/.irssi/config
 tmux:
-	ln -s ./tmux.conf ~/.tmux.conf
+	ln -s ${PWD}/tmux.conf ~/.tmux.conf
 vim:
-	ln -s ./nvimrc ~/.nvimrc
-	ln -s ./nvim ~/.nvim
+	ln -s ${PWD}/nvimrc ~/.nvimrc
+	ln -s ${PWD}/nvim ~/.nvim
 git:
-	ln -s ~/gitconfig ~/.gitconfig
-	ln -s ~/gitignore_global ~/.gitignore_global
+	ln -s ${PWD}/gitconfig ~/.gitconfig
+	ln -s ${PWD}/gitignore_global ~/.gitignore_global
 bash:
 	echo "source ${PWD}/bashrc" >> ~/.bashrc
 mongo:
