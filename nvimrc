@@ -15,7 +15,6 @@ Plug 'fntlnz/atags.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/gist-vim'
-Plug 'flazz/vim-colorschemes'
 Plug 'joonty/vdebug'
 Plug 'mattn/webapi-vim'
 Plug 'benmills/vimux'
@@ -50,8 +49,6 @@ set showcmd                             " Show (partial) commands (or size of se
 set showmatch                           " When a bracket is inserted, briefly jump to a matching one
 set backspace+=start,eol,indent
 syntax on
-set background=dark
-colorscheme solarized
 set enc=utf-8
 set tabstop=4                           " Use 4 spaces for <Tab> and :retab
 set expandtab                           " Expand tabs to spaces
@@ -70,3 +67,5 @@ set ruler                               " Show line, column number, and relative
 set scrolloff=999                       " Scroll when cursor gets within 10 characters of top/bottom edge
 set rnu
 set shiftwidth=4                        " Use 4 spaces for (auto)indent
+set background=dark
+colorscheme solarized
