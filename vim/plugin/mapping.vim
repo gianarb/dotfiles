@@ -43,3 +43,5 @@ let g:VimuxOrientation = "h"
 map <Leader>rb :VimuxRunCommand  "<LEFT>"
 map <Leader>rc :VimuxCloseRunner<CR>
 
+" Save how sudo
+cmap w!! w !sudo tee % >/dev/null
