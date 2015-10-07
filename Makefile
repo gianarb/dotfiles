@@ -1,4 +1,5 @@
 all: tmux irssi nvim
+.PHONY: nvim vim
 
 irssi:
 	ln -s ${PWD}/irssi ~/.irssi
@@ -6,13 +7,13 @@ irssi:
 tmux:
 	ln -s ${PWD}/tmux.conf ~/.tmux.conf
 
-nvim:
-	ln -s ${PWD}/vimrc ~/.nvimrc
-	ln -s ${PWD}/vim ~/.nvim
-
 vim:
 	ln -s ${PWD}/vimrc ~/.vimrc
 	ln -s ${PWD}/vim ~/.vim
+
+nvim: vim
+	ln -s ~/.vimrc ~/.nvimrc
+	ln -s ~/.vim ~/.nvim
 
 git:
 	ln -s ${PWD}/gitconfig ~/.gitconfig
