@@ -1,4 +1,4 @@
-.vagrant
+j.vagrant
 bundle/
 *.sw*
 *~
@@ -7,3 +7,5 @@ vendor
 /vim/bundle
 nvim/autoload/
 nvim/plugged/
+vim/autoload/
+vim:aq/plugged/
