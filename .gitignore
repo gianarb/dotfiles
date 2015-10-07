@@ -8,4 +8,4 @@ vendor
 nvim/autoload/
 nvim/plugged/
 vim/autoload/
-vim:aq/plugged/
+vim/plugged/
