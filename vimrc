@@ -1,9 +1,9 @@
 "Install vundle
 let shouldInstallBundles = 0
 
-if !filereadable($HOME . "/.nvim/autoload/plug.vim")
+if !filereadable($HOME . "/.vim/autoload/plug.vim")
 	echo "~≥ Installing vim-plug \n"
-	silent !curl -fLo $HOME/.nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	let shouldInstallBundles = 1
 endif
 
