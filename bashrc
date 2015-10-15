@@ -22,11 +22,11 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 #
 # FZF plugins
 #
-history_() {
+_history() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
-find_() {
+_find() {
   local file
   file=$(fzf --query="$1" --select-1 --exit-0)
   [ -n "$file" ] && ${EDITOR:-vim} "$file"
