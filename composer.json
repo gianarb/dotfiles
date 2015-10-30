@@ -5,6 +5,8 @@
         "techlivezheng/phpctags": "0.6.0",
         "squizlabs/php_codesniffer": "^2.3",
         "phpmd/phpmd": "^2.2",
-        "localheinz/github-changelog": "^0.3.0"
-    }
+        "localheinz/github-changelog": "^0.3.0",
+        "sensiolabs/melody": "dev-master"
+    },
+    "minimum-stability": "dev"
 }
