@@ -47,7 +47,6 @@ let mapleader = ","                     " Set the <Leader> for combo commands
 set autoindent                          " Make sure that unrecognized files are still indented
 set showcmd                             " Show (partial) commands (or size of selection in Visual mode) in the status
 set showmatch                           " When a bracket is inserted, briefly jump to a matching one
-set backspace+=start,eol,indent
 syntax on
 set enc=utf-8
 set tabstop=4                           " Use 4 spaces for <Tab> and :retab
