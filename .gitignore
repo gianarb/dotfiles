@@ -6,6 +6,7 @@ bundle/
 vendor
 /vim/bundle
 nvim/autoload/
+vim/init.vim
 nvim/plugged/
 vim/autoload/
 vim/plugged/

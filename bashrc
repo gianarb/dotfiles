@@ -1,6 +1,7 @@
 PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH"
 
 alias tmux='TERM=screen-256color tmux'
+alias ll='ls -lsa'
 
 #
 # Load bash git prompt
@@ -8,16 +9,7 @@ alias tmux='TERM=screen-256color tmux'
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.dotfiles/bash-git-prompt/gitprompt.sh
 
-#
-# History between shell
-#
-
-# avoid duplicates..
-export HISTCONTROL=ignoredups:erasedups
-# append history entries..
-shopt -s histappend
-# After each command, save and reload history
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export XDG_CONFIG_HOME=$HOME/.config
 
 #
 # FZF plugins
@@ -43,3 +35,8 @@ git_log() {
     done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
   done
 }
+
+#
+# GitHub bash completation
+# SOURCE here https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+source ~/.dotfiles/git-completion.bash
