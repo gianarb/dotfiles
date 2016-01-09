@@ -17,3 +17,6 @@ setlocal shiftwidth=4
 setlocal expandtab
 setlocal autoindent
 setlocal smarttab
+
+let g:hack#omnifunc = 0
+set tags+=vendor/tags

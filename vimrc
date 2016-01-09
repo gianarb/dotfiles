@@ -1,3 +1,11 @@
+" post installation hooks{{{
+function! BuildYCM(info)
+    if a:info.status == 'installed' || a:info.force
+        !./install.py
+    endif
+endfunction
+" }}} thanks fntlnz
+
 "Install vundle
 let shouldInstallBundles = 0
 
@@ -10,6 +18,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'junegunn/fzf.vim'
 Plug 'fntlnz/atags.vim'
 Plug 'scrooloose/syntastic'
@@ -17,14 +26,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'mattn/gist-vim'
 Plug 'joonty/vdebug'
 Plug 'mattn/webapi-vim'
-Plug 'benmills/vimux'
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
 Plug 'wdalmut/vim-phpunit', { 'for': 'php' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'saltstack/salt-vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 
 call plug#end()

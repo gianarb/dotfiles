@@ -7,6 +7,7 @@ vendor
 /vim/bundle
 nvim/autoload/
 vim/init.vim
+vim/shada
 nvim/plugged/
 vim/autoload/
 vim/plugged/
