@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf.vim'
 Plug 'fntlnz/atags.vim'
 Plug 'scrooloose/syntastic'
