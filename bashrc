@@ -2,6 +2,7 @@ PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH"
 
 alias tmux='TERM=screen-256color tmux'
 alias ll='ls -lsa'
+alias vim='nvim'
 
 #
 # Load bash git prompt
@@ -40,3 +41,4 @@ git_log() {
 # GitHub bash completation
 # SOURCE here https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 source ~/.dotfiles/git-completion.bash
+source ~/.dotfiles/docker-completion.sh
