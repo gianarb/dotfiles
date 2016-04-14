@@ -49,7 +49,7 @@ endif
 
 filetype plugin indent on
 set number                               " enable line number
-set exrc                                " Enable project specific .vimrc
+set rnu                                 " Relative line number
 set secure                              " Enable secure mode
 let mapleader = ","                     " Set the <Leader> for combo commands
 set autoindent                          " Make sure that unrecognized files are still indented
@@ -72,7 +72,7 @@ set backupdir=/tmp
 set directory=/tmp                      " Don't clutter my dirs up with swp and tmp files
 set ruler                               " Show line, column number, and relative position within a file in the status
 set scrolloff=999                       " Scroll when cursor gets within 10 characters of top/bottom edge
-set rnu
 set shiftwidth=4                        " Use 4 spaces for (auto)indent
-set background=dark
-colorscheme solarized
+set background=dark                     " Background options
+colorscheme solarized                   " Schema color
+set exrc                                " Enable project specific .vimrc

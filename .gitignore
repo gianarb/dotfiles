@@ -1,4 +1,5 @@
 j.vagrant
+.idea
 bundle/
 *.sw*
 *~
