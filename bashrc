@@ -42,3 +42,5 @@ git_log() {
 # SOURCE here https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 source ~/.dotfiles/git-completion.bash
 source ~/.dotfiles/docker-completion.sh
+
+eval $(docker-machine env default)
