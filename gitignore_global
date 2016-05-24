@@ -1,5 +1,6 @@
 tags
 composer.phar
+.idea
 .nvimrc
 .DS_Store
 .ctags
