@@ -38,7 +38,5 @@ git_log() {
 }
 
 #
-# GitHub bash completation
-# SOURCE here https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-source ~/.dotfiles/git-completion.bash
-source ~/.dotfiles/docker-completion.sh
+source ~/.dotfiles/bash/git-completion
+source ~/.dotfiles/bash/docker-completion
