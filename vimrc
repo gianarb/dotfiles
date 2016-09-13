@@ -76,3 +76,5 @@ set shiftwidth=4                        " Use 4 spaces for (auto)indent
 set background=dark                     " Background options
 colorscheme solarized                   " Schema color
 set exrc                                " Enable project specific .vimrc
+set spell                               " Enable spell check
+set backspace=indent,eol,start

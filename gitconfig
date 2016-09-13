@@ -42,6 +42,7 @@
 [diff]
     # Detect copies as well as renames
     renames = copies
+	compactionHeuristic = true
 
 [help]
     # Automatically correct and execute mistyped commands
