@@ -12,11 +12,11 @@ au FileType php noremap <Leader>i :call phpcomplete#JumpToDefinition('vsplit')<C
 " array() -> []
 au FileType php nnoremap <silent> <Leader>a /\<array\>\s*(<CR>:nohl<CR>dwmp%r]`pr[
 
-setlocal tabstop=4
-setlocal shiftwidth=4
-setlocal expandtab
-setlocal autoindent
-setlocal smarttab
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smarttab
 
 let g:hack#omnifunc = 0
 set tags+=vendor/tags
