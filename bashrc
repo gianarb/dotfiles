@@ -2,6 +2,7 @@ PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH"
 
 alias tmux='TERM=screen-256color tmux'
 alias ll='ls -lsa'
+export PS1='\w $ '
 
 #
 # Load bash git prompt
