@@ -1,4 +1,4 @@
-PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin"
+PATH="$HOME/.dotfiles/docker-bin:$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin"
 
 alias tmux='TERM=screen-256color tmux'
 alias ll='ls -lsa'
