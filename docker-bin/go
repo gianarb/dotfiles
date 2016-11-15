@@ -1,0 +1,1 @@
+docker run -v /home/gianarb/go:/home/gianarb/go -e GOPATH=/home/gianarb/go -w $PWD --rm golang:latest go $@

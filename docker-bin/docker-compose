@@ -1,0 +1,1 @@
+docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -w $PWD -v $PWD:$PWD docker/compose:1.9.0-rc4 $@

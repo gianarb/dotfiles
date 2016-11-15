@@ -1,0 +1,9 @@
+docker run --rm -it \
+       -v /etc/localtime:/etc/localtime:ro \
+       -v ${HOME}/.config/keepassx:/root/.config/keepassx \
+       -v /tmp/.X11-unix:/tmp/.X11-unix \
+       -v ${HOME}:/home/gianarb \
+       -e DISPLAY=unix$DISPLAY \
+       --rm \
+       --name keepassx \
+       gianarb/keepassx "$@"
