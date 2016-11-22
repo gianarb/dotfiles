@@ -1,0 +1,1 @@
+docker run -v /home/gianarb/.aws:/root/.aws -v $PWD:$PWD -w $PWD --rm -it cgswong/aws:aws $@
