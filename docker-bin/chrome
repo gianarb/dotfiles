@@ -6,6 +6,7 @@ docker run -it \
     -e DISPLAY=unix$DISPLAY \
     -v $HOME/Downloads:/root/Downloads \
     -v $HOME/.config/google-chrome/:/data \
+    -v /dev/shm:/dev/shm \
     --device /dev/snd \
     --name chrome \
     --privileged \

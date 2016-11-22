@@ -1,0 +1,10 @@
+docker run -it \
+    --net host \
+    --memory 1G \
+    --rm \
+    -v /inkscape:/workspace \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY=unix$DISPLAY \
+    -v $HOME:/root \
+    --name inkscape \
+    gianarb/inkscape
