@@ -4,10 +4,10 @@ docker run -it \
     --rm \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY=unix$DISPLAY \
-    -v $HOME:$HOME \
+    -v $HOME/Downloads:/root/Downloads \
     -v $HOME/.config/google-chrome/:/data \
     -v /dev/shm:/dev/shm \
     --device /dev/snd \
     --name chrome \
     --privileged \
-    jess/chrome
+    jess/chrome $@
