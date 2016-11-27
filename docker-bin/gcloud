@@ -1,0 +1,2 @@
+docker run -ti --rm --volumes-from gcloud-config google/cloud-sdk gcloud $@ 
+

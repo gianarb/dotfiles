@@ -1,0 +1,2 @@
+docker run -ti --rm -v $PWD:$PWD -w $PWD --volumes-from gcloud-config google/cloud-sdk gsutil $@ 
+
