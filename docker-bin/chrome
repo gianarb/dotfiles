@@ -2,7 +2,6 @@ docker run -it \
     --net host \
     --memory 1G \
     --rm \
-    -d \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY=unix$DISPLAY \
     -v $HOME/Downloads:/root/Downloads \
