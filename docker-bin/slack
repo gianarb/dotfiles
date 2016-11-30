@@ -4,7 +4,6 @@ docker run --rm -it \
        -e DISPLAY=unix$DISPLAY \
        -v $HOME:/root \
        --rm \
-       -d \
        --device /dev/snd \
        --device /dev/dri \
        --device /dev/video0 \

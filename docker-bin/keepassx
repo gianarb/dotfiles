@@ -4,7 +4,6 @@ docker run --rm -it \
        -v /tmp/.X11-unix:/tmp/.X11-unix \
        -v ${HOME}:/home/gianarb \
        -e DISPLAY=unix$DISPLAY \
-       -d \
        --rm \
        --name keepassx \
        gianarb/keepassx "$@"
