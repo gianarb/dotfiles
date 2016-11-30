@@ -1,4 +1,5 @@
-PATH="$HOME/.dotfiles/docker-bin:$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin"
+DOTFILES="$HOME/.dotfiles"
+PATH="$DOTFILES/docker-bin:$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin"
 
 alias tmux='TERM=screen-256color tmux'
 alias ll='ls -lsa'
@@ -8,7 +9,7 @@ export PS1='\w $ '
 # Load bash git prompt
 #
 GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.dotfiles/bash-git-prompt/gitprompt.sh
+source $DOTFILES/bash-git-prompt/gitprompt.sh
 
 export XDG_CONFIG_HOME=$HOME/.config
 
@@ -34,5 +35,5 @@ git_log() {
 }
 
 #
-source ~/.dotfiles/bash/git-completion
-source ~/.dotfiles/bash/docker-completion
+source $DOTFILES/bash/git-completion
+source $DOTFILES/bash/docker-completion
