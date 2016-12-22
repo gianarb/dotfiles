@@ -1,0 +1,1 @@
+docker run --rm -it -e DO=$DO -w $PWD -v $PWD:$PWD gianarb/docli:latest $@

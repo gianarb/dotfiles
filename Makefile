@@ -1,4 +1,4 @@
-.PHONY: nvim vim profile.d
+.PHONY: nvim vim profile.d bash
 
 irssi:
 	ln -s ${DOTFILES}/irssi ~/.irssi
