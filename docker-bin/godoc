@@ -1,7 +1,0 @@
-docker run \
-    -v /home/gianarb/go:/home/gianarb/go \
-    -e GOPATH=/home/gianarb/go \
-    -e TERM=$TERM \
-    -w $PWD \
-    --rm -it \
-    golang:1.7.1 godoc $@
