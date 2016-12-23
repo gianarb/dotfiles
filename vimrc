@@ -24,7 +24,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/gist-vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'joonty/vdebug'
 Plug 'mattn/webapi-vim'
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
