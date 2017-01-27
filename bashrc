@@ -1,5 +1,10 @@
 DOTFILES="$HOME/.dotfiles"
-PATH="$DOTFILES/docker-bin:$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin"
+PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin"
+
+#
+# This directory contains all the command replaced with a docker container.
+# By default it's disable but you can enable it in your ~/.bashrc
+# PATH="$DOTFILES/docker-bin:$PATH'
 
 alias tmux='TERM=screen-256color tmux'
 alias ll='ls -lsa'
@@ -33,6 +38,5 @@ git_log() {
   done
 }
 
-#
 source $DOTFILES/bash/git-completion
 source $DOTFILES/bash/docker-completion
