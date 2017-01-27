@@ -6,7 +6,7 @@ function! BuildYCM(info)
 endfunction
 " }}} thanks fntlnz
 
-"Install vundle
+" Install and setup plug{{{
 let shouldInstallBundles = 0
 
 if !filereadable($HOME . "/.vim/autoload/plug.vim")
@@ -36,18 +36,22 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 
 call plug#end()
 
+
 if shouldInstallBundles == 1
     echo "~> Installing plugs\n"
     :PlugInstall
 endif
+" }}}
 
-" Use local vimrc if available
+" Use local vimrc if available{{{
 if filereadable(expand("~/.vimrc.local"))
 	source $HOME/.vimrc.local
 endif
+" }}}
 
+" Startup settings {{{
 filetype plugin indent on
-set number                               " enable line number
+set number                              " enable line number
 set rnu                                 " Relative line number
 set secure                              " Enable secure mode
 let mapleader = ","                     " Set the <Leader> for combo commands
@@ -72,8 +76,10 @@ set directory=/tmp                      " Don't clutter my dirs up with swp and 
 set ruler                               " Show line, column number, and relative position within a file in the status
 set scrolloff=999                       " Scroll when cursor gets within 10 characters of top/bottom edge
 set shiftwidth=4                        " Use 4 spaces for (auto)indent
-"set background=dark                     " Background options
-"colorscheme solarized                   " Schema color
+"set background=dark                    " Background options
+"colorscheme solarized                  " Schema color
 set exrc                                " Enable project specific .vimrc
 set spell                               " Enable spell check
 set backspace=indent,eol,start
+set mouse=v
+" }}}
