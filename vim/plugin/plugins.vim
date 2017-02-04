@@ -24,7 +24,7 @@ set diffopt+=vertical
 
 " UltiSnips
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=["mysnippets"]
+let g:UltiSnipsSnippetDirectories=["/home/gianarb/.dotfiles/vim/mysnippets", "/home/gianarb/.dotfiles/vim/plugged/vim-go/gosnippets/UltiSnips"]
 let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
