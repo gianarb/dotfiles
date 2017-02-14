@@ -3,5 +3,6 @@ docker run --rm -it \
        -e DISPLAY=unix$DISPLAY \
        --rm \
        -v "${HOME}/.filezilla:/root/.filezilla" \
+       -v "${HOME}:${HOME}" \
        --name filezilla \
        gianarb/filezilla "$@"
