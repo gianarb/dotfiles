@@ -5,3 +5,4 @@ au BufReadPost Vagrantfile set filetype=ruby
 au BufReadPost sudoers set filetype=sudoers
 au BufReadPost *.toml set filetype=toml
 au BufReadPost Dockerfile* set filetype=dockerfile
+au BufNewFile,BufRead *.thrift setlocal filetype=thrift
