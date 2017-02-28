@@ -7,6 +7,7 @@
     tags = tag -l
     branches = branch -a
     remotes = remote -v
+    pr = "!f() { git fetch $1 refs/pull/$2/head:pr/$1/$2 && git checkout pr/$1/$2;  } ; f"
 [core]
 	editor = vim
     excludesfile = ~/.gitignore_global

@@ -34,3 +34,6 @@ SPOF
 iptables
 OpenVPN
 TPC
+yaml
+autoscaler
+DigitalOcean

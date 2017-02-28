@@ -79,6 +79,4 @@ colorscheme glokai                      " Schema color
 set exrc                                " Enable project specific .vimrc
 set backspace=indent,eol,start
 set mouse=v
-hi ColorColumn ctermbg=10
-:set colorcolumn=81
 " }}}
