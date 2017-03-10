@@ -3,3 +3,5 @@ setlocal shiftwidth=2
 setlocal expandtab
 setlocal autoindent
 setlocal smarttab
+
+set colorcolumn=81

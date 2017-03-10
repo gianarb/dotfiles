@@ -21,5 +21,4 @@ set smarttab
 let g:hack#omnifunc = 0
 set tags+=vendor/tags
 
-hi ColorColumn ctermbg=10
 set colorcolumn=81
