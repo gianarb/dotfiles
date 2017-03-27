@@ -14,6 +14,11 @@ let g:syntastic_css_checkers=['csslint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
+" Autoformat js{{{
+let g:formatterpath = ['xo']
+noremap <F3> :Autoformat<CR>
+" }}}
+
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_style_error_symbol = '✠'
 let g:syntastic_warning_symbol = '∆'

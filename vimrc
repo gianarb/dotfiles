@@ -29,6 +29,7 @@ Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
 Plug 'wdalmut/vim-phpunit', { 'for': 'php' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
+Plug 'Chiel92/vim-autoformat', { 'for': 'javascript' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'fatih/vim-go', { 'for': 'go' }
