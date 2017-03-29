@@ -26,25 +26,11 @@ vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
 
-" FZF
-map <C-p> :FZF<cr>
-map <C-t> :Tags<cr>
-map <C-b> :Buffers<cr>
-
-" atags.vim
-map <Leader>t :call atags#generate()<cr>
-
 "  select all
 map <C-a> <esc>ggVG<CR>
 
-map <Leader>tree :NERDTreeToggle<CR>
-
-let g:VimuxOrientation = "h"
-map <Leader>rb :VimuxRunCommand  "<LEFT>"
-map <Leader>rc :VimuxCloseRunner<CR>
-
 " Save how sudo
-cmap w!! w !sudo tee % >/dev/null
+cmap ww w !sudo tee % >/dev/null
 
 map + :vertical resize +5<CR>
 map _ :vertical resize -5<CR>
