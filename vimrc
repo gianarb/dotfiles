@@ -18,6 +18,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/syntastic'
@@ -34,9 +35,12 @@ Plug 'Chiel92/vim-autoformat', { 'for': 'javascript' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'vim-fetch'
+Plug 'godlygeek/tabular'
+Plug 'fatih/vim-hclfmt'
+Plug 'nathanielc/vim-tickscript'
 
 call plug#end()
-
 
 if shouldInstallBundles == 1
     echo "~> Installing plugs\n"
