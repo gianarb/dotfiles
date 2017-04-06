@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -it --rm -v ${PWD}:${PWD} -w ${PWD} php:7 php "$@"
+docker run -it -p 8080:8080 --rm -v ${PWD}:${PWD} -w ${PWD} php:7 php "$@"
