@@ -8,6 +8,7 @@
     branches = branch -a
     remotes = remote -v
     pr = "!f() { git fetch $1 refs/pull/$2/head:pr/$1/$2 && git checkout pr/$1/$2;  } ; f"
+    prune = fetch --prune
 [core]
 	editor = vim
     excludesfile = ~/.gitignore_global
@@ -52,3 +53,7 @@
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
+[commit]
+	gpgsign = true
+[status]
+    showUntrackedFiles = all
