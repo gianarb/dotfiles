@@ -1,7 +1,7 @@
 " post installation hooks{{{
 function! BuildYCM(info)
     if a:info.status == 'installed' || a:info.force
-        !./install.py
+        !./install.py --clang-completer --tern-completer --gocode-completer
     endif
 endfunction
 " }}} thanks fntlnz
