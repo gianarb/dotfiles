@@ -1,5 +1,5 @@
 DOTFILES="$HOME/.dotfiles"
-PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin"
+PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:$GOPATH/bin"
 
 #
 # This directory contains all the command replaced with a docker container.
