@@ -1,8 +1,13 @@
-.PHONY: completion-update npm
+.PHONY: completion-update npm i3
 .DEFAULT: default
 
 irssi:
 	@ln -s ${DOTFILES}/irssi ~/.irssi
+
+i3:
+	@mkdir ~/.i3
+	@ln -s ${PWD}/i3/config ~/.i3/config
+	@ln -s ${PWD}/i3/i3status.conf ~/.i3status.conf
 
 tmux:
 	@ln -s ${DOTFILES}/tmux.conf ~/.tmux.conf
