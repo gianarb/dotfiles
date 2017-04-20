@@ -8,6 +8,7 @@ PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:$GOPATH/bin"
 
 alias tmux='TERM=screen-256color tmux'
 alias ll='ls -lsa'
+alias myip='curl ipinfo.io/ip'
 
 #
 # Load bash git prompt
