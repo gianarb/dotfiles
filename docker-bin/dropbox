@@ -1,5 +1,7 @@
 docker run -d --restart=always --name=dropbox \
     -v ${HOME}/Dropbox:/dbox/Dropbox \
+    -v ${HOME}/.dropbox:/dbox/.dropbox \
+    -v ${HOME}/.dropbox.cache:/dbox/.dropbox.cache\
     -e DBOX_UID=${UID} \
     -e DBOX_GID=${GROUPS} \
     --net="host" \
