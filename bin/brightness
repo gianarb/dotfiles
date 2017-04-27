@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#
+# Thi script manage the monitor lightness.
+# You need sudo permission to run this script.
+# Update sudoers with:
+# pippo host = (ALL) NOPASSWD: /home/gianarb/.dotfiles/bin/brightness*
+#
+
+brightness_file=/sys/class/backlight/intel_backlight/brightness
+currentVal=$(cat $brightness_file)
+direction=$1
+step=100
+
+case $direction in
+    -)
+    if [ "$(($currentVal-$step))" -le "0" ]; then
+		echo "skip. We are good enough."
+	else
+        echo $(($currentVal-$step)) > $brightness_file
+	fi
+    shift
+    ;;
+    +)
+    if [ "$(($currentVal+$step))" -ge "900" ]; then
+		echo "skip. We are good enough."
+	else
+        echo $(($currentVal+$step)) > $brightness_file
+	fi
+    shift # past argument
+    ;;
+    *)
+	echo "We only accept - or + as argument."
+	exit 1
+    ;;
+esac
