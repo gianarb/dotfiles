@@ -1,4 +1,4 @@
-docker run --rm -it \
+docker run --rm -i \
        -v /etc/localtime:/etc/localtime:ro \
        -v /tmp/.X11-unix:/tmp/.X11-unix \
        -e DISPLAY=unix$DISPLAY \

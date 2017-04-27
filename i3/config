@@ -2,8 +2,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
+# This config file uses keycodes (bindsym) and was written for the QWERTY # layout.
 #
 # To get a config file with the same key positions, but for your current
 # layout, use the i3-config-wizard
@@ -169,6 +168,14 @@ bar {
         status_command i3status
 }
 
+# Screenshots
+# Screenshot fullscreen
+bindsym Print exec "scrot -q 100 ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'"
+# Screenshot with selection
+bindsym $mod+Print exec "sleep 0.4; scrot -q 100 -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'"
+# Screenshot current focused window
+bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'"
+
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)
@@ -186,8 +193,27 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /home/gianarb/.dotfiles/bin/toggletouchpad.sh 
+bindsym XF86TouchpadToggle exec /home/gianarb/.dotfiles/bin/toggletouchpad.sh
 
 # Display backlight
-bindsym XF86MonBrightnessDown exec /home/gianarb/.dotfiles/bin/backlight - 
-bindsym XF86MonBrightnessUp exec /home/gianarb/.dotfiles/bin/backlight + 
+bindsym XF86MonBrightnessDown exec /home/gianarb/.dotfiles/bin/backlight -
+bindsym XF86MonBrightnessUp exec /home/gianarb/.dotfiles/bin/backlight +
+
+# Keyboard backlight
+bindsym XF86KbdBrightnessDown exec /home/gianarb/.dotfiles/bin/backlight -
+bindsym XF86KbdBrightnessUp exec /home/gianarb/.dotfiles/bin/backlight +
+
+#### RULES FOR SPECIFIC APPLICATIONS ####
+
+# by APPLICATION (WM_CLASS)
+# Note: class is typically useful for applying custom settings to
+#       to entire applications, including child windows. If this
+#       isn't want you want see the ROLE section, below.
+# Tip: To find out what these values might be run:
+#       xprop | grep -i 'class'
+for_window [class="gnome-terminal"] move workspace 1
+for_window [class="Google-chrome"] move workspace 2
+for_window [class="Slack"] move workspace 9
+for_window [class="Telegram"] move workspace 9
+for_window [class="Spotify"] move workspace 8
+

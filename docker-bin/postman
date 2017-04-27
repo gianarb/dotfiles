@@ -1,0 +1,7 @@
+#!/bin/sh
+docker run -it --rm \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v ${HOME}/.config/Postman/:/root/.config/Postman \
+    -e DISPLAY=unix$DISPLAY \
+    gianarb/postman $@

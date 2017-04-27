@@ -1,9 +1,13 @@
-docker run --rm -it --name telegram \
-   -v /tmp/.X11-unix:/tmp/.X11-unix \
+#!/bin/sh
+
+docker run --rm \
+   --name telegram \
    -e DISPLAY=unix$DISPLAY \
-   -it \
+   -i \
    --rm \
    --device /dev/snd \
+   --group-add audio \
    -v /dev/shm:/dev/shm \
    -v ${HOME}/.local/share/TelegramDesktop:/root/.local/share/TelegramDesktop \
+   -v /tmp/.X11-unix:/tmp/.X11-unix \
    xorilog/telegram

@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -i --rm realguess/jq:1.4 jq $@
