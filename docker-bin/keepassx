@@ -1,4 +1,5 @@
-docker run --rm -it \
+#!/bin/bash
+docker run --rm -i \
        -v /etc/localtime:/etc/localtime:ro \
        -v ${HOME}/.config/keepassx:/root/.config/keepassx \
        -v /tmp/.X11-unix:/tmp/.X11-unix \
