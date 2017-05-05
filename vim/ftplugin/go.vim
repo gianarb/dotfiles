@@ -1,5 +1,5 @@
 nmap <leader>tau :GoTest<CR>
-nmap <leader>b :GoBuild<CR>
+nmap gb :GoBuild<CR>
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1

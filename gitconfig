@@ -1,7 +1,7 @@
 [user]
 	name = Gianluca Arbezzano
 	email = gianarb92@gmail.com
-	signingkey = 6292051F
+	signingkey = B6A8130D3FD472C730D721239505D2809E1D6180
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     tags = tag -l
@@ -57,3 +57,5 @@
 	gpgsign = true
 [status]
     showUntrackedFiles = all
+[url "git@github.com:"]
+	insteadOf = https://github.com/

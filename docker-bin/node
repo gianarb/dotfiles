@@ -1,0 +1,2 @@
+#!/bin/sh
+docker run -it -v ${PWD} -w ${PWD} node:7.9-alpine node $@
