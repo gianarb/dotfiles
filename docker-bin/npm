@@ -1,2 +1,2 @@
 #!/bin/sh
-docker run -it -v ${PWD} -w ${PWD} node:7.9-alpine npm $@
+docker run -it -v ${PWD}:${PWD} -w ${PWD} node:7.9-alpine npm $@
