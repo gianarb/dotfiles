@@ -10,6 +10,28 @@ alias tmux='TERM=screen-256color tmux'
 alias ll='ls -lsa'
 alias myip='curl ipinfo.io/ip'
 
+alias sl=ls
+alias mdkir=mkdir
+alias soruce=source
+alias souce=source
+alias vi=vim
+
+alias g=git
+alias d=docker
+
+alias gs='git show --pretty=oneline'
+alias gpom='git push origin master'
+alias gpod='git push origin development'
+alias grom='git reset --hard origin/master'
+alias gp='git pull'
+alias shm="source ~/.bashrc"
+
+# Reference
+alias alphabet='echo a b c d e f g h i j k l m n o p q r s t u v w x y z'
+alias unicode='echo ✓ ™  ♪ ♫ ☃ ° Ɵ ∫'
+alias numalphabet='alphabet; echo 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6'
+alias ascii='man ascii | grep -m 1 -A 63 --color=never Oct'
+
 #
 # Load bash git prompt
 #
