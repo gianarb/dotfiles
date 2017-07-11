@@ -1,0 +1,6 @@
+#!/bin/bash
+aws ec2 \
+    --region ${1} \
+    --profile influxdb authorize-security-group-ingress \
+    --group-name ${2} \
+    --protocol tcp --port 22 --cidr ${myip}/32
