@@ -1,6 +1,7 @@
 #!/bin/sh
 docker run -i --rm \
     -v /etc/localtime:/etc/localtime:ro \
+    --name postman \
     --net host \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ${HOME}:/root \

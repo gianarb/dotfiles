@@ -54,3 +54,8 @@ map <C-p> :FZF<cr>
 map <C-t> :Tags<cr>
 map <C-b> :Buffers<cr>
 " }}}
+
+" vim-go {{{
+let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
+let g:go_metalinter_autosave = 1
+" }}}

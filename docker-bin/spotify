@@ -8,6 +8,7 @@ docker run  \
    --device /dev/snd:/dev/snd \
    -v ${HOME}/.spotify/config:/home/spotify/.config/spotify \
    -v ${HOME}/.spotify/cache:/home/spotify/.cache/spotify \
+   -v /tmp/pulse-socket:/var/run/pulse.socket \
     -v /var/lib/dbus:/var/lib/dbus \
    --name spotify \
    jess/spotify
