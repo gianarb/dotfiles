@@ -1,5 +1,6 @@
 DOTFILES="$HOME/.dotfiles"
 PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:$GOPATH/bin"
+EDITOR=vim
 
 #
 # This directory contains all the command replaced with a docker container.
@@ -21,7 +22,8 @@ alias d=docker
 
 alias gs='git show --pretty=oneline'
 alias gpom='git push origin master'
-alias gpod='git push origin development'
+alias gpod='git push origin develop'
+alias gfpu='git fetch upstream && git pull upstream develop'
 alias grom='git reset --hard origin/master'
 alias gp='git pull'
 alias shm="source ~/.bashrc"
