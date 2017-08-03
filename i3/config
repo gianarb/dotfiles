@@ -236,4 +236,4 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+End mode "$mode_system"
+bindsym Mod4+Escape mode "$mode_system"
