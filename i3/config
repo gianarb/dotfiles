@@ -195,8 +195,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86TouchpadToggle exec /home/gianarb/.dotfiles/bin/toggletouchpad.sh
 
 # Display backlight
-bindsym XF86MonBrightnessDown exec /home/gianarb/.dotfiles/bin/backlight -
-bindsym XF86MonBrightnessUp exec /home/gianarb/.dotfiles/bin/backlight +
+bindsym XF86MonBrightnessDown exec sudo /home/gianarb/.dotfiles/bin/brightness -
+bindsym XF86MonBrightnessUp exec sudo /home/gianarb/.dotfiles/bin/brightness +
 
 # Keyboard backlight
 bindsym XF86KbdBrightnessDown exec /home/gianarb/.dotfiles/bin/backlight -
