@@ -19,6 +19,8 @@ $stow systemd
 $stow irssi
 $stow i3
 $stow profile.d
+$stow tmux
+$stow git
 $stow screenlayout
 $stow vim
 popd
