@@ -14,13 +14,9 @@ if [ ! -d "$install_path" ]; then
 fi
 
 pushd $install_path
-$stow bash-git-prompt
 $stow systemd
-$stow irssi
 $stow i3
-$stow profile.d
 $stow tmux
 $stow git
-$stow screenlayout
 $stow vim
 popd
