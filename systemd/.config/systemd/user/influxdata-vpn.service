@@ -1,0 +1,14 @@
+[Unit]
+Description=Openvpn InfluxData
+After=network-online.target firewalld.service
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/sbin/openvpn /home/gianarb/.config/gianarb.ovpn
+ExecReload=/bin/kill -s SIGHUP $MAINPID
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
