@@ -11,5 +11,6 @@ nvim/autoload/
 vim/init.vim
 vim/shada
 nvim/plugged/
+vim/.vim/plugged
 vim/autoload/
 vim/plugged/
