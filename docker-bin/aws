@@ -1,1 +1,1 @@
-docker run -v ${PWD}:${PWD} -w ${PWD} -v ~/.aws:/root/.aws  --rm -it cgswong/aws aws $@
+docker run -v ${PWD}:${PWD} -w ${PWD} -v ~/.aws:/root/.aws  --rm -t cgswong/aws aws $@

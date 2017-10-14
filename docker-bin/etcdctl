@@ -1,8 +1,3 @@
 #!/bin/bash
-docker run -i --rm \
-    -v ${PWD}:${PWD} \
-    -w ${PWD} \
-    --net host \
-    --entrypoint /etcdctl \
-    gianarb/etcdctl $@
-
+echo $@
+docker run -it --rm ${DOCKERBIN_OPTS} gianarb/etcdctl $@
