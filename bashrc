@@ -62,6 +62,3 @@ git_log() {
     done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
   done
 }
-
-source $DOTFILES/bash/git-completion
-source $DOTFILES/bash/docker-completion
