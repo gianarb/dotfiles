@@ -39,6 +39,7 @@ Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'Chiel92/vim-autoformat', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'artur-shaik/vim-javacomplete2'
 
 call plug#end()
 
