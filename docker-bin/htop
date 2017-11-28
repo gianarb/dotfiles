@@ -1,3 +1,0 @@
-docker run --rm -it \
-   --pid host \
-   jess/htop

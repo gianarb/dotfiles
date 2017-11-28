@@ -1,8 +1,0 @@
-docker run --rm \
-    -it \
-    -e TERM \
-    -u $(id -u):$(id -g) \
-    --log-driver=none \
-    -v $HOME/.dotfiles/irssi:/home/user/.irssi:ro \
-    -v /etc/localtime:/etc/localtime:ro \
-    irssi:0.8.20-alpine $@

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-docker run --rm -it \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v ${HOME}/.docker:/root/.docker \
-    -v ${PWD}:${PWD} \
-    -w ${PWD} \
-    docker/compose:1.13.0 $@
