@@ -16,6 +16,7 @@ alias mdkir=mkdir
 alias soruce=source
 alias souce=source
 alias vi=vim
+alias myzoom='echo "https://zoom.us/j/7781108297"'
 
 alias g=git
 alias d=docker
