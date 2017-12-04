@@ -8,7 +8,7 @@ EDITOR=vim
 # PATH="$DOTFILES/docker-bin:$PATH'
 
 alias tmux='TERM=screen-256color tmux'
-alias ll='ls -lsa'
+alias ll='ls -lsah'
 alias myip='curl ipinfo.io/ip'
 
 alias sl=ls

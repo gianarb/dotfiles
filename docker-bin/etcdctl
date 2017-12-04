@@ -1,3 +1,0 @@
-#!/bin/bash
-echo $@
-docker run -it --rm ${DOCKERBIN_OPTS} gianarb/etcdctl $@

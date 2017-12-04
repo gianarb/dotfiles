@@ -1,7 +1,7 @@
 " post installation hooks{{{
 function! BuildYCM(info)
     if a:info.status == 'installed' || a:info.force
-        !./install.py --clang-completer --tern-completer --gocode-completer
+        !./install.py --clang-completer --go-completer --js-completer --tern-completer
     endif
 endfunction
 " }}} thanks fntlnz
@@ -24,6 +24,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'mattn/gist-vim'
 Plug 'joonty/vdebug'
 Plug 'jaxbot/github-issues.vim'

@@ -59,3 +59,5 @@
     showUntrackedFiles = all
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[web]
+	browser = xdg-open
