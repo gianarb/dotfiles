@@ -1,7 +1,0 @@
-#!/bin/bash
-docker run --rm -it \
-    -v ${PWD}:${PWD} \
-    -v /usr/bin/git:/bin/git \
-    -v ${HOME}.ssh/id_rsa:/root/.ssh/id_rsa \
-    -v ${HOME}/.composer:/root/.composer \
-    -w ${PWD} composer:1 "$@"

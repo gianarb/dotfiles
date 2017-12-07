@@ -1,9 +1,0 @@
-#!/bin/sh
-
-docker run --rm \
-    -i -t \
-    -v ${PWD}:${PWD} \
-    -v ${HOME}/.aws:/root/.aws \
-    -v ${HOME}/.ssh:/root/.ssh \
-    -w ${PWD} \
-    hashicorp/terraform:light $@

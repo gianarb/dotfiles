@@ -1,8 +1,0 @@
-#!/bin/sh
-
-docker run -it \
-    -v ${HOME}/.mutt:/home/mutty/.mutt \
-    -v ${HOME}/.gnupg:/home/mutty/.gnupg \
-    --rm \
-    --name mutt \
-    gianarb/mutt "$@"
