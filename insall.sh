@@ -18,6 +18,6 @@ $stow systemd
 $stow i3
 $stow tmux
 $stow git
-$stow vim
+$stow irssi
 $stow gdb
 popd
