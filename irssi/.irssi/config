@@ -100,12 +100,8 @@ chatnets = {
 };
 
 channels = (
-  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#gianarb-dev"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#influxdb"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#docker"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#golang"; chatnet = "freenode"; autojoin = "yes"; },
 );
 
 aliases = {
