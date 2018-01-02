@@ -19,5 +19,7 @@ $stow i3
 $stow tmux
 $stow git
 $stow irssi
+$stow  bash
+$stow  vim
 $stow gdb
 popd
