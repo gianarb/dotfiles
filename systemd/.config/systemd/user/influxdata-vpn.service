@@ -7,8 +7,6 @@ Wants=network-online.target
 ExecStart=/usr/sbin/openvpn /home/gianarb/.config/gianarb.ovpn
 ExecReload=/bin/kill -s SIGHUP $MAINPID
 Restart=on-failure
-User=root
-Group=root
 
 [Install]
 WantedBy=multi-user.target
