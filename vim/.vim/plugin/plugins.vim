@@ -40,7 +40,13 @@ inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("\<C-k>"))
 " }}}
 
 " NERDTree {{{
-map <Leader>tree :NERDTreeToggle<CR>
+map <Leader>t :NERDTreeToggle<CR>
+" }}}
+
+" {{{
+if exists('g:ycm_filetype_blacklist')
+   let g:ycm_filetype_blacklist.asciidoc = 1
+endif
 " }}}
 
 " vimux {{{
