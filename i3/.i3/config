@@ -212,6 +212,7 @@ bindsym XF86KbdBrightnessUp exec /home/gianarb/.dotfiles/bin/backlight +
 #       xprop | grep -i 'class'
 for_window [class="gnome-terminal"] move workspace 1
 for_window [class="Google-chrome"] move workspace 2
+for_window [class="Chromium"] move workspace 2
 for_window [class="Postman"] move workspace 3
 for_window [class="Slack"] move workspace 9
 for_window [class="Telegram"] move workspace 9
@@ -237,3 +238,5 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym Mod4+Escape mode "$mode_system"
+
+exec "setxkbmap -layout gb"
