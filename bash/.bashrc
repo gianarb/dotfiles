@@ -1,6 +1,6 @@
-DOTFILES="$HOME/.dotfiles"
-PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:$GOPATH/bin"
-EDITOR=vim
+export DOTFILES="$HOME/.dotfiles"
+export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/home/gianarb/go/bin"
+export EDITOR=vim
 
 #
 # This directory contains all the command replaced with a docker container.
@@ -63,3 +63,4 @@ git_log() {
     done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
   done
 }
+source <(kubectl completion bash)
