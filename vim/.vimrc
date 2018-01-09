@@ -1,6 +1,7 @@
 " post installation hooks{{{
 function! BuildYCM(info)
     if a:info.status == 'installed' || a:info.force
+        !git submodule update --init --recursive
         !./install.py --clang-completer --go-completer --js-completer --tern-completer
     endif
 endfunction
@@ -20,6 +21,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/syntastic'
