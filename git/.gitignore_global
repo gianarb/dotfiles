@@ -6,3 +6,4 @@ composer.phar
 .ctags
 .vimrc
 .env*
+.gdb_history
