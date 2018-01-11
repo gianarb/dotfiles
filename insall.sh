@@ -22,4 +22,5 @@ $stow irssi
 $stow  bash
 $stow  vim
 $stow gdb
+$stow  desktop
 popd
