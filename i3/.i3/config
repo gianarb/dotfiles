@@ -242,3 +242,6 @@ exec "setxkbmap -layout gb"
 for_window [class="^.*"] border pixel 1
 
 exec --no-startup-id /usr/bin/feh --bg-scale /home/gianarb/.dotfiles/unicorn_wallpapers.jpg
+
+exec --no-startup-id nm-applet --sm-disable
+exec --no-startup-id blueman-applet
