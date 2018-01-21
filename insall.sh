@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-# thanks fntlnz
+wget -P ~ git.io/.gdbinit
 
 set -xeuo pipefail
 
@@ -22,5 +21,6 @@ $stow irssi
 $stow  bash
 $stow  vim
 $stow gdb
+$stow dunst
 $stow  desktop
 popd
