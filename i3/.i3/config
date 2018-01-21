@@ -237,8 +237,6 @@ mode "$mode_system" {
 }
 bindsym Mod4+Escape mode "$mode_system"
 
-exec "setxkbmap -layout gb"
-
 for_window [class="^.*"] border pixel 1
 
 exec --no-startup-id /usr/bin/feh --bg-scale /home/gianarb/.dotfiles/unicorn_wallpapers.jpg
