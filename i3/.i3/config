@@ -8,11 +8,11 @@
 # layout, use the i3-config-wizard
 #
 set $mod Mod4
-set $editor gnome-terminal
+set $editor termite -d $(xcwd)
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -36,7 +36,7 @@ set $right semicolon
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec i3-sensible-terminal
+bindsym Mod4+Return exec $editor
 
 # kill focused window
 bindsym Mod4+Shift+q kill
@@ -132,6 +132,9 @@ bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod4+Shift+r restart
 
+# Open Nautilus
+bindsym Ctrl+space exec --no-startup-id nautilus
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -161,8 +164,13 @@ bindsym Mod4+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango:DejaVu Sans Mono, Awesome 8
-        status_command i3status
+    position top
+    status_command i3blocks
+    i3bar_command i3bar
+    strip_workspace_numbers yes
+    tray_padding 0
+    tray_output primary
+    separator_symbol "/"
 }
 
 # Screenshots

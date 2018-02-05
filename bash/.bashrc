@@ -17,6 +17,7 @@ alias soruce=source
 alias souce=source
 alias vi=vim
 alias myzoom='echo "https://zoom.us/j/7781108297"'
+alias clipc='xclip -in -selection clipboard'
 
 alias g=git
 alias d=docker

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 wget -P ~ git.io/.gdbinit
 
+git clone https://github.com/vivien/i3blocks-contrib $HOME/.i3/i3blocks-contrib
+
 set -xeuo pipefail
 
 install_path=$HOME/.dotfiles
@@ -13,7 +15,6 @@ if [ ! -d "$install_path" ]; then
 fi
 
 pushd $install_path
-$stow systemd
 $stow i3
 $stow tmux
 $stow git
@@ -23,4 +24,6 @@ $stow  vim
 $stow gdb
 $stow dunst
 $stow  desktop
+$stow  terminator
+$stow  config
 popd

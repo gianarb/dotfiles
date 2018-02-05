@@ -125,3 +125,8 @@ set backspace=indent,eol,start
 set mouse=v
 set clipboard=unnamed
 " }}}
+
+
+" Show tabs and spaces
+set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~
+set list
