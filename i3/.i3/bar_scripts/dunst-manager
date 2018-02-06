@@ -1,22 +1,25 @@
 #!/usr/bin/env bash
 
+disabled=
+enabled=
+
 suspend() {
   pkill -u "$USER" -USR1 dunst
-  echo "disabled" > /tmp/dunst-status
+  echo $disabled > /tmp/dunst-status
 }
 
 resume() {
   pkill -u "$USER" -USR2 dunst
-  echo "enabled" > /tmp/dunst-status
+  echo $enabled > /tmp/dunst-status
 }
 
 toggle() {
-  if [[ $(status) = "enabled" ]]; then
+  if [[ $(status) = $enabled ]]; then
     suspend
     return
   fi
 
-  if [[ $(status) = "disabled" ]]; then
+  if [[ $(status) = $disabled ]]; then
     resume
     return
   fi
@@ -27,7 +30,7 @@ status() {
   status=$([ -a /tmp/dunst-status ] && cat /tmp/dunst-status)
   # if the status file is not present but dunst is running for the current user just assume that is enabled
   if [ $"$status" = "" ] && [ $(ps -u $USER | grep dunst | wc -l) > 0 ]; then
-    echo "enabled"
+    echo $enabled
     return
   fi
   echo $status
@@ -40,7 +43,7 @@ status_interactive() {
   fi
 
   status
-  if [[ $(status) = "disabled" ]]; then
+  if [[ $(status) = $disabled ]]; then
     echo ""
     echo "#FFAE00"
   fi
@@ -65,12 +68,12 @@ if [[ "$1" = "status-interactive" ]]; then
   exit
 fi
 
-if [[ "$1" = "enable" ]]; then
+if [[ "$1" = $enabled ]]; then
   resume
   exit
 fi
 
-if [[ "$1" = "disable" ]]; then
+if [[ "$1" =  $disabled ]]; then
   suspend
   exit
 fi
