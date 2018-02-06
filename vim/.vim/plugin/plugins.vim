@@ -67,5 +67,5 @@ let g:go_metalinter_autosave = 1
 " }}}
 
 " tagbar {{{
-nmap <Leader>tag :TagbarToggle<CR>
+nmap <Leader>tt :TagbarToggle<CR>
 " }}}
