@@ -30,7 +30,11 @@ noremap <F3> :Autoformat<CR>
 
 " UltiSnips {{{
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=["/home/gianarb/.dotfiles/vim/mysnippets", "/home/gianarb/.dotfiles/vim/plugged/vim-go/gosnippets/UltiSnips"]
+if !exists("g:UltiSnipsSnippetDirectories")
+    let g:UltiSnipsSnippetDirectories = ["mysnippets"]
+else
+    let g:UltiSnipsSnippetDirectories += ["mysnippets"]
+endif
 let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"

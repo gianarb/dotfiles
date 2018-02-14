@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'mhinz/vim-startify'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jremmen/vim-ripgrep'
@@ -41,7 +42,8 @@ Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'Chiel92/vim-autoformat', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'artur-shaik/vim-javacomplete2'
+Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
+Plug 'wsdjeg/JavaUnit.vim', { 'for': 'java' }
 
 call plug#end()
 
