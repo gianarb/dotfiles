@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# i3blocks volume
+# This script outputs the status of audio devices
+#
+# Copyright (C) 2016 Lorenzo Fontana <fontanalorenz@gmail.com>
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+#
+[[ -z $DEVICE ]] && DEVICE="Master"
+volume=$(amixer -D pulse get $DEVICE | grep -E -o '[0-9]{1,3}?%' | head -1)
+
+muted_count=$(amixer -D pulse get $DEVICE | grep off | wc -l)
+
+if [ $muted_count -gt 0 ]; then
+echo "🔈off"
+exit
+fi
+
+echo "🔊 ${volume}"
+
