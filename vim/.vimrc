@@ -1,9 +1,7 @@
 " post installation hooks{{{
 function! BuildYCM(info)
-    if a:info.status == 'installed' || a:info.force
-        !git submodule update --init --recursive
-        !./install.py --clang-completer --go-completer --js-completer --tern-completer
-    endif
+    !git submodule update --init --recursive
+    !./install.py --clang-completer --go-completer --js-completer --java-completer
 endfunction
 " }}} thanks fntlnz
 
@@ -41,9 +39,7 @@ Plug 'wdalmut/vim-phpunit', { 'for': 'php' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'Chiel92/vim-autoformat', { 'for': 'javascript' }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
-Plug 'wsdjeg/JavaUnit.vim', { 'for': 'java' }
+Plug 'fatih/vim-go', { 'for': 'go'  , 'do': ':GoInstallBinaries'}
 
 call plug#end()
 

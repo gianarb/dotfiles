@@ -8,7 +8,7 @@
 # layout, use the i3-config-wizard
 #
 set $mod Mod4
-set $editor termite -d $(xcwd)
+set $editor alacritty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -217,7 +217,6 @@ bindsym XF86KbdBrightnessUp exec /home/gianarb/.dotfiles/bin/backlight +
 #       isn't want you want see the ROLE section, below.
 # Tip: To find out what these values might be run:
 #       xprop | grep -i 'class'
-for_window [class="gnome-terminal"] move workspace 1
 for_window [class="Google-chrome"] move workspace 2
 for_window [class="Chromium"] move workspace 2
 for_window [class="Postman"] move workspace 3
