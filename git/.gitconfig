@@ -12,6 +12,7 @@
 [core]
 	editor = vim
     excludesfile = ~/.gitignore_global
+	hooksPath = /home/gianarb/.dotfiles/git/templates/hooks/
 
 [color]
 	ui = true
@@ -61,3 +62,5 @@
 	insteadOf = https://github.com/
 [web]
 	browser = xdg-open
+[init]
+	templatedir = /home/gianarb/.dotfiles/git/templates/
