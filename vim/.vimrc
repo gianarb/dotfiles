@@ -1,7 +1,7 @@
 " post installation hooks{{{
 function! BuildYCM(info)
     !git submodule update --init --recursive
-    !./install.py --clang-completer --go-completer --js-completer --java-completer
+    ./install.py --system-libclang --clang-completer --go-completer --js-completer --java-completer
 endfunction
 " }}} thanks fntlnz
 

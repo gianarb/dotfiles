@@ -3,6 +3,7 @@ set rtp+=~/.fzf
 " Go Vim {{{
 let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
+let g:go_omnifunc_enabled = 0
 " }}}
 
 " Syntastic {{{
