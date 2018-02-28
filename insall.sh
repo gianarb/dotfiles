@@ -30,4 +30,5 @@ $stow dunst
 $stow  desktop
 $stow  config
 $stow  kitty
+$stow  autorandr
 popd
