@@ -40,6 +40,7 @@ Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'Chiel92/vim-autoformat', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go'  , 'do': ':GoInstallBinaries'}
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
