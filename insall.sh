@@ -28,7 +28,6 @@ $stow  vim
 $stow gdb
 $stow dunst
 $stow  desktop
-$stow  terminator
 $stow  config
-$stow  thinkpad
+$stow  kitty
 popd

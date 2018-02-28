@@ -1,4 +1,0 @@
-[profiles]
-  [[default]]
-      show_titlebar = false
-      font = "Mono 20"
