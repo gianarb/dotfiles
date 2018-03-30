@@ -224,19 +224,19 @@ for_window [class="Slack"] move workspace 9
 for_window [class="Telegram"] move workspace 9
 for_window [class="Spotify"] move workspace 8
 for_window [class="Pavucontrol"] floating enable, border normal
+for_window [class="zoom"] floating enable
 
 # Arrange displays for home configuration
 bindsym $mod+Shift+a exec --no-startup-id $HOME/.dotfiles/screenlayout/home.sh
 bindsym $mod+Shift+s exec --no-startup-id $HOME/.dotfiles/screenlayout/reset.sh
 
 # Shutdown, Reboot, etc..
-set $mode_system System (l) lock \t (e) logout \t (r) reboot \t (Shift+s) shutdown
-#set $mode_system System (l) lock \t (e) logout \t (s) suspend \t (h) hibernate \t (r) reboot \t (Shift+s) shutdown
+set $mode_system System (l) lock \t (e) logout \t (s) suspend \t (h) hibernate \t (r) reboot \t (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $HOME/.dotfiles/bin/i3exit lock, mode "default"
     bindsym e exec --no-startup-id $HOME/.dotfiles/bin/i3exit logout, mode "default"
-    #bindsym s exec --no-startup-id $HOME/.dotfiles/bin/i3exit suspend, mode "default"
-    #bindsym h exec --no-startup-id $HOME/.dotfiles/bin/i3exit hibernate, mode "default"
+    bindsym s exec --no-startup-id $HOME/.dotfiles/bin/i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id $HOME/.dotfiles/bin/i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id $HOME/.dotfiles/bin/i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id $HOME/.dotfiles/bin/i3exit shutdown, mode "default"
 

@@ -1,3 +1,4 @@
+export TERM="screen-256color"
 export DOTFILES="$HOME/.dotfiles"
 export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/home/gianarb/go/bin"
 export EDITOR=vim
@@ -7,7 +8,6 @@ export EDITOR=vim
 # By default it's disable but you can enable it in your ~/.bashrc
 # PATH="$DOTFILES/docker-bin:$PATH'
 
-alias tmux='TERM=screen-256color tmux'
 alias ll='ls -lsah'
 alias myip='curl ipinfo.io/ip'
 
