@@ -1,6 +1,6 @@
 export TERM="screen-256color"
 export DOTFILES="$HOME/.dotfiles"
-export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/home/gianarb/go/bin"
+export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/home/gianarb/go/bin:/home/gianarb/.local/bin"
 export EDITOR=vim
 
 #
