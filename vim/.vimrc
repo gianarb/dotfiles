@@ -70,7 +70,6 @@ set cmdheight=1
 
 " Line Number {{{
 set number                              " enable line number
-set rnu                                 " Relative line number
 " }}}
 "
 " Disable sounds {{{
@@ -115,7 +114,6 @@ set laststatus=2                        " Always show status line, even for one 
 set matchtime=2                         " Jump to matching bracket for 2/10th of a second (works with showmatch)
 set backupdir=/tmp
 set directory=/tmp                      " Don't clutter my dirs up with swp and tmp files
-set ruler                               " Show line, column number, and relative position within a file in the status
 set scrolloff=999                       " Scroll when cursor gets within 10 characters of top/bottom edge
 set shiftwidth=4                        " Use 4 spaces for (auto)indent
 colorscheme glokai                      " Schema color
@@ -129,3 +127,4 @@ set clipboard=unnamed
 " Show tabs and spaces
 set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~
 set list
+
