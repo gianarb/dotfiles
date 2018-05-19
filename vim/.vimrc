@@ -29,6 +29,7 @@ Plug 'gianarb/vim-ifql'
 Plug 'tpope/vim-rhubarb'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
+Plug 'rakr/vim-one'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar'
@@ -108,7 +109,7 @@ set smartcase                           " Ignore case only if seach string is al
 set incsearch                           " Makes search act like search in modern browsers
 set ic                                  " Search ignore case
 " }}}
-"
+
 set showtabline=2                       " Make sure that tabline is always present
 set laststatus=2                        " Always show status line, even for one window
 set matchtime=2                         " Jump to matching bracket for 2/10th of a second (works with showmatch)
@@ -116,13 +117,15 @@ set backupdir=/tmp
 set directory=/tmp                      " Don't clutter my dirs up with swp and tmp files
 set scrolloff=999                       " Scroll when cursor gets within 10 characters of top/bottom edge
 set shiftwidth=4                        " Use 4 spaces for (auto)indent
-colorscheme glokai                      " Schema color
 set exrc                                " Enable project specific .vimrc
 set backspace=indent,eol,start
 set mouse=v
 set clipboard=unnamed
-" }}}
 
+colorscheme one
+set background=light
+set t_8b=^[[48;2;%lu;%lu;%lum
+set t_8f=^[[38;2;%lu;%lu;%lum
 
 " Show tabs and spaces
 set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~

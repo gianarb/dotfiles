@@ -2,14 +2,18 @@ export TERM="screen-256color"
 export DOTFILES="$HOME/.dotfiles"
 export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/home/gianarb/go/bin:/home/gianarb/.local/bin"
 export EDITOR=vim
+export XDG_CONFIG_HOME=$HOME/.config
+export LS_OPTS='--color=auto'
 
 #
 # This directory contains all the command replaced with a docker container.
 # By default it's disable but you can enable it in your ~/.bashrc
 # PATH="$DOTFILES/docker-bin:$PATH'
 
-alias ll='ls -lsah'
+alias ll='ls ${LS_OPTS} -lsah'
 alias myip='curl ipinfo.io/ip'
+alias less='less --RAW-CONTROL-CHARS'
+alias ls='ls ${LS_OPTS}'
 
 alias sl=ls
 alias mdkir=mkdir
@@ -39,10 +43,9 @@ alias ascii='man ascii | grep -m 1 -A 63 --color=never Oct'
 #
 # Load bash git prompt
 #
-GIT_PROMPT_ONLY_IN_REPO=0
 source $DOTFILES/bash-git-prompt/gitprompt.sh
-
-export XDG_CONFIG_HOME=$HOME/.config
+GIT_PROMPT_ONLY_IN_REPO=0
+GIT_PROMPT_THEME_NAME="Single_line" # needed for reload optimization, should be unique
 
 #
 # FZF plugins
