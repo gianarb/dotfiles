@@ -25,11 +25,9 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
-Plug 'gianarb/vim-ifql'
 Plug 'tpope/vim-rhubarb'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-Plug 'rakr/vim-one'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar'
@@ -122,12 +120,6 @@ set backspace=indent,eol,start
 set mouse=v
 set clipboard=unnamed
 
-colorscheme one
-set background=light
-set t_8b=^[[48;2;%lu;%lu;%lum
-set t_8f=^[[38;2;%lu;%lu;%lum
-
 " Show tabs and spaces
 set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~
 set list
-
