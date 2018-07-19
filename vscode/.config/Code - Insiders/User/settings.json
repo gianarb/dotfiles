@@ -1,0 +1,42 @@
+{
+    "window.zoomLevel": 0,
+    "vim.leader": ",",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "leader",
+                "c",
+                "c",
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.blockComment"
+                }
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "c",
+                "d",
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.blockComment"
+                }
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["leader"],
+            "after": ["leader"],
+            "commands": [
+                "workbench.action.files.save"
+            ]
+        },
+    ]
+}

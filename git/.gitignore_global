@@ -7,3 +7,5 @@ composer.phar
 .vimrc
 .env*
 .gdb_history
+.vs
+.vscode
