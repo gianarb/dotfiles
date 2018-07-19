@@ -7,6 +7,7 @@ let g:go_omnifunc_enabled = 0
 " }}}
 
 " Syntastic {{{
+let g:syntastic_sh_checkers=['shellcheck']
 let g:syntastic_c_checkers=['c']
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 let g:syntastic_php_phpcs_args="--standard=psr2"

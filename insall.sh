@@ -31,4 +31,6 @@ $stow  desktop
 $stow  config
 $stow  kitty
 $stow  autorandr
+$stow  vscode
+$stow  screenlayout
 popd

@@ -23,6 +23,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf.vim'
+Plug 'rakr/vim-one'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -107,6 +108,13 @@ set smartcase                           " Ignore case only if seach string is al
 set incsearch                           " Makes search act like search in modern browsers
 set ic                                  " Search ignore case
 " }}}
+"
+colorscheme one
+set background=dark
+let g:one_allow_italics = 1
+set t_8b=^[[48;2;%lu;%lu;%lum
+set t_8f=^[[38;2;%lu;%lu;%lum
+call one#highlight('Normal', 'abb2bf', '000000', 'none')
 
 set showtabline=2                       " Make sure that tabline is always present
 set laststatus=2                        " Always show status line, even for one window

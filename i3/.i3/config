@@ -225,10 +225,11 @@ for_window [class="Telegram"] move workspace 9
 for_window [class="Spotify"] move workspace 8
 for_window [class="Pavucontrol"] floating enable, border normal
 for_window [class="zoom"] floating enable
+#for_window [class="pinentry-gtk-2"] popup_during_fullscreen smart
 
 # Arrange displays for home configuration
-bindsym $mod+Shift+a exec --no-startup-id $HOME/.dotfiles/screenlayout/home.sh
-bindsym $mod+Shift+s exec --no-startup-id $HOME/.dotfiles/screenlayout/reset.sh
+bindsym $mod+Shift+a exec --no-startup-id $HOME/.screenlayout/home.sh
+bindsym $mod+Shift+s exec --no-startup-id $HOME/.screenlayout/reset.sh
 
 # Shutdown, Reboot, etc..
 set $mode_system System (l) lock \t (e) logout \t (s) suspend \t (h) hibernate \t (r) reboot \t (Shift+s) shutdown
@@ -253,3 +254,4 @@ exec --no-startup-id /usr/bin/feh --bg-scale /home/gianarb/.dotfiles/unicorn_wal
 exec --no-startup-id nm-applet --sm-disable
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox
+exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00

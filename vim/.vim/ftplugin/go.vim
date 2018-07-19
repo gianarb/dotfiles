@@ -1,6 +1,15 @@
 nmap <leader>tau :GoTest<CR>
 nmap gb :GoBuild<CR>
 
+nmap db :GoDebugBreakpoint<CR>
+nmap ds :GoDebugStart<CR>
+nmap dss :GoDebugStop<CR>
+nmap dc :GoDebugContinue<CR>
+nmap dst :GoDebugTest<CR>
+nmap dn :GoDebugNext<CR>
+nmap di :GoDebugStep<CR>
+nmap do :GoDebugStepOut<CR>
+
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
