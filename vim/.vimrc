@@ -109,12 +109,12 @@ set incsearch                           " Makes search act like search in modern
 set ic                                  " Search ignore case
 " }}}
 "
+
+set termguicolors
 colorscheme one
 set background=dark
-let g:one_allow_italics = 1
-set t_8b=^[[48;2;%lu;%lu;%lum
-set t_8f=^[[38;2;%lu;%lu;%lum
 call one#highlight('Normal', 'abb2bf', '000000', 'none')
+let g:one_allow_italics = 1
 
 set showtabline=2                       " Make sure that tabline is always present
 set laststatus=2                        " Always show status line, even for one window
