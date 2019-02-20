@@ -1,5 +1,5 @@
 export DOTFILES="$HOME/.dotfiles"
-export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/home/gianarb/go/bin:/home/gianarb/.local/bin:/home/gianarb/.gem/ruby/2.5.0/bin"
+export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/home/gianarb/go/bin:/home/gianarb/.local/bin:/home/gianarb/.gem/ruby/2.5.0/bin:$HOME/bin"
 export EDITOR=vim
 export XDG_CONFIG_HOME=$HOME/.config
 export LS_OPTS='--color=auto'
@@ -19,7 +19,6 @@ alias mdkir=mkdir
 alias soruce=source
 alias souce=source
 alias vi=vim
-alias myzoom='echo "https://zoom.us/j/7781108297"'
 alias clipc='xclip -in -selection clipboard'
 
 alias g=git
@@ -71,3 +70,5 @@ source <(kubectl completion bash)
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source /usr/share/nvm/init-nvm.sh
+
+source ~/.bash_profile
