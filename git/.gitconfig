@@ -9,6 +9,7 @@
     remotes = remote -v
     pr = "!f() { git fetch $1 refs/pull/$2/head:pr/$1/$2 && git checkout pr/$1/$2;  } ; f"
     prune = fetch --prune
+    conflicts = "!f() { git format-patch $1 --stdout | git-apply --check - 2>&1; } ; f"
 [core]
 	editor = vim
     excludesfile = ~/.gitignore_global
