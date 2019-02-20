@@ -1,0 +1,28 @@
+{
+    "languageserver": {
+      "sh": {
+        "command": "bash-language-server",
+        "args": [
+          "start"
+        ],
+        "filetypes": ["sh"]
+      },
+      "go": {
+        "command": "go-langserver",
+        "filetypes": ["go"],
+        "args": [
+          "-gocodecompletion",
+          "-freeosmemory=false",
+          "-func-snippet-enabled=false",
+          "-format-tool=goimports",
+          "-diagnostics=true"
+        ]
+      }
+  },
+  "yaml.customTags": ["!Ref", "!Join", "!GetAtt"],
+  "yaml.format.enable": true,
+  "coc.source.gocode.enable": false,
+  "coc.preferences.autoTrigger": "trigger",
+  "coc.preferences.triggerAfterInsertEnter": false,
+  "coc.source.ultisnips.enable": true
+}

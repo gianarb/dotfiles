@@ -14,7 +14,6 @@ let g:syntastic_php_phpcs_args="--standard=psr2"
 let g:syntastic_html_checkers=['jshint']
 let g:syntastic_json_checkers=['jsonlint']
 let g:syntastic_css_checkers=['csslint']
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 let g:syntastic_error_symbol = '✗'
@@ -33,10 +32,11 @@ noremap <F3> :Autoformat<CR>
 " UltiSnips {{{
 let g:UltiSnipsEditSplit="vertical"
 if !exists("g:UltiSnipsSnippetDirectories")
-    let g:UltiSnipsSnippetDirectories = ["mysnippets"]
+    let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/mysnippets']
 else
-    let g:UltiSnipsSnippetDirectories += ["mysnippets"]
+    let g:UltiSnipsSnippetDirectories+=[$HOME.'/.vim/mysnippets']
 endif
+
 let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
@@ -92,4 +92,55 @@ let g:startify_custom_header = [
            \ '      |\_|__|__|_/|',
            \ '       \_________/',
             \ ]
+" }}}
+
+" {{{
+" " Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <c-space> for trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <C-p> to complete 'word', 'emoji' and 'include' sources
+imap <silent> <C-p> <Plug>(coc-complete-custom)
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <cr> for confirm completion.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 " }}}

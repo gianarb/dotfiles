@@ -1,8 +1,8 @@
 " post installation hooks{{{
-function! BuildYCM(info)
-    !git submodule update --init --recursive
-    !./install.py --system-libclang --clang-completer --go-completer --js-completer --java-completer
-endfunction
+"function! BuildYCM(info)
+    "!git submodule update --init --recursive
+    "!./install.py --system-libclang --clang-completer --go-completer --js-completer --java-completer
+"endfunction
 " }}} thanks fntlnz
 
 " Install and setup plug{{{
@@ -17,30 +17,23 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-Plug 'mhinz/vim-startify'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'tag': '*'}
+Plug 'leafgarland/typescript-vim'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'thiagoalessio/rainbow_levels.vim'
 Plug 'majutsushi/tagbar'
-Plug 'fatih/vim-hclfmt'
 Plug 'nathanielc/vim-tickscript'
-Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
-Plug 'wdalmut/vim-phpunit', { 'for': 'php' }
-Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-Plug 'Chiel92/vim-autoformat', { 'for': 'javascript' }
+Plug 'Shougo/denite.nvim'
 Plug 'fatih/vim-go', { 'for': 'go'  , 'do': ':GoInstallBinaries'}
-Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
@@ -58,6 +51,8 @@ endif
 "
 let mapleader = ","                     " Set the <Leader> for combo commands
 
+set hidden
+
 " Enable filetype plugins {{{
     filetype plugin on
     filetype indent on
@@ -65,11 +60,12 @@ let mapleader = ","                     " Set the <Leader> for combo commands
 " }}}
 
 " Height of the command bar {{{
-set cmdheight=1
+set cmdheight=2
 " }}}
 
 " Line Number {{{
-set number                              " enable line number
+set rnu                              " enable relative line number
+set number                           " enable no relative number for the current line
 " }}}
 "
 " Disable sounds {{{
@@ -131,3 +127,8 @@ set clipboard=unnamed
 " Show tabs and spaces
 set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~
 set list
+
+let g:go_def_mapping_enabled = 0
+nnoremap <silent> <space>s :<C-u>Denite coc-service<cr>
+nnoremap <silent> <space>a :<C-u>Denite coc-diagnostic<cr>
+nmap <leader>rn <Plug>(coc-rename)
