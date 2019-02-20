@@ -18,6 +18,8 @@ if [ ! -d "$install_path" ]; then
   $git clone https://github.com/gianarb/dotfiles $install_path
 fi
 
+wget -O ~/.weechat/python/autoload/wee_slack.py https://raw.githubusercontent.com/wee-slack/wee-slack/master/wee_slack.py
+
 pushd $install_path
 $stow i3
 $stow tmux
@@ -33,4 +35,5 @@ $stow  kitty
 $stow  autorandr
 $stow  vscode
 $stow  screenlayout
+$stow  cheat
 popd
