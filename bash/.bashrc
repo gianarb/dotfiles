@@ -71,4 +71,15 @@ source <(kubectl completion bash)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source /usr/share/nvm/init-nvm.sh
 
-source ~/.bash_profile
+export JAVA_HOME=/usr/lib/jvm/java-10-openjdk
+export ANDROID_HOME=/home/gianarb/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export ANDROID_SDK_HOM=$ANDROID_HOME
+
+export PATH=${PATH}:$ANDROID_HOME/tools/bin
+export PATH=${PATH}:$ANDROID_HOME/tools
+export PATH=${PATH}:$ANDROID_HOME/platform-tools
+export PATH=${PATH}:$ANDROID_SDK/emulator
+export PATH=${PATH}:/home/gianarb/.cargo/bin
+
+GOPROXY=https://proxy.golang.org
