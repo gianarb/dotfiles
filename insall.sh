@@ -19,6 +19,8 @@ if [ ! -d "$install_path" ]; then
 fi
 
 wget -O ~/.weechat/python/autoload/wee_slack.py https://raw.githubusercontent.com/wee-slack/wee-slack/master/wee_slack.py
+wget -O ~/.weechat/python/autoload/autosort.py https://raw.githubusercontent.com/de-vri-es/weechat-autosort/master/autosort.py
+wget -O ~/.weechat/weemoji.json https://raw.githubusercontent.com/wee-slack/wee-slack/master/weemoji.json
 
 pushd $install_path
 $stow i3
@@ -35,5 +37,4 @@ $stow  kitty
 $stow  autorandr
 $stow  vscode
 $stow  screenlayout
-$stow  cheat
 popd
