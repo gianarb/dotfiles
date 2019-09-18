@@ -3,13 +3,14 @@
 	email = gianarb92@gmail.com
 	;signingkey = B6A8130D3FD472C730D721239505D2809E1D6180
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev=7
     tags = tag -l
     branches = branch -a
     remotes = remote -v
     pr = "!f() { git fetch $1 refs/pull/$2/head:pr/$1/$2 && git checkout pr/$1/$2;  } ; f"
     prune = fetch --prune
     conflicts = "!f() { git format-patch $1 --stdout | git-apply --check - 2>&1; } ; f"
+    stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
 [core]
 	editor = vim
     excludesfile = ~/.gitignore_global
@@ -56,7 +57,7 @@
     # Include summaries of merged commits in newly created merge commit messages
     log = true
 [commit]
-	gpgsign = true
+	;gpgsign = true
 [status]
     showUntrackedFiles = all
 [url "git@github.com:"]
