@@ -1,22 +1,22 @@
 {
     "languageserver": {
+      "phplang": {
+        "command": "php",
+        "args": ["/home/gianarb/.config/composer/vendor/bin/php-language-server.php"],
+        "filetypes": ["php"]
+      },
       "sh": {
         "command": "bash-language-server",
         "args": [
           "start"
         ],
-        "filetypes": ["sh"]
+        "filetypes": ["sh", "bash"]
       },
       "go": {
-        "command": "go-langserver",
+        "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+        "command": "gopls",
         "filetypes": ["go"],
-        "args": [
-          "-gocodecompletion",
-          "-freeosmemory=false",
-          "-func-snippet-enabled=false",
-          "-format-tool=goimports",
-          "-diagnostics=true"
-        ]
+        "args": []
       }
   },
   "yaml.customTags": ["!Ref", "!Join", "!GetAtt"],

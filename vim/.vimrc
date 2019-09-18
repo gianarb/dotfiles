@@ -23,16 +23,15 @@ Plug 'SirVer/ultisnips'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
+Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rhubarb'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'thiagoalessio/rainbow_levels.vim'
-Plug 'majutsushi/tagbar'
-Plug 'nathanielc/vim-tickscript'
-Plug 'Shougo/denite.nvim'
+Plug 'rhysd/vim-grammarous'
 Plug 'fatih/vim-go', { 'for': 'go'  , 'do': ':GoInstallBinaries'}
 
 call plug#end()
@@ -128,7 +127,10 @@ set clipboard=unnamed
 set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~
 set list
 
-let g:go_def_mapping_enabled = 0
-nnoremap <silent> <space>s :<C-u>Denite coc-service<cr>
-nnoremap <silent> <space>a :<C-u>Denite coc-diagnostic<cr>
-nmap <leader>rn <Plug>(coc-rename)
+
+" wrap long lines in quickfix
+" https://github.com/fatih/vim-go/issues/1271
+augroup quickfix
+    autocmd!
+    autocmd FileType qf setlocal wrap
+augroup END

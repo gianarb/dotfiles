@@ -14,3 +14,14 @@ let g:go_fmt_command = "goimports"
 let g:go_test_prepend_name = 1
 let g:go_test_show_name=1
 setlocal omnifunc=
+
+let g:LanguageClient_rootMarkers = {
+    \ 'go': ['.git', 'go.mod'],
+    \ }
+
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['gopls'],
+    \ }
+
+
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')

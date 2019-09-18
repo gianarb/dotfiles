@@ -1,0 +1,61 @@
+snippet tdt "testcontainers-demo-test"
+func TestSuccessfulCheck(t *testing.T) {
+	ctx := context.Background()
+	req := testcontainers.ContainerRequest{
+		Image:        "mysql:latest",
+		ExposedPorts: []string{"3306/tcp", "33060/tcp"},
+		Env: map[string]string{
+			"MYSQL_ROOT_PASSWORD": "root",
+			"MYSQL_DATABASE":      "database",
+		},
+		WaitingFor: wait.ForLog("port: 3306  MySQL Community Server - GPL"),
+	}
+	mysqlC, err := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
+		ContainerRequest: req,
+		Started:          true,
+	})
+
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+
+	defer mysqlC.Terminate(ctx)
+
+	ip, err := mysqlC.Host(ctx)
+	if err != nil {
+		t.Error(err)
+	}
+	port, err := mysqlC.MappedPort(ctx, "3306")
+	if err != nil {
+		t.Error(err)
+	}
+
+	check := checkMySql(ip, "root", "root", "database", port.Int())
+	if err := check(); err != nil {
+		t.Fatal(err.Error())
+	}
+}
+endsnippet
+
+snippet tdm "testcontainers-demo-checkmysql"
+_ "github.com/go-sql-driver/mysql"
+
+func checkMySql(host, username, password, database string, port int) func() error {
+	db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?tls=skip-verify", username, password, host, port, database))
+	if err != nil {
+		return func() error {
+			return err
+		}
+	}
+	err = db.Ping()
+	if err != nil {
+		return func() error {
+			return err
+		}
+	}
+
+	return func() error {
+		return nil
+	}
+}
+endsnippet
