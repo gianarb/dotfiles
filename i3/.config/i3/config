@@ -255,3 +255,6 @@ exec --no-startup-id nm-applet --sm-disable
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox
 exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
+
+for_window [class="^.*"] border pixel 1
+new_window 1pixel

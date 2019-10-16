@@ -21,23 +21,6 @@ alias souce=source
 alias vi=vim
 alias clipc='xclip -in -selection clipboard'
 
-alias g=git
-alias d=docker
-
-alias gs='git show --pretty=oneline'
-alias gpom='git push origin master'
-alias gpod='git push origin develop'
-alias gfpu='git fetch upstream && git pull upstream develop'
-alias grom='git reset --hard origin/master'
-alias gp='git pull'
-alias shm="source ~/.bashrc"
-
-# Reference
-alias alphabet='echo a b c d e f g h i j k l m n o p q r s t u v w x y z'
-alias unicode='echo ✓ ™  ♪ ♫ ☃ ° Ɵ ∫'
-alias numalphabet='alphabet; echo 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6'
-alias ascii='man ascii | grep -m 1 -A 63 --color=never Oct'
-
 #
 # Load bash git prompt
 #
@@ -54,19 +37,7 @@ _history() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
-git_log() {
-  local out sha q
-  while out=$(
-      git log --decorate=short --graph --oneline --color=always |
-      fzf --ansi --multi --no-sort --reverse --query="$q" --print-query); do
-    q=$(head -1 <<< "$out")
-    while read sha; do
-      [ -n "$sha" ] && git show --color=always $sha | less -R
-    done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
-  done
-}
 source <(kubectl completion bash)
-
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source /usr/share/nvm/init-nvm.sh
@@ -82,4 +53,17 @@ export PATH=${PATH}:$ANDROID_HOME/platform-tools
 export PATH=${PATH}:$ANDROID_SDK/emulator
 export PATH=${PATH}:/home/gianarb/.cargo/bin
 
+export PATH=${PATH}:/usr/local/go/bin
+
 GOPROXY=https://proxy.golang.org
+
+EMOJIS=('🌄' '☀️' '☕️' '🍳' '🍞' '🐓' '🐔' '🌲' '🌳' '🌴' '🌵' '🌷' '🌺' '🌸' '🌹' '🌻' '🌼' '💐' '🌾' '🌿' '🍀' '🍁' '🍂' '🍃' '🍄' '☀️' '⛅️' '☁️' '☔️' '🌈' '🌊' '🗻' '🌍' '🌞' '💻' '🚽' '📚' '✂️' '🔪' '🍔' '🍕' '🍖' '🍗' '🍘' '🍙' '🍚' '🍛' '🍜' '🍝' '🍞' '🍟' '🍣' '🍤' '🍥' '🍱' '🍲' '🍳' '🍴' '🍏' '🍇' '🍉' '🍊' '🍌' '🍍' '🍑' '🍒' '🍓' '🍡' '🍢' '🍦' '🍧' '🍨' '🍩' '🍪' '🍫' '🍬' '🍭' '🍮' '🍰' '🍷' '🍸' '🍶' '🍹' '🍺' '🍻' '😴' '🌠' '🌑' '🌒' '🌔' '🌖' '🌘' '🌚' '🌝' '🌛' '🌜' '⛺️' '🌃' '🌉' '🌌');
+
+RANDOM_EMOJI() {
+  SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
+  echo $SELECTED_EMOJI;
+}
+
+ALL_EMOJY() {
+  printf "%s\n" "${EMOJIS[@]}";
+}

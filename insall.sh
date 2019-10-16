@@ -8,7 +8,7 @@ if [ ! -f "$HOME/.gdbinit" ]; then
     wget -P ~ git.io/.gdbinit
 fi
 
-if [ ! -d "$HOME~/.i3/i3blocks-contrib" ]; then
+if [ ! -d "$HOME~/.config/i3/i3blocks-contrib" ]; then
     git clone https://github.com/vivien/i3blocks-contrib $HOME/.i3/i3blocks-contrib
 fi
 
@@ -26,15 +26,13 @@ pushd $install_path
 $stow i3
 $stow tmux
 $stow git
-$stow irssi
-$stow  bash
-$stow  vim
+$stow bash
+$stow vim
 $stow gdb
 $stow dunst
-$stow  desktop
-$stow  config
-$stow  kitty
-$stow  autorandr
-$stow  vscode
-$stow  screenlayout
+$stow desktop
+$stow config
+$stow kitty
+$stow vscode
+$stow screenlayout
 popd
