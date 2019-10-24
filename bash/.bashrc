@@ -67,3 +67,9 @@ RANDOM_EMOJI() {
 ALL_EMOJY() {
   printf "%s\n" "${EMOJIS[@]}";
 }
+
+[[ -s "/home/gianarb/.gvm/scripts/gvm" ]] && source "/home/gianarb/.gvm/scripts/gvm"
+
+function mdtopdf() {
+    pandoc $1 --pdf-engine=latexmk -o $2
+}
