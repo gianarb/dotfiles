@@ -31,7 +31,7 @@ GIT_PROMPT_THEME_NAME="Single_line" # needed for reload optimization, should be 
 #
 # FZF plugins
 #
-export FZF_DEFAULT_COMMAND="find -L * -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null"
+export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
 _history() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
@@ -73,3 +73,5 @@ ALL_EMOJY() {
 function mdtopdf() {
     pandoc $1 --pdf-engine=latexmk -o $2
 }
+
+DOCKER_BUILDKIT=1
