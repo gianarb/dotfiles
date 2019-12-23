@@ -5,12 +5,26 @@
         "args": ["/home/gianarb/.config/composer/vendor/bin/php-language-server.php"],
         "filetypes": ["php"]
       },
+      "flux": {
+        "command": "flux-lsp",
+        "args": ["-l", "/tmp/fluxlsp"],
+        "filetypes": ["flux"]
+      },
       "sh": {
         "command": "bash-language-server",
         "args": [
           "start"
         ],
         "filetypes": ["sh", "bash"]
+      },
+      "cquery": {
+        "command": "cquery",
+        "args": ["--log-file=/tmp/cq.log"],
+        "filetypes": ["c", "cpp"],
+        "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+        "initializationOptions": {
+          "cacheDirectory": "/tmp/cquery"
+        }
       },
       "go": {
         "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],

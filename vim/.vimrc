@@ -25,14 +25,17 @@ Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
 Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rhubarb'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-Plug 'scrooloose/nerdtree'
+Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rhysd/vim-grammarous'
 Plug 'fatih/vim-go', { 'for': 'go'  , 'do': ':GoInstallBinaries'}
+
+"if filereadable($HOME . "/git/vim-flux/syntax/flux.vim")
+Plug '~/git/vim-flux'
+"endif
 
 call plug#end()
 
