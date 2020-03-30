@@ -34,9 +34,5 @@
       }
   },
   "yaml.customTags": ["!Ref", "!Join", "!GetAtt"],
-  "yaml.format.enable": true,
-  "coc.source.gocode.enable": false,
-  "coc.preferences.autoTrigger": "trigger",
-  "coc.preferences.triggerAfterInsertEnter": false,
-  "coc.source.ultisnips.enable": true
+  "yaml.format.enable": true
 }
