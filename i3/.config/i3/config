@@ -225,6 +225,7 @@ for_window [class="Telegram"] move workspace 9
 for_window [class="Spotify"] move workspace 8
 for_window [class="Pavucontrol"] floating enable, border normal
 for_window [class="zoom"] floating enable
+for_window [class="obs"] floating enable
 #for_window [class="pinentry-gtk-2"] popup_during_fullscreen smart
 
 # Arrange displays for home configuration

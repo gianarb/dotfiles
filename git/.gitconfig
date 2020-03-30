@@ -14,7 +14,6 @@
 [core]
 	editor = vim
     excludesfile = ~/.gitignore_global
-	hooksPath = /home/gianarb/.dotfiles/git/templates/hooks/
 
 [color]
 	ui = true

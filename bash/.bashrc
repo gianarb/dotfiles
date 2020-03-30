@@ -4,6 +4,9 @@ export EDITOR=vim
 export XDG_CONFIG_HOME=$HOME/.config
 export LS_OPTS='--color=auto'
 
+export GOPROXY=https://proxy.golang.org
+export GOPATH=/home/gianarb/go
+
 #
 # This directory contains all the command replaced with a docker container.
 # By default it's disable but you can enable it in your ~/.bashrc
@@ -31,7 +34,7 @@ GIT_PROMPT_THEME_NAME="Single_line" # needed for reload optimization, should be 
 #
 # FZF plugins
 #
-export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 
 _history() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
@@ -42,7 +45,7 @@ source <(kubectl completion bash)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source /usr/share/nvm/init-nvm.sh
 
-export JAVA_HOME=/usr/lib/jvm/java-10-openjdk
+export JAVA_HOME=/usr/lib/jvm/default
 export ANDROID_HOME=/home/gianarb/Android/Sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export ANDROID_SDK_HOM=$ANDROID_HOME
@@ -52,10 +55,9 @@ export PATH=${PATH}:$ANDROID_HOME/tools
 export PATH=${PATH}:$ANDROID_HOME/platform-tools
 export PATH=${PATH}:$ANDROID_SDK/emulator
 export PATH=${PATH}:/home/gianarb/.cargo/bin
-
 export PATH=${PATH}:/usr/local/go/bin
-
-GOPROXY=https://proxy.golang.org
+export PATH=${PATH}:${GOPATH}/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 EMOJIS=('🌄' '☀️' '☕️' '🍳' '🍞' '🐓' '🐔' '🌲' '🌳' '🌴' '🌵' '🌷' '🌺' '🌸' '🌹' '🌻' '🌼' '💐' '🌾' '🌿' '🍀' '🍁' '🍂' '🍃' '🍄' '☀️' '⛅️' '☁️' '☔️' '🌈' '🌊' '🗻' '🌍' '🌞' '💻' '🚽' '📚' '✂️' '🔪' '🍔' '🍕' '🍖' '🍗' '🍘' '🍙' '🍚' '🍛' '🍜' '🍝' '🍞' '🍟' '🍣' '🍤' '🍥' '🍱' '🍲' '🍳' '🍴' '🍏' '🍇' '🍉' '🍊' '🍌' '🍍' '🍑' '🍒' '🍓' '🍡' '🍢' '🍦' '🍧' '🍨' '🍩' '🍪' '🍫' '🍬' '🍭' '🍮' '🍰' '🍷' '🍸' '🍶' '🍹' '🍺' '🍻' '😴' '🌠' '🌑' '🌒' '🌔' '🌖' '🌘' '🌚' '🌝' '🌛' '🌜' '⛺️' '🌃' '🌉' '🌌');
 
