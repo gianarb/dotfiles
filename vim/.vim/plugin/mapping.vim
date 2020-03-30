@@ -35,3 +35,5 @@ cmap ww w !sudo tee % >/dev/null
 map + :vertical resize +5<CR>
 map _ :vertical resize -5<CR>
 
+nmap tr :TestNearest<CR>
+nmap ta :TestSuite<CR>

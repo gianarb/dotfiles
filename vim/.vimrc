@@ -29,8 +29,11 @@ Plug 'tpope/vim-rhubarb'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rhysd/vim-grammarous'
+Plug 'janko/vim-test'
+Plug 'google/vim-jsonnet'
 Plug 'fatih/vim-go', { 'for': 'go'  , 'do': ':GoInstallBinaries'}
 
 "if filereadable($HOME . "/git/vim-flux/syntax/flux.vim")
@@ -133,7 +136,7 @@ set list
 
 " wrap long lines in quickfix
 " https://github.com/fatih/vim-go/issues/1271
-augroup quickfix
-    autocmd!
-    autocmd FileType qf setlocal wrap
-augroup END
+"augroup quickfix
+    "autocmd!
+    "autocmd FileType qf setlocal wrap
+"augroup END
