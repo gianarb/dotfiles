@@ -13,7 +13,7 @@ export GOPATH=/home/gianarb/go
 # PATH="$DOTFILES/docker-bin:$PATH'
 
 alias ll='ls ${LS_OPTS} -lsah'
-alias myip='curl ipinfo.io/ip'
+alias myip='curl --silent ipinfo.io/ip'
 alias less='less --RAW-CONTROL-CHARS'
 alias ls='ls ${LS_OPTS}'
 
