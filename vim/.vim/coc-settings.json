@@ -1,38 +1,68 @@
 {
-    "languageserver": {
-      "phplang": {
-        "command": "php",
-        "args": ["/home/gianarb/.config/composer/vendor/bin/php-language-server.php"],
-        "filetypes": ["php"]
-      },
-      "flux": {
-        "command": "flux-lsp",
-        "args": ["-l", "/tmp/fluxlsp"],
-        "filetypes": ["flux"]
-      },
-      "sh": {
-        "command": "bash-language-server",
-        "args": [
-          "start"
-        ],
-        "filetypes": ["sh", "bash"]
-      },
-      "cquery": {
-        "command": "cquery",
-        "args": ["--log-file=/tmp/cq.log"],
-        "filetypes": ["c", "cpp"],
-        "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-        "initializationOptions": {
-          "cacheDirectory": "/tmp/cquery"
-        }
-      },
-      "go": {
-        "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-        "command": "gopls",
-        "filetypes": ["go"],
-        "args": []
+  "languageserver": {
+    "phplang": {
+      "command": "php",
+      "args": [
+        "/home/gianarb/.config/composer/vendor/bin/php-language-server.php"
+      ],
+      "filetypes": [
+        "php"
+      ]
+    },
+    "sh": {
+      "command": "bash-language-server",
+      "args": [
+        "start"
+      ],
+      "filetypes": [
+        "sh",
+        "bash"
+      ]
+    },
+    "cquery": {
+      "command": "cquery",
+      "args": [
+        "--log-file=/tmp/cq.log"
+      ],
+      "filetypes": [
+        "c",
+        "cpp"
+      ],
+      "rootPatterns": [
+        "compile_flags.txt",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cacheDirectory": "/tmp/cquery"
       }
+    },
+    "rust": {
+      "command": "rlg",
+      "filetypes": [
+        "rs"
+      ],
+    },
+    "go": {
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "command": "gopls",
+      "filetypes": [
+        "go"
+      ],
+      "args": []
+    }
   },
-  "yaml.customTags": ["!Ref", "!Join", "!GetAtt"],
+  "yaml.customTags": [
+    "!Ref",
+    "!Join",
+    "!GetAtt"
+  ],
   "yaml.format.enable": true
 }

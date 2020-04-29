@@ -10,22 +10,35 @@ nmap dn :GoDebugNext<CR>
 nmap di :GoDebugStep<CR>
 nmap do :GoDebugStepOut<CR>
 
-let g:go_metalinter_enabled=1
-let g:go_test_prepend_name = 1
-let g:go_test_show_name=1
+" Go Vim {{{
 setlocal omnifunc=
+let g:go_omnifunc_enabled = 0
+let g:go_fmt_autosave = 0
+
+let g:go_def_mapping_enabled = 0
+let go_gopls_enabled = 0
+
+let g:go_metalinter_autosave_enabled = ['vet']
+let g:go_metalinter_autosave = 0
+let g:go_metalinter_enabled=0
+
+let g:go_diagnostics_enabled=0
 
 let g:go_test_prepend_name = 1
 let g:go_test_show_name=1
-let g:go_diagnostics_enabled=1
 
-let g:go_def_mode='gopls'
-let g:go_fmt_command = "gopls"
-let g:go_rename_command="gopls"
-let g:go_metalinter_command = "gopls"
+" wrap long lines in quickfix
+" https://github.com/fatih/vim-go/issues/1271
+augroup quickfix
+    autocmd!
+    autocmd FileType qf setlocal wrap
+augroup END
+" }}}
 
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-nmap <leader>rn <Plug>(coc-rename)
+" vim-coc {{{
+autocmd BufWritePre *.go silent! :call CocAction('runCommand', 'editor.action.organizeImport')
+
+nmap <silent> jt    :call     CocAction('runCommand', 'go.test.toggle')<CR>
 
 nmap tr :GoTestFunc<CR>
 nmap ta :GoTest<CR>

@@ -16,10 +16,10 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'fatih/vim-go', { 'for': 'go'  , 'do': ':GoInstallBinaries'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'tag': '*'}
 Plug 'leafgarland/typescript-vim'
-Plug 'SirVer/ultisnips'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
@@ -34,7 +34,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'rhysd/vim-grammarous'
 Plug 'janko/vim-test'
 Plug 'google/vim-jsonnet'
-Plug 'fatih/vim-go', { 'for': 'go'  , 'do': ':GoInstallBinaries'}
 
 "if filereadable($HOME . "/git/vim-flux/syntax/flux.vim")
 Plug '~/git/vim-flux'
@@ -57,6 +56,10 @@ endif
 let mapleader = ","                     " Set the <Leader> for combo commands
 
 set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
 
 " Enable filetype plugins {{{
     filetype plugin on
@@ -133,10 +136,13 @@ set clipboard=unnamed
 set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~
 set list
 
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
 
-" wrap long lines in quickfix
-" https://github.com/fatih/vim-go/issues/1271
-"augroup quickfix
-    "autocmd!
-    "autocmd FileType qf setlocal wrap
-"augroup END
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
