@@ -1,6 +1,0 @@
-[submodule "mongo-hacker"]
-	path = mongo-hacker
-	url = https://github.com/TylerBrock/mongo-hacker.git
-[submodule "bash-git-prompt"]
-	path = bash-git-prompt
-	url = git@github.com:magicmonty/bash-git-prompt.git
