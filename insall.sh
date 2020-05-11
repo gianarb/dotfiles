@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -xeuo pipefail
+
 install_path=$HOME/.dotfiles
 
 git=$(which git)
@@ -11,8 +13,6 @@ fi
 if [ ! -d "$HOME~/.config/i3/i3blocks-contrib" ]; then
     git clone https://github.com/vivien/i3blocks-contrib $HOME/.i3/i3blocks-contrib
 fi
-
-set -xeuo pipefail
 
 if [ ! -d "$install_path" ]; then
   $git clone https://github.com/gianarb/dotfiles $install_path
