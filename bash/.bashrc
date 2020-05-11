@@ -1,5 +1,6 @@
 export DOTFILES="$HOME/.dotfiles"
-export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/home/gianarb/go/bin:/home/gianarb/.local/bin:/home/gianarb/.gem/ruby/2.5.0/bin:$HOME/bin"
+export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/$HOME/go/bin:/$HOME/.local/bin:/$HOME/.gem/ruby/2.5.0/bin:$HOME/bin"
+export GOPATH="$HOME/go"
 
 export PATH=${PATH}:$ANDROID_HOME/tools/bin
 export PATH=${PATH}:$ANDROID_HOME/tools
@@ -34,6 +35,7 @@ alias ls='ls ${LS_OPTS}'
 alias sl=ls
 alias mdkir=mkdir
 alias vi=vim
+alias clipc=pbcopy
 
 #
 # Load bash git prompt
@@ -71,7 +73,14 @@ function mdtopdf() {
     pandoc $1 --pdf-engine=latexmk -o $2
 }
 
+# Enable experimental feature for Docker buildkit
 DOCKER_BUILDKIT=1
 
-
+# in theory bash is deprecated (that's weird by itself) in Catalina in favor of
+# zsh. That's not acceptable.
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Load all bash completition file
+if [ -f $DOTFILES/bash_completion ]; then
+    for f in $DOTFILES/bash_completion/*; do source $f; done
+fi
