@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -xeuo pipefail
 
 install_path=$HOME/.dotfiles
@@ -17,10 +18,6 @@ fi
 if [ ! -d "$install_path" ]; then
   $git clone https://github.com/gianarb/dotfiles $install_path
 fi
-
-wget -O ~/.weechat/python/autoload/wee_slack.py https://raw.githubusercontent.com/wee-slack/wee-slack/master/wee_slack.py
-wget -O ~/.weechat/python/autoload/autosort.py https://raw.githubusercontent.com/de-vri-es/weechat-autosort/master/autosort.py
-wget -O ~/.weechat/weemoji.json https://raw.githubusercontent.com/wee-slack/wee-slack/master/weemoji.json
 
 pushd $install_path
 $stow i3

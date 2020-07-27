@@ -61,7 +61,3 @@
     showUntrackedFiles = all
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-[web]
-	browser = xdg-open
-[init]
-	templatedir = /home/gianarb/.dotfiles/git/templates/

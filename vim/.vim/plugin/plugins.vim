@@ -14,7 +14,7 @@ let test#strategy = "vimterminal"
 " vim-coc {{{
 "
 " https://github.com/neoclide/coc.nvim/issues/888#issuecomment-504090910
-call coc#config('coc.preferences', {
-    \ 'messageLevel': 'error',
-    \})
+"call coc#config('coc.preferences', {
+    "\ 'messageLevel': 'error',
+    "\})
 " }}}

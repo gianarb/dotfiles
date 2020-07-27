@@ -16,28 +16,23 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'fatih/vim-go', { 'for': 'go'  , 'do': ':GoInstallBinaries'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'tag': '*'}
-Plug 'leafgarland/typescript-vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
 Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rhysd/vim-grammarous'
 Plug 'janko/vim-test'
-Plug 'google/vim-jsonnet'
-
-"if filereadable($HOME . "/git/vim-flux/syntax/flux.vim")
-Plug '~/git/vim-flux'
-"endif
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-goimports'
 
 call plug#end()
 
