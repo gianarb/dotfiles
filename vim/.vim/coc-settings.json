@@ -39,11 +39,11 @@
         "cacheDirectory": "/tmp/cquery"
       }
     },
-    "rust": {
-      "command": "rlg",
+    "nix": {
+      "command": "rnix-lsp",
       "filetypes": [
-        "rs"
-      ],
+        "nix"
+      ]
     },
     "go": {
       "rootPatterns": [
@@ -64,5 +64,8 @@
     "!Join",
     "!GetAtt"
   ],
-  "yaml.format.enable": true
+  "yaml.format.enable": true,
+  "coc.preferences.extensionUpdateCheck": "never",
+  "grammarly.autoActivate": true,
+  "grammarly.ignore": ["code"],
 }

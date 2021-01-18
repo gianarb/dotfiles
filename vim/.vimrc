@@ -27,13 +27,12 @@ Plug 'mattn/webapi-vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'rhysd/vim-grammarous'
 Plug 'janko/vim-test'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-goimports'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'LnL7/vim-nix'
 
 call plug#end()
 
@@ -98,7 +97,7 @@ set expandtab                           " Expand tabs to spaces
 set smarttab
 " }}}
 "
-set nowrap                              " do not wrap lines by default
+set wrap                                " Wrap lines to fit in a window
 set wildmenu                            " Use menu to show command-line completion (in 'full' case)
 
 " Search {{{
@@ -111,10 +110,13 @@ set ic                                  " Search ignore case
 "
 
 set termguicolors
+
+ "colorscheme one {{{
 colorscheme one
 set background=dark
 call one#highlight('Normal', 'abb2bf', '000000', 'none')
 let g:one_allow_italics = 1
+ "}}}
 
 set showtabline=2                       " Make sure that tabline is always present
 set laststatus=2                        " Always show status line, even for one window
