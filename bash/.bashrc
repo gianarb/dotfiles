@@ -1,7 +1,7 @@
 export DOTFILES="$HOME/.dotfiles"
 
 export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/$HOME/go/bin:/$HOME/.local/bin:/$HOME/.gem/ruby/2.5.0/bin:$HOME/bin"
-export PATH=${PATH}:/home/gianarb/.cargo/bin
+export PATH=${PATH}:${HOME}/.cargo/bin
 export PATH=${PATH}:/usr/local/go/bin
 export PATH=${PATH}:${GOPATH}/bin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -26,6 +26,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval "$(direnv hook bash)"
 
 for rc in $(ls ${DOTFILES}/bashrc.d/[0-9]*sh | sort -n); do
   . "$rc";
