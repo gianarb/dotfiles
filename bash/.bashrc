@@ -6,7 +6,10 @@ export PATH=${PATH}:/usr/local/go/bin
 export PATH=${PATH}:${GOPATH}/bin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-export EDITOR=vim export XDG_CONFIG_HOME=$HOME/.config
+export HOMEBREW_BUNDLE_FILE=$HOME/.dotfiles/homebrew/Brewfile
+
+export EDITOR=vim
+export XDG_CONFIG_HOME=$HOME/.config
 
 alias ll='ls ${LS_OPTS} -lsah'
 alias myip='curl --silent ipinfo.io/ip'
