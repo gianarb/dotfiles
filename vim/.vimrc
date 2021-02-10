@@ -81,7 +81,6 @@ set tm=500
 " Indentation {{{
 set autoindent                          " Make sure that unrecognized files are still indented
 set si
-set wrap
 " }}}
 
 set secure                              " Enable secure mode
@@ -97,7 +96,7 @@ set expandtab                           " Expand tabs to spaces
 set smarttab
 " }}}
 "
-set wrap                                " Wrap lines to fit in a window
+set nowrap
 set wildmenu                            " Use menu to show command-line completion (in 'full' case)
 
 " Search {{{
