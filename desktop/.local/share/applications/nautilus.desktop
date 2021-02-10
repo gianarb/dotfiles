@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Nautilus
-Comment=Open nautilus
-TryExec=/usr/bin/nautilus
-Exec=/usr/bin/nautilus
-Terminal=false
-Type=Application

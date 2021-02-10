@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Browser
-TryExec=/usr/bin/chromium
-Exec=/usr/bin/chromium
-Terminal=false
-Type=Application

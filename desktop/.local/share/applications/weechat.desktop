@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Weechat
-Exec=/usr/bin/kitty weechat
-Icon=chat
-Terminal=false
-Type=Application

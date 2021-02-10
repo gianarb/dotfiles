@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=pavucontrol
-TryExec=/usr/bin/pavucontrol
-Exec=/usr/bin/pavucontrol
-Terminal=false
-Type=Application
