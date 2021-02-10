@@ -27,9 +27,6 @@ $stow bash
 $stow vim
 $stow gdb
 $stow dunst
-$stow desktop
-$stow config
 $stow kitty
-$stow vscode
 $stow screenlayout
 popd
