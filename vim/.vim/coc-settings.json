@@ -1,50 +1,5 @@
 {
   "languageserver": {
-    "phplang": {
-      "command": "php",
-      "args": [
-        "/home/gianarb/.config/composer/vendor/bin/php-language-server.php"
-      ],
-      "filetypes": [
-        "php"
-      ]
-    },
-    "sh": {
-      "command": "bash-language-server",
-      "args": [
-        "start"
-      ],
-      "filetypes": [
-        "sh",
-        "bash"
-      ]
-    },
-    "cquery": {
-      "command": "cquery",
-      "args": [
-        "--log-file=/tmp/cq.log"
-      ],
-      "filetypes": [
-        "c",
-        "cpp"
-      ],
-      "rootPatterns": [
-        "compile_flags.txt",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "cacheDirectory": "/tmp/cquery"
-      }
-    },
-    "nix": {
-      "command": "rnix-lsp",
-      "filetypes": [
-        "nix"
-      ]
-    },
     "go": {
       "rootPatterns": [
         "go.mod",
@@ -59,13 +14,11 @@
       "args": []
     }
   },
-  "yaml.customTags": [
-    "!Ref",
-    "!Join",
-    "!GetAtt"
-  ],
   "yaml.format.enable": true,
   "coc.preferences.extensionUpdateCheck": "never",
-  "grammarly.autoActivate": true,
-  "grammarly.ignore": ["code"],
+  "grammarly.diagnostic": {
+    "[markdown]": {
+      "ignore": ["inlineCode", "code"]
+    }
+  }
 }
