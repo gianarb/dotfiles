@@ -27,6 +27,6 @@ $stow bash
 $stow vim
 $stow gdb
 $stow dunst
-$stow kitty
 $stow screenlayout
+$stow alacritty
 popd
