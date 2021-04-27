@@ -29,10 +29,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'janko/vim-test'
 Plug 'mattn/vim-goimports'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'leafOfTree/vim-svelte-plugin'
-Plug 'LnL7/vim-nix'
+
+" I develop this integration and I want to load it directly from my workspace
+if isdirectory($HOME . "/git/coc-grammarly")
+    Plug '~/git/coc-grammarly'
+endif
 
 call plug#end()
 
