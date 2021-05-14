@@ -37,4 +37,4 @@ for rc in $(ls ${DOTFILES}/bashrc.d/[0-9]*sh | sort -n); do
 done
 
 export GIT_PS1_SHOWUPSTREAM="auto"
-export PS1='\u \[\e[$([[ $? = 0 ]] && printf 32 || printf 31);1m\]\w\[\e[m\] $(__git_ps1 " (%s)") \$ '
+export PS1='\u@\h \[\e[$([[ $? = 0 ]] && printf 32 || printf 31);1m\]\w\[\e[m\] $(__git_ps1 " (%s)") \$ '
