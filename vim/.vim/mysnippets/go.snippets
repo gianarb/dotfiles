@@ -36,26 +36,3 @@ func TestSuccessfulCheck(t *testing.T) {
 	}
 }
 endsnippet
-
-snippet tdm "testcontainers-demo-checkmysql"
-_ "github.com/go-sql-driver/mysql"
-
-func checkMySql(host, username, password, database string, port int) func() error {
-	db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?tls=skip-verify", username, password, host, port, database))
-	if err != nil {
-		return func() error {
-			return err
-		}
-	}
-	err = db.Ping()
-	if err != nil {
-		return func() error {
-			return err
-		}
-	}
-
-	return func() error {
-		return nil
-	}
-}
-endsnippet
