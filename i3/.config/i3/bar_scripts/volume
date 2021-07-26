@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # i3blocks volume
 # This script outputs the status of audio devices
