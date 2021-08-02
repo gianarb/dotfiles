@@ -34,7 +34,7 @@ dpi:
 draw_bold_text_with_bright_colors: true
 
 ## Font configuration (changes require restart)
-#font:
+font:
   ## The normal (roman) font face to use.
   #normal:
     #family: Menlo
@@ -54,7 +54,7 @@ draw_bold_text_with_bright_colors: true
     ## style: Italic
 
   ## Point size of the font
-  #size: 14.0
+  size: 8.0
 
   ## Offset is the extra space around each character. offset.y can be thought of
   ## as modifying the linespacing, and offset.x as modifying the letter spacing.

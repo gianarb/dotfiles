@@ -11,7 +11,7 @@ if [ ! -f "$HOME/.gdbinit" ]; then
     wget -P ~ git.io/.gdbinit
 fi
 
-if [ ! -d "$HOME~/.config/i3/i3blocks-contrib" ]; then
+if [ ! -d "$HOME~/.i3/i3blocks-contrib" ]; then
     git clone https://github.com/vivien/i3blocks-contrib $HOME/.i3/i3blocks-contrib
 fi
 

@@ -8,7 +8,7 @@
 # layout, use the i3-config-wizard
 #
 set $mod Mod4
-set $editor kitty
+set $editor alacritty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -16,7 +16,7 @@ font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -44,7 +44,8 @@ bindsym Mod4+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec alacritty --class 'launcher' --command bash -c 'compgen -c | sort -u | fzf | xargs -r i3-msg -t command exec'
+for_window [class="launcher"] floating enable border none, resize set width 25 ppt height 100 ppt, move position 0 px 0 px
 
 # change focus
 bindsym Mod4+$left focus left
@@ -127,10 +128,8 @@ bindsym Mod4+Shift+8 move container to workspace 8
 bindsym Mod4+Shift+9 move container to workspace 9
 bindsym Mod4+Shift+0 move container to workspace 10
 
-# reload the configuration file
-bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod4+Shift+r restart
+bindsym Mod4+Shift+r exec i3-msg reload
 
 # Open Nautilus
 bindsym Ctrl+space exec --no-startup-id nautilus
@@ -167,7 +166,6 @@ bar {
     font pango:DejaVu Sans Mono, Awesome 8
     position top
     status_command i3blocks
-    i3bar_command i3bar
     strip_workspace_numbers yes
     tray_padding 0
     tray_output primary
@@ -193,23 +191,9 @@ bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d
 #######################################################################
 exec i3-config-wizard
 
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /home/gianarb/.dotfiles/bin/toggletouchpad.sh
-
-# Display backlight
-bindsym XF86MonBrightnessDown exec sudo /home/gianarb/.dotfiles/bin/brightness -
-bindsym XF86MonBrightnessUp exec sudo /home/gianarb/.dotfiles/bin/brightness +
-
-# Keyboard backlight
-bindsym XF86KbdBrightnessDown exec /home/gianarb/.dotfiles/bin/backlight -
-bindsym XF86KbdBrightnessUp exec /home/gianarb/.dotfiles/bin/backlight +
-
-#### RULES FOR SPECIFIC APPLICATIONS ####
+## Brightness
+bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-"
+bindsym XF86MonBrightnessUp exec "brightnessctl set +2%"
 
 # by APPLICATION (WM_CLASS)
 # Note: class is typically useful for applying custom settings to
@@ -217,7 +201,7 @@ bindsym XF86KbdBrightnessUp exec /home/gianarb/.dotfiles/bin/backlight +
 #       isn't want you want see the ROLE section, below.
 # Tip: To find out what these values might be run:
 #       xprop | grep -i 'class'
-for_window [class="Google-chrome"] move workspace 2
+for_window [class="Brave"] move workspace 2
 for_window [class="Chromium"] move workspace 2
 for_window [class="Postman"] move workspace 3
 for_window [class="Slack"] move workspace 9
@@ -250,9 +234,39 @@ bindsym Mod4+Escape mode "$mode_system"
 
 for_window [class="^.*"] border pixel 1
 
-exec --no-startup-id /usr/bin/feh --bg-scale /home/gianarb/.dotfiles/unicorn_wallpapers.jpg
-
 exec --no-startup-id nm-applet --sm-disable
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox
-exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
+
+
+
+## Volume control
+
+# Path to volume control, without trailing slash
+set $volumepath ~/.config/i3/bar_scripts
+
+# Command for the status line
+#   ie: i3blocks, i3status
+set $statuscmd i3status
+
+# Signal used to update the status line
+#   i3blocks uses SIGRTMIN+10 by default
+#   i3status uses SIGUSR1 by default
+set $statussig SIGUSR1
+
+# Amount to increase/decrease volume as a percentage
+set $volumestep 5
+
+# alsa-utils settings
+#
+# To configure a default card, see https://www.alsa-project.org/main/index.php/Asoundrc
+#
+# Card number to control.
+#   If not specified, i3-volume will let `amixer` use a default.
+#   List cards: aplay -l
+#set $alsacard 1
+
+# append "-c $alsacard" without quotes to override default card
+bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig up $volumestep
+bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig down $volumestep
+bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig mute
