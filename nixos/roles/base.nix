@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    bintools-unwrapped
     utillinux
     stow
     wget

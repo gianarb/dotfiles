@@ -1,5 +1,6 @@
 {}: self: super:
 {
+  weechat-edit = self.callPackage ./weechat-edit {};
   microcodeIntel = super.microcodeIntel.overrideAttrs (
     x: rec {
       version = "20210608";
@@ -15,7 +16,10 @@
     configure = { availablePlugins, ... }: {
       scripts = with super.weechatScripts; [
         weechat-matrix
+        weechat-otr
         wee-slack
+        weechat-autosort
+        self.weechat-edit
       ];
     };
   };

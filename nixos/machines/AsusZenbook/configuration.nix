@@ -4,7 +4,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../applications/i3.nix
-    ../../applications/sound-pulse.nix
+    ../../applications/sound-pipewire.nix
     ../../roles/desktop.nix
   ];
 
@@ -37,10 +37,15 @@
   location.provider = "geoclue2";
   services.geoclue2.enable = true;
 
+  programs.ssh.startAgent = true;
+
   programs.dconf.enable = true;
   services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
 
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.gutenprint pkgs.epson-escpr2 ];
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
 
   hardware.bluetooth = {
     enable = true;
