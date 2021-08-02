@@ -29,6 +29,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'janko/vim-test'
 Plug 'mattn/vim-goimports'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
 
 " I develop this integration and I want to load it directly from my workspace
 if isdirectory($HOME . "/git/coc-grammarly")
