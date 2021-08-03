@@ -30,6 +30,7 @@
     slack
     weechat
     obs-studio
+    spotify
 
     rnix-lsp
   ];
