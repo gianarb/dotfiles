@@ -56,3 +56,5 @@
     defaultBranch = main
 [pull]
 	rebase = false
+[url "ssh://git@github.com/eradb/tsbs"]
+	insteadOf = https://github.com/eradb/tsbs

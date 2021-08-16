@@ -16,7 +16,6 @@
   },
   "yaml.format.enable": true,
   "coc.preferences.extensionUpdateCheck": "never",
-  "rust-client.disableRustup": true"
   "grammarly.diagnostic": {
     "[markdown]": {
       "ignore": ["inlineCode", "code"]
