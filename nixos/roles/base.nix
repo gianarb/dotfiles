@@ -6,7 +6,7 @@
     utillinux
     stow
     wget
-    vim
+    vim_configurable
     git
     gitAndTools.gh
     tailscale

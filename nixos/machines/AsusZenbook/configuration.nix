@@ -40,20 +40,6 @@
   programs.ssh.startAgent = true;
 
   programs.dconf.enable = true;
-  services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
-
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.gutenprint pkgs.epson-escpr2 ];
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
-
-  hardware.bluetooth = {
-    enable = true;
-    settings.general.Enable = "Source,Sink,Media,Socket";
-  };
-  services.blueman.enable = true;
-  hardware.bluetooth.package = pkgs.bluezFull;
-
   powerManagement.powertop.enable = true;
   powerManagement.cpuFreqGovernor = "powersave";
 
@@ -122,6 +108,10 @@
     useSandbox = true;
     distributedBuilds = true;
     gc = { automatic = true; };
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
   };
 
   nixpkgs.config.allowUnfree = true;

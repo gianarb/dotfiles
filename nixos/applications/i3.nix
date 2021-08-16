@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }: {
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.lightdm.enableGnomeKeyring = true;
 
   services.xserver = {
     enable = true;
