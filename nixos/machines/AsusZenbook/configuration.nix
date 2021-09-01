@@ -4,6 +4,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../applications/i3.nix
+    ../../applications/tailscale.nix
     ../../applications/sound-pipewire.nix
     ../../roles/desktop.nix
     ../../users/gianarb
@@ -19,6 +20,8 @@
       font-awesome
     ];
   };
+
+  networking.firewall.enable = true;
 
   # Use the systemd-boot EFI boot loader.
 
@@ -42,8 +45,6 @@
   environment.pathsToLink = [ "/libexec" ];
 
   virtualisation.docker.enable = true;
-
-  services.tailscale.enable = true;
 
   services.fwupd.enable = true;
 

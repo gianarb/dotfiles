@@ -9,7 +9,6 @@
     vim_configurable
     git
     gitAndTools.gh
-    tailscale
     nmap
     tmux
     fzf
