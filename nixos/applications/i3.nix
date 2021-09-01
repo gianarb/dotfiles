@@ -17,8 +17,13 @@
     '';
 
     libinput = {
-        enable = true;
-        touchpad.accelProfile = "flat";
+      enable = true;
+      mouse = {
+        accelProfile = "flat";
+      };
+      touchpad = {
+        accelProfile = "flat";
+      };
     };
 
 

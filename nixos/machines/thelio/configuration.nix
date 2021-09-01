@@ -20,10 +20,28 @@
     ];
   };
 
+  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+  # Per-interface useDHCP will be mandatory in the future, so this generated config
+  # replicates the default behaviour.
+  networking.useDHCP = false;
+  networking.interfaces.enp5s0.useDHCP = true;
+  networking.interfaces.enp6s0.useDHCP = true;
+  networking.interfaces.wlp4s0.useDHCP = true;
+
+
   # Use the systemd-boot EFI boot loader.
 
   networking.hostName = "huge"; # Define your hostname.
   networking.networkmanager.enable = true;
+
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    loader.grub.device = "nodev";
+    loader.grub.enable = true;
+    loader.grub.version = 2;
+    loader.grub.efiSupport = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Rome";
@@ -94,6 +112,8 @@
       experimental-features = nix-command flakes
     '';
   };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ (import ../../overlay/overlay.nix { }) ];
