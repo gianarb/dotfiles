@@ -6,6 +6,7 @@
     ../../applications/i3.nix
     ../../applications/sound-pipewire.nix
     ../../roles/desktop.nix
+    ../../users/gianarb
   ];
 
   fonts = {
@@ -27,11 +28,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
-  networking.interfaces.eth0.useDHCP = true;
   networking.interfaces.wlp2s0.useDHCP = true;
 
   location.provider = "geoclue2";
@@ -43,26 +39,6 @@
   powerManagement.powertop.enable = true;
   powerManagement.cpuFreqGovernor = "powersave";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.gianarb = {
-    isNormalUser = true;
-    uid = 1000;
-    createHome = true;
-    extraGroups = [
-        "root"
-        "wheel"
-        "networkmanager"
-        "video"
-        "dbus"
-        "audio"
-        "sound"
-        "pulse"
-        "input"
-        "lp"
-        "docker"
-        ];
-  };
-
   environment.pathsToLink = [ "/libexec" ];
 
   virtualisation.docker.enable = true;
@@ -70,6 +46,13 @@
   services.tailscale.enable = true;
 
   services.fwupd.enable = true;
+
+  services = {
+    clamav = {
+      daemon. enable = true;
+      updater.enable = true;
+    };
+  };
 
   environment.variables = {
     EDITOR = "vim";
@@ -124,5 +107,9 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.09"; # Did you read the comment?
+
+  # https://nixos.org/manual/nixos/stable/index.html#sec-upgrading-automatic
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
 
 }
