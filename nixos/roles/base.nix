@@ -21,6 +21,7 @@
     nixfmt
     gnumake
     nodejs-16_x
+    unzip
   ];
 
 }
