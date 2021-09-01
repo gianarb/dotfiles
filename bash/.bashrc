@@ -26,7 +26,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 #
 # FZF plugins
 #
-export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
+export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
