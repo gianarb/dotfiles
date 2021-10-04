@@ -6,33 +6,14 @@
   services.xserver = {
     enable = true;
 
-    config = ''
-      Section "InputClass"
-        Identifier "mouse accel"
-        Driver "libinput"
-        MatchIsPointer "on"
-        Option "AccelProfile" "flat"
-        Option "AccelSpeed" "0"
-      EndSection
-    '';
-
-    libinput = {
-      enable = true;
-      mouse = {
-        accelProfile = "flat";
-      };
-      touchpad = {
-        accelProfile = "flat";
-      };
-    };
-
+    libinput.enable = true;
 
     desktopManager = {
       xterm.enable = false;
     };
 
     displayManager = {
-        defaultSession = "none+i3";
+      defaultSession = "none+i3";
     };
 
     windowManager.i3 = {
@@ -42,9 +23,7 @@
         i3status # gives you the default i3 status bar
         i3lock #default i3 screen locker
         i3blocks #if you are planning on using i3blocks over i3status
-        physlock #required for the i3exit binary
-     ];
+      ];
     };
   };
 }
-

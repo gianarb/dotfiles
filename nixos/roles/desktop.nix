@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }: {
-  imports = [ 
+  imports = [
+    ./../applications/vscode.nix
     ./base.nix
     ./devtools.nix
   ];
@@ -18,8 +19,8 @@
   services.blueman.enable = true;
   hardware.bluetooth.package = pkgs.bluezFull;
 
-
   environment.systemPackages = with pkgs; [
+    lldb
     dunst
     libnotify
     acpi
@@ -42,13 +43,13 @@
     brightnessctl
     aerc
     zoom-us
+    libreoffice
     alacritty
     slack
     weechat
     obs-studio
     spotify
-
     rnix-lsp
   ];
-}
 
+}

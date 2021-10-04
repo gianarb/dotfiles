@@ -1,4 +1,12 @@
 { config, lib, pkgs, ... }: {
+  boot.kernel.sysctl = {
+    "vm.swappiness" = lib.mkDefault 1;
+  };
+
+  boot.tmpOnTmpfs = true;
+
+  services.fstrim.enable = lib.mkDefault true;
+
   environment.systemPackages = with pkgs; [
     htop
     tree
@@ -21,7 +29,8 @@
     gnumake
     nodejs-16_x
     unzip
+    pciutils
+    killall
   ];
 
 }
-

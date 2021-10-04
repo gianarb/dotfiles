@@ -5,7 +5,7 @@
     rustup gcc pkg-config openssl openssl.dev rls
     grpc-tools
     gdb
-    go
+    #go
     linuxPackages.perf
   ];
   environment.variables = {
