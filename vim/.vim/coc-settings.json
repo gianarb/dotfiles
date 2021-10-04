@@ -1,5 +1,11 @@
 {
   "languageserver": {
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": [
+        "nix"
+      ]
+    },
     "go": {
       "rootPatterns": [
         "go.mod",

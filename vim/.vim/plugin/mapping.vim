@@ -40,18 +40,16 @@ nmap ta :TestSuite<CR>
 nmap jt :TestVisit<CR>
 
 " vim-coc {{{
- " Use tab for trigger completion with characters ahead and navigate.
+
+" Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Use <c-space> for trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <C-p> to complete 'word', 'emoji' and 'include' sources
-imap <silent> <C-p> <Plug>(coc-complete-custom)
+" https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-and-s-tab-to-navigate-the-completion-list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -86,13 +84,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" snippet
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
 
 function! s:check_back_space() abort
   let col = col('.') - 1

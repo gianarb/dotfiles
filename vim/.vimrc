@@ -14,6 +14,11 @@ if !filereadable($HOME . "/.vim/autoload/plug.vim")
 	let shouldInstallBundles = 1
 endif
 
+let g:coc_global_extensions = [
+\ 'coc-ultisnips',
+\ 'coc-rust-analyzer'
+\ ]
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -29,7 +34,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'janko/vim-test'
 Plug 'mattn/vim-goimports'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
+Plug 'puremourning/vimspector'
 
 " I develop this integration and I want to load it directly from my workspace
 if isdirectory($HOME . "/git/coc-grammarly")
@@ -145,3 +151,7 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
+
+" TODO: This is not the right place. move it
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_install_gadgets = [ 'CodeLLDB' ]
