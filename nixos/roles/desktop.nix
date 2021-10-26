@@ -42,6 +42,7 @@
     keepassxc
     brightnessctl
     aerc
+    python39Packages.goobook
     zoom-us
     libreoffice
     alacritty

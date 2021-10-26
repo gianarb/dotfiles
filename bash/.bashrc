@@ -16,6 +16,11 @@ alias myip='curl --silent ipinfo.io/ip'
 alias less='less --RAW-CONTROL-CHARS'
 alias ls='ls ${LS_OPTS}'
 
+# Sometime the cursor disappears.
+# This is a solution that works for me
+# https://superuser.com/questions/1547622/tmux-keyboard-cursor-disappears-after-leaving-scroll-mode
+alias refresh_cursor='tput cnorm'
+
 alias vi=vim
 alias clipc=pbcopy
 
@@ -26,7 +31,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 #
 # FZF plugins
 #
-export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+export FZF_DEFAULT_COMMAND='rg -l ""'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

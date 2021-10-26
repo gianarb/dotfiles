@@ -30,3 +30,4 @@ A list of NixOS configuration I often look at:
 * [danielfullmer/pinecube-nixos](https://github.com/danielfullmer/pinecube-nixos)
 * [lovesegfault/nix-config](https://github.com/lovesegfault/nix-config)
 * [balsoft/nixos-config](https://github.com/balsoft/nixos-config)
+* [mitchellh/nixos-config](https://github.com/mitchellh/nixos-config)
