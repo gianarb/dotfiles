@@ -68,6 +68,7 @@ in
   environment.pathsToLink = [ "/libexec" ];
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.enableOnBoot = false;
 
   services.fwupd.enable = true;
 
@@ -101,7 +102,7 @@ in
     wantedBy = [ "graphical-session.target" ];
     environment = {
       QT_PLUGIN_PATH = "/run/current-system/sw/"
-      + pkgs.qt5.qtbase.qtPluginPrefix;
+        + pkgs.qt5.qtbase.qtPluginPrefix;
       QML2_IMPORT_PATH = "/run/current-system/sw
       + pkgs.qt5.qtbase.qtQmlPrefix";
     };
@@ -136,7 +137,7 @@ in
   services.xserver.videoDrivers = [ "nvidia" ];
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [ (import ../../overlay/overlay.nix {}) ];
+  nixpkgs.overlays = [ (import ../../overlay/overlay.nix { }) ];
 
   # This value determines the NixOS release from which thedefault
   # settings for stateful data, like file locations and database versions

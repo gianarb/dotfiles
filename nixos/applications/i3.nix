@@ -19,6 +19,7 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
+        xorg.libXcomposite # this should make drawing with Slak possible
         arandr
         i3status # gives you the default i3 status bar
         i3lock #default i3 screen locker

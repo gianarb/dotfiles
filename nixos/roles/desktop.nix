@@ -36,6 +36,7 @@
     blueman
     adwaita-qt
     gnome3.adwaita-icon-theme
+    gparted
     vlc
     dropbox-cli
     brave
