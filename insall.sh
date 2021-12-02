@@ -29,4 +29,5 @@ $stow gdb
 $stow dunst
 $stow screenlayout
 $stow alacritty
+$stow gh
 popd
