@@ -21,7 +21,13 @@
     }
   },
   "yaml.format.enable": true,
-  "coc.preferences.extensionUpdateCheck": "never",
+  "coc.source.buffer.enable": false,
+  "coc.source.file.enable": false,
+  "coc.preferences.useTmuxTerminal": true,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "rust-analyzer.diagnostics.enable": false,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.debug.runtime": "vimspector",
   "grammarly.diagnostic": {
     "[markdown]": {
       "ignore": ["inlineCode", "code"]
