@@ -10,6 +10,7 @@ in
     ../../applications/i3.nix
     ../../applications/tailscale.nix
     ../../applications/steam.nix
+    ../../applications/qemu.nix
     ../../applications/sound-pipewire.nix
     ../../roles/desktop.nix
     ../../users/gianarb
