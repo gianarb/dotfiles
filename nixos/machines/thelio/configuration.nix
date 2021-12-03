@@ -16,7 +16,7 @@ in
     ../../users/gianarb
   ];
   environment.systemPackages = with pkgs; [
-    unstable.linuxKernel.packages.linux_5_10.system76-power
+    unstable.linuxPackages_latest.system76-power
   ];
 
   fonts = {
@@ -91,7 +91,7 @@ in
     description = "System76 Power Daemon";
     wantedBy = [ "basic.target" ];
     serviceConfig = {
-      ExecStart = "${unstable.linuxKernel.packages.linux_5_10.system76-power}/bin/system76-power daemon";
+      ExecStart = "${unstable.linuxPackages_latest.system76-power}/bin/system76-power daemon";
       KillMode = "control-group"; # upstream recommends process
       Restart = "on-failure";
       ProtectSystem = "full";
