@@ -190,10 +190,6 @@ bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d
 #######################################################################
 exec i3-config-wizard
 
-## Brightness
-bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-"
-bindsym XF86MonBrightnessUp exec "brightnessctl set +2%"
-
 # by APPLICATION (WM_CLASS)
 # Note: class is typically useful for applying custom settings to
 #       to entire applications, including child windows. If this
@@ -269,3 +265,5 @@ set $volumestep 5
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig up $volumestep
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig down $volumestep
 bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -an -t $statuscmd -u $statussig mute
+bindsym XF86MonBrightnessUp  exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
