@@ -14,11 +14,6 @@ if !filereadable($HOME . "/.vim/autoload/plug.vim")
 	let shouldInstallBundles = 1
 endif
 
-let g:coc_global_extensions = [
-\ 'coc-ultisnips',
-\ 'coc-rust-analyzer'
-\ ]
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -152,6 +147,4 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
-" TODO: This is not the right place. move it
 let g:vimspector_enable_mappings = 'HUMAN'
-let g:vimspector_install_gadgets = [ 'CodeLLDB' ]

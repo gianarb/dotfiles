@@ -23,11 +23,13 @@
   "yaml.format.enable": true,
   "coc.source.buffer.enable": false,
   "coc.source.file.enable": false,
+  "coc.source.around.enable": false,
   "coc.preferences.useTmuxTerminal": true,
   "coc.preferences.extensionUpdateCheck": "daily",
   "rust-analyzer.diagnostics.enable": false,
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.debug.runtime": "vimspector",
+  "snippets.userSnippetsDirectory": "~/.vim/mysnippets",
   "grammarly.diagnostic": {
     "[markdown]": {
       "ignore": ["inlineCode", "code"]

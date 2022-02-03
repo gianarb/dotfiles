@@ -41,11 +41,20 @@ nmap jt :TestVisit<CR>
 
 " vim-coc {{{
 
-" Use tab for trigger completion with characters ahead and navigate.
+" Use tab for trigger completion with characters ahead and navigate, this
+" exposes snipptes as well.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-and-s-tab-to-navigate-the-completion-list
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -100,4 +109,8 @@ let NERDTreeShowHidden=1
 map <C-p> :FZF<cr>
 map <C-t> :Tags<cr>
 map <C-b> :Buffers<cr>
+" }}}
+
+" vimspector {{{
+map <F2> :call vimspector#Reset()<CR>
 " }}}
