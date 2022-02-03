@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }: {
   imports = [
     ./../applications/vscode.nix
+    ./../applications/3dprinting.nix
     ./base.nix
     ./devtools.nix
   ];
@@ -42,6 +43,7 @@
     brave
     keepassxc
     brightnessctl
+    calibre
     aerc
     python39Packages.goobook
     zoom-us

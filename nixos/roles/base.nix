@@ -23,6 +23,7 @@
     ripgrep
     file
     jq
+    bind
     direnv
     python3
     nixfmt

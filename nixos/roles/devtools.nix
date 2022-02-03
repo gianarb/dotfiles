@@ -2,6 +2,11 @@
   environment.systemPackages = with pkgs; [
     kubectl
     rustup
+
+    # useful to play with perf and framegraph in Rust context
+    inferno
+    cargo-flamegraph
+
     gcc
     pkg-config
     openssl
