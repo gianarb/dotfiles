@@ -1,6 +1,6 @@
 {}: self: super:
 {
-  weechat-edit = self.callPackage ./weechat-edit {};
+  weechat-edit = self.callPackage ./weechat-edit { };
   microcodeIntel = super.microcodeIntel.overrideAttrs (
     x: rec {
       version = "20210608";
@@ -23,4 +23,18 @@
       ];
     };
   };
+  rust-analyzer = super.rust-analyzer.overrideAttrs (
+    x: rec {
+      version = "2022-02-28";
+      cargoSha256 = "sha256-dTw6xp99uGtGp6YuqAX3r3GDD6Wto3KHTaO2DUUE2FA=";
+      RUST_ANALYZER_REV = "2022-02-28";
+
+      src = super.fetchFromGitHub {
+        owner = "rust-analyzer";
+        repo = "rust-analyzer";
+        rev = "2022-02-28";
+        sha256 = "sha256-GQ1cPO4povnozLl0MTFs0ZXpmBn+AZeFWQVnxHHWf9g=";
+      };
+    }
+  );
 }

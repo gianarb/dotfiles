@@ -6,12 +6,12 @@
     # useful to play with perf and framegraph in Rust context
     inferno
     cargo-flamegraph
+    rust-analyzer
 
     gcc
     pkg-config
     openssl
     openssl.dev
-    rls
     protobuf
     gdb
     linuxPackages.perf
