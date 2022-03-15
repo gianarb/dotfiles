@@ -68,15 +68,13 @@ endfunction
 " Use <cr> for confirm completion.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Use `[c` and `]c` for navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-refactor)
@@ -107,7 +105,6 @@ let NERDTreeShowHidden=1
 
 " FZF {{{
 map <C-p> :FZF<cr>
-map <C-t> :Tags<cr>
 map <C-b> :Buffers<cr>
 " }}}
 
