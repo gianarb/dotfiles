@@ -26,9 +26,13 @@
   "coc.source.around.enable": false,
   "coc.preferences.useTmuxTerminal": true,
   "coc.preferences.extensionUpdateCheck": "daily",
-  "rust-analyzer.diagnostics.enable": false,
-  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.diagnostics.enable": true,
+  "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"],
+  "rust-analyzer.inlayHints.typeHints.enable": true,
+  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": true,
   "rust-analyzer.debug.runtime": "vimspector",
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.server.path": "/run/current-system/sw/bin/rust-analyzer",
   "snippets.userSnippetsDirectory": "~/.vim/mysnippets",
   "grammarly.diagnostic": {
     "[markdown]": {

@@ -30,6 +30,7 @@
     gnumake
     nodejs-16_x
     unzip
+    zip
     pciutils
     killall
   ];

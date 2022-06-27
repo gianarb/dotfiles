@@ -20,9 +20,7 @@ window:
     x: 0
     y: 5
 
- #  decorations: buttonless
-
-background_opacity: 1
+  opacity: 1
 
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
