@@ -9,14 +9,13 @@ in
     ./hardware-configuration.nix
     ../../applications/i3.nix
     ../../applications/tailscale.nix
-    ../../applications/steam.nix
     ../../applications/qemu.nix
     ../../applications/sound-pipewire.nix
     ../../roles/desktop.nix
     ../../users/gianarb
   ];
   environment.systemPackages = with pkgs; [
-    unstable.linuxPackages_latest.system76-power
+    pkgs.linuxPackages.system76-power
   ];
 
   fonts = {
@@ -36,17 +35,19 @@ in
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.enp5s0.useDHCP = true;
-  networking.interfaces.enp6s0.useDHCP = true;
-  networking.interfaces.wlp4s0.useDHCP = true;
+
+  # tailscale workaround https://github.com/tailscale/tailscale/issues/4432
+  networking.firewall.checkReversePath = "loose";
 
   # Use the systemd-boot EFI boot loader.
 
   networking.hostName = "huge"; # Define your hostname.
   networking.networkmanager.enable = true;
 
+  # This is the TCP port I want to use to reach my laptop in my internal network.
+  networking.firewall.interfaces.enp5s0.allowedTCPPorts = [ 10123 ];
+
   boot = {
-    loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     loader.grub.device = "nodev";
     loader.grub.enable = true;
@@ -73,12 +74,15 @@ in
 
   services.fwupd.enable = true;
 
-  services = {
-    clamav = {
-      daemon.enable = true;
-      updater.enable = true;
-    };
-  };
+  programs.mosh.enable = true;
+
+  # disabled for now
+  #services = {
+  #clamav = {
+  #daemon.enable = true;
+  #updater.enable = true;
+  #};
+  #};
 
   environment.variables = {
     EDITOR = "vim";
@@ -151,5 +155,7 @@ in
   # https://nixos.org/manual/nixos/stable/index.html#sec-upgrading-automatic
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
+
+  programs.fuse.userAllowOther = true;
 
 }

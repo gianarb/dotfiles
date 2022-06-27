@@ -7,7 +7,7 @@
   ];
 
   services.printing.enable = true;
-  services.printing.drivers = [ pkgs.gutenprint pkgs.epson-escpr2 ];
+  services.printing.drivers = [ pkgs.gutenprint pkgs.epson-escpr2 pkgs.brlaser pkgs.hll2375dw-cups ];
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
@@ -30,13 +30,15 @@
     pavucontrol
     usbutils
     xclip
+    feh
     gnome3.nautilus
-    gnome3.networkmanagerapplet
+    networkmanagerapplet
     gnomeExtensions.appindicator
     scrot
     blueman
     adwaita-qt
     gnome3.adwaita-icon-theme
+    gcalcli
     gparted
     vlc
     dropbox-cli
@@ -51,6 +53,7 @@
     alacritty
     slack
     weechat
+    wireshark
     obs-studio
     spotify
     rnix-lsp

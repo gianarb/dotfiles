@@ -24,20 +24,19 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'mattn/webapi-vim'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'liuchengxu/vista.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'janko/vim-test'
 Plug 'mattn/vim-goimports'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'rust-lang/rust.vim'
 Plug 'puremourning/vimspector'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
 
 " I develop this integration and I want to load it directly from my workspace
 if isdirectory($HOME . "/git/coc-grammarly")
     Plug '~/git/coc-grammarly'
 endif
-
-call plug#end()
 
 if shouldInstallBundles == 1
     echo "~> Installing plugs\n"
