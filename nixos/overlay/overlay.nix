@@ -13,6 +13,17 @@
       };
     }
   );
+  vim_configurable = super.vim_configurable.overrideAttrs (
+    x: rec {
+      version = "9.0.0001";
+      src = super.fetchFromGitHub {
+        owner = "vim";
+        repo = "vim";
+        rev = "v${version}";
+        sha256 = "sha256-WnMm3q5Stn3s33rxQt76goURSa1Rq+jMVWYiS+uJTX0=";
+      };
+    }
+  );
   weechat = super.weechat.override {
     configure = { availablePlugins, ... }: {
       scripts = with super.weechatScripts; [
