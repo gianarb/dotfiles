@@ -7,6 +7,7 @@ in
     kubectl
     rustup
     unstable.rust-analyzer
+    pkgs.cargo-watch
 
     # useful to play with perf and framegraph in Rust context
     inferno

@@ -57,6 +57,7 @@
     obs-studio
     spotify
     rnix-lsp
+    remmina
   ];
 
 }
