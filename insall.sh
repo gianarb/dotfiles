@@ -30,4 +30,6 @@ $stow dunst
 $stow screenlayout
 $stow alacritty
 $stow gh
+$stow nixpkgs
+$stow ssh
 popd
