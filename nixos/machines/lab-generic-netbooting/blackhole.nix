@@ -1,0 +1,23 @@
+{ config, pkgs, lib, modulesPath, ... }: with lib; {
+  imports = [
+    (modulesPath + "/installer/netboot/netboot-base.nix")
+  ];
+
+  boot.initrd.kernelModules = [ "dm-snapshot" "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEKy/Uk6P2qaDtZJByQ+7i31lqUAw9xMDZ5LFEamIe6l"
+  ];
+
+  ## Some useful options for setting up a new system
+  services.getty.autologinUser = mkForce "root";
+
+  networking.firewall.enable = false;
+  networking.dhcpcd.enable = true;
+  services.openssh.enable = true;
+
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  system.stateVersion = "22.05";
+}
