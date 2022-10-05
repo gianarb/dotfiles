@@ -31,3 +31,9 @@ A list of NixOS configuration I often look at:
 * [lovesegfault/nix-config](https://github.com/lovesegfault/nix-config)
 * [balsoft/nixos-config](https://github.com/balsoft/nixos-config)
 * [mitchellh/nixos-config](https://github.com/mitchellh/nixos-config)
+* [wiltaylor/dotfiles](https://github.com/wiltaylor/dotfiles)
+* [cadey/nixos-configs](https://tulpa.dev/cadey/nixos-configs)
+
+## Miscellany
+
+* [An easy to read flake repository that teaches how to package and expose a module to NixOS](https://git.sr.ht/~bwolf/learna.nix)
