@@ -51,7 +51,6 @@
     zoom-us
     libreoffice
     alacritty
-    slack
     weechat
     wireshark
     obs-studio

@@ -2,25 +2,14 @@
 {
   weechat-edit = self.callPackage ./weechat-edit { };
   hll2375dw-cups = self.callPackage ./hll2375dw-cups { };
-  microcodeIntel = super.microcodeIntel.overrideAttrs (
+  wee-slack = super.weechatScripts.wee-slack.overrideAttrs (
     x: rec {
-      version = "20210608";
+      version = "a4e1c79d3bffa82628bcb91a4121ed5f7600d1e1";
       src = super.fetchFromGitHub {
-        owner = "intel";
-        repo = "Intel-Linux-Processor-Microcode-Data-Files";
-        rev = "microcode-${version}";
-        sha256 = "sha256-oydbpJyf0psy0ykfmQF3dOfnrnK6YVGX1JhR8UcZ0yI=";
-      };
-    }
-  );
-  vim_configurable = super.vim_configurable.overrideAttrs (
-    x: rec {
-      version = "9.0.0001";
-      src = super.fetchFromGitHub {
-        owner = "vim";
-        repo = "vim";
-        rev = "v${version}";
-        sha256 = "sha256-WnMm3q5Stn3s33rxQt76goURSa1Rq+jMVWYiS+uJTX0=";
+        owner = "wee-slack";
+        repo = "wee-slack";
+        rev = "a4e1c79d3bffa82628bcb91a4121ed5f7600d1e1";
+        sha256 = "sha256-cp6vdLzK+0hKRs/wtvvmIGzdhSv37Vy1X1IlOmxWOEY=";
       };
     }
   );
@@ -28,25 +17,10 @@
     configure = { availablePlugins, ... }: {
       scripts = with super.weechatScripts; [
         weechat-matrix
-        #weechat-otr
-        wee-slack
         weechat-autosort
         self.weechat-edit
+        self.wee-slack
       ];
     };
   };
-  rust-analyzer = super.rust-analyzer.overrideAttrs (
-    x: rec {
-      version = "2022-02-28";
-      cargoSha256 = "sha256-dTw6xp99uGtGp6YuqAX3r3GDD6Wto3KHTaO2DUUE2FA=";
-      RUST_ANALYZER_REV = "2022-02-28";
-
-      src = super.fetchFromGitHub {
-        owner = "rust-analyzer";
-        repo = "rust-analyzer";
-        rev = "2022-02-28";
-        sha256 = "sha256-GQ1cPO4povnozLl0MTFs0ZXpmBn+AZeFWQVnxHHWf9g=";
-      };
-    }
-  );
 }
