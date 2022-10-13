@@ -5,10 +5,11 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "ahci" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "ahci" "usb_storage" "sd_mod" "acpi_call" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.initrd.luks.devices = {
     root = {
@@ -17,8 +18,8 @@
       preLVM = true;
     };
   };
-  boot.kernelModules = [ "kvm-intel" "iwlwifi"];
-  boot.extraModulePackages = [];
+  boot.kernelModules = [ "kvm-intel" "iwlwifi" ];
+  boot.extraModulePackages = [ ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -28,18 +29,19 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/0859f92e-45a6-4d0a-8407-9abe48064305";
+    {
+      device = "/dev/disk/by-uuid/0859f92e-45a6-4d0a-8407-9abe48064305";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/15D8-6A27";
+    {
+      device = "/dev/disk/by-uuid/15D8-6A27";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/9d7b4da7-a99d-4826-ac73-49d64202633e"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/9d7b4da7-a99d-4826-ac73-49d64202633e"; }];
 
   hardware.cpu.intel.updateMicrocode = true;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";

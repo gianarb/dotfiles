@@ -31,6 +31,8 @@ in
 
   services.upower.enable = true;
 
+  services.openssh.enable = true;
+
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
@@ -73,16 +75,6 @@ in
   virtualisation.docker.enableOnBoot = false;
 
   services.fwupd.enable = true;
-
-  programs.mosh.enable = true;
-
-  # disabled for now
-  #services = {
-  #clamav = {
-  #daemon.enable = true;
-  #updater.enable = true;
-  #};
-  #};
 
   environment.variables = {
     EDITOR = "vim";
@@ -151,10 +143,6 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.09"; # Did you read the comment?
-
-  # https://nixos.org/manual/nixos/stable/index.html#sec-upgrading-automatic
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
 
   programs.fuse.userAllowOther = true;
 
