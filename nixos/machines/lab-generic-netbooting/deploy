@@ -1,0 +1,2 @@
+#!bin/bash
+nix run github:serokell/deploy-rs -- . -- --impure

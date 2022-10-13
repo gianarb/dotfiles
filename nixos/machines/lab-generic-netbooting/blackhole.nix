@@ -1,4 +1,5 @@
-{ config, pkgs, lib, modulesPath, ... }: with lib; {
+{ config, pkgs, lib, modulesPath, ... }: with lib;
+{
   imports = [
     (modulesPath + "/installer/netboot/netboot-base.nix")
   ];
@@ -11,6 +12,11 @@
 
   ## Some useful options for setting up a new system
   services.getty.autologinUser = mkForce "root";
+
+  system.build.myInit = pkgs.runCommand "init" { } ''
+    mkdir -p $out
+    echo -n "init=${config.system.build.toplevel}/init initrd=initrd loglevel=4" > $out/init
+  '';
 
   networking.firewall.enable = false;
   networking.dhcpcd.enable = true;
