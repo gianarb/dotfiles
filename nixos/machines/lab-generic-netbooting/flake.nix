@@ -7,12 +7,13 @@
   outputs = { self, nixpkgs, deploy-rs }: {
 
     nixosConfigurations = {
-      blackhole = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./blackhole.nix
-        ];
-      };
+      blackhole =
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./blackhole.nix
+          ];
+        };
       snowflake =
         let
           system = "x86_64-linux";
@@ -35,6 +36,7 @@
         netbootRamdisk
         kernel
         netbootIpxeScript
+        myInit
       ];
     };
 

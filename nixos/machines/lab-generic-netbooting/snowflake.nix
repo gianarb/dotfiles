@@ -37,9 +37,7 @@
   services.pixiecore.debug = true;
   services.pixiecore.kernel = "${pkgs.lab.blackhole}/bzImage";
   services.pixiecore.initrd = "${pkgs.lab.blackhole}/initrd";
-  #Ideally this is part of the ${blackhole-os}/netboot.ipxe
-  #but I have no idea about how to pass it here just yet :(
-  services.pixiecore.cmdLine = "init=/nix/store/dcpk1i1masymc199f6s48m9fizw9mlyb-nixos-system-nixos-22.05.20220902.67e4507/init initrd=initrd initrd=initrd loglevel=4";
+  services.pixiecore.cmdLine = lib.readFile "${pkgs.lab.blackhole}/init";
 
 
   ## Some useful options for setting up a new system
