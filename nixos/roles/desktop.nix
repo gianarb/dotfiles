@@ -34,6 +34,7 @@
     gnome3.nautilus
     networkmanagerapplet
     gnomeExtensions.appindicator
+    xournal
     scrot
     blueman
     adwaita-qt
