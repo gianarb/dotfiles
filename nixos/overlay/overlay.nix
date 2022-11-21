@@ -2,6 +2,7 @@
 {
   weechat-edit = self.callPackage ./weechat-edit { };
   hll2375dw-cups = self.callPackage ./hll2375dw-cups { };
+  rssnix = self.callPackage ./rssnix { };
   wee-slack = super.weechatScripts.wee-slack.overrideAttrs (
     x: rec {
       version = "a4e1c79d3bffa82628bcb91a4121ed5f7600d1e1";

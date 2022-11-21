@@ -16,6 +16,7 @@ in
   ];
   environment.systemPackages = with pkgs; [
     pkgs.linuxPackages.system76-power
+    pkgs.rssnix
   ];
 
   fonts = {
