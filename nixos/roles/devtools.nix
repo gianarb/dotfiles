@@ -5,7 +5,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     kubectl
-    rustup
+    unstable.rustup
     unstable.rust-analyzer
     pkgs.cargo-watch
 
@@ -15,7 +15,10 @@ in
     rust-analyzer
 
     gcc
+    autoconf
     pkg-config
+    c-ares
+    automake
     openssl
     openssl.dev
     protobuf

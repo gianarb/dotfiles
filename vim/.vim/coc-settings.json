@@ -38,5 +38,6 @@
     "[markdown]": {
       "ignore": ["inlineCode", "code"]
     }
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }
