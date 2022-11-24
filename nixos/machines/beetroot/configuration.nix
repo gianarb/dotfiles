@@ -28,6 +28,9 @@
     localDomain = "m.gianarb.it";
     configureNginx = true;
     smtp.fromAddress = "";
+    extraConfig = {
+      SINGLE_USER_MODE = "true";
+    };
   };
 
   security.acme = {
@@ -57,3 +60,7 @@
 
   system.stateVersion = "22.05"; # Did you read the comment?
 }
+
+
+
+
