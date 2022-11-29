@@ -12,6 +12,7 @@ in
     ../../applications/qemu.nix
     ../../applications/sound-pipewire.nix
     ../../roles/desktop.nix
+    ../../applications/nix.nix
     ../../users/gianarb
   ];
   environment.systemPackages = with pkgs; [

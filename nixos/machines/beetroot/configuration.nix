@@ -7,12 +7,13 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../roles/base.nix
     ../../users/gianarb
+    ../../applications/nix.nix
   ];
 
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
+  system.autoUpgrade.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   users.users.root.openssh.authorizedKeys.keys = config.users.users.gianarb.openssh.authorizedKeys.keys;
 
@@ -57,6 +58,19 @@
       ];
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    htop
+    tree
+    bintools-unwrapped
+    utillinux
+    vim_configurable
+    git
+    nmap
+    jq
+    pciutils
+    killall
+  ];
 
   system.stateVersion = "22.05"; # Did you read the comment?
 }
