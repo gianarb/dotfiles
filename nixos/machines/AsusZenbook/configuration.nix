@@ -21,17 +21,26 @@
     ];
   };
 
-  networking.firewall.enable = true;
+  services.udev.extraRules = ''
+      # keyboard disable autosuspand
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="04b4", ATTR{idProduct}=="6001", ATTR{power/autosuspend}="-1"
+    # mouse disable autosuspand
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="1bcf", ATTR{idProduct}=="0005", ATTR{power/autosuspend}="-1"
+  '';
 
-  # Use the systemd-boot EFI boot loader.
-
-  networking.hostName = "dieci"; # Define your hostname.
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 
-  networking.interfaces.wlp2s0.useDHCP = true;
+  networking.hostName = "dieci"; # Define your hostname.
+  networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
+  # This is the TCP port I want to use to reach my laptop in my internal network.
+  networking.firewall.interfaces.enp5s0.allowedTCPPorts = [ 10123 ];
+
+  # tailscale workaround https://github.com/tailscale/tailscale/issues/4432
+  networking.firewall.checkReversePath = "loose";
+
 
   location.provider = "geoclue2";
   services.geoclue2.enable = true;

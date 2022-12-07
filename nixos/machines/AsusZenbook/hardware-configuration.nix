@@ -9,8 +9,20 @@
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "ahci" "usb_storage" "sd_mod" "acpi_call" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
+
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
+
   boot.initrd.luks.devices = {
     root = {
       device = "/dev/nvme0n1p3";
@@ -18,8 +30,6 @@
       preLVM = true;
     };
   };
-  boot.kernelModules = [ "kvm-intel" "iwlwifi" ];
-  boot.extraModulePackages = [ ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -43,7 +53,7 @@
   swapDevices =
     [{ device = "/dev/disk/by-uuid/9d7b4da7-a99d-4826-ac73-49d64202633e"; }];
 
-  hardware.cpu.intel.updateMicrocode = true;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  hardware.enableAllFirmware = true;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
 }
