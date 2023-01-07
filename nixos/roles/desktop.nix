@@ -1,4 +1,8 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }:
+let
+  unstable = import <unstable> { config = { allowUnfree = true; }; };
+in
+{
   imports = [
     ./../applications/vscode.nix
     ./../applications/3dprinting.nix
@@ -19,6 +23,10 @@
   };
   services.blueman.enable = true;
   hardware.bluetooth.package = pkgs.bluezFull;
+
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   environment.systemPackages = with pkgs; [
     lldb
@@ -47,7 +55,7 @@
     keepassxc
     brightnessctl
     calibre
-    aerc
+    unstable.aerc
     python39Packages.goobook
     zoom-us
     libreoffice

@@ -3,6 +3,7 @@ let
   unstable = import <unstable> { config = { allowUnfree = true; }; };
 in
 {
+  services.lorri.enable = true;
   environment.systemPackages = with pkgs; [
     kubectl
     unstable.rustup
@@ -14,16 +15,15 @@ in
     cargo-flamegraph
     rust-analyzer
 
-    gcc
-    autoconf
-    pkg-config
-    c-ares
-    automake
-    openssl
-    openssl.dev
-    protobuf
-    gdb
-    linuxPackages.perf
+    gopls
+
+    jq
+    direnv
+    nixfmt
+    ripgrep
+    nodejs-16_x
+    fzf
+    gitAndTools.gh
   ];
   environment.variables = {
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
