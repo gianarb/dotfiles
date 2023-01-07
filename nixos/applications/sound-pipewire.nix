@@ -7,7 +7,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    package = pkgs.pipewire.overrideAttrs ({ patches ? [], ... }: {
+    package = pkgs.pipewire.overrideAttrs ({ patches ? [ ], ... }: {
       patches = [ ./../patches/ASUS_Zenbook_UX390.patch ] ++ patches;
     });
     config = {

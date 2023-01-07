@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
     ../../applications/i3.nix
     ../../applications/tailscale.nix
-    ../../applications/sound-pipewire.nix
     ../../roles/desktop.nix
     ../../users/gianarb
   ];
@@ -98,7 +97,9 @@
   };
 
   nix = {
-    useSandbox = true;
+    settings = {
+      sandbox = true;
+    };
     distributedBuilds = true;
     gc = { automatic = true; };
     package = pkgs.nixUnstable;
