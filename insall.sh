@@ -32,4 +32,5 @@ $stow alacritty
 $stow gh
 $stow nixpkgs
 $stow ssh
+$stow rssnix
 popd
