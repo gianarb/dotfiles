@@ -1,7 +1,7 @@
 {
   description = "A very basic flake";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05-small";
     deploy-rs.url = "github:serokell/deploy-rs";
   };
   outputs = { self, nixpkgs, deploy-rs }: {
