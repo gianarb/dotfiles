@@ -38,6 +38,7 @@ in
     pavucontrol
     usbutils
     xclip
+    rssnix
     feh
     gnome3.nautilus
     networkmanagerapplet
