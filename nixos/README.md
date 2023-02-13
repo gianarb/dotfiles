@@ -34,6 +34,7 @@ A list of NixOS configuration I often look at:
 * [wiltaylor/dotfiles](https://github.com/wiltaylor/dotfiles)
 * [cadey/nixos-configs](https://tulpa.dev/cadey/nixos-configs)
 * [git.0x76.dev/v/infrastructure](https://git.0x76.dev/v/infrastructure)
+* [K900/nix](https://gitlab.com/K900/nix/-/tree/master)
 
 ## Miscellany
 
