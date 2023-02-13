@@ -2,12 +2,12 @@
 
 buildGo118Module {
   pname = "rssnix";
-  version = "b2e21359973d98a54c10ac570d8d85c269189272";
-  vendorSha256 = "sha256-tcRk0J+Mllf5J6MjLdm2ODm+ePepN3cB5GKaGC2I/i0=";
+  version = "1e756cc42acb3748f20f270fc0a0e47d29a14622";
+  vendorSha256 = "sha256-QMEubCu1zpH9xb6qwtzf+hE806/9c9beMzfCv8K/yCQ=";
   src = fetchFromGitHub {
     owner = "jafarlihi";
     repo = "rssnix";
-    rev = "b2e21359973d98a54c10ac570d8d85c269189272";
-    sha256 = "sha256-/qpqxFC1EJr233jj65gwDkDa+WCczZwAMsl1KJMDPas=";
+    rev = "1e756cc42acb3748f20f270fc0a0e47d29a14622";
+    sha256 = "sha256-ftY535Qkyj+SAL7a/v+BK9cTTIO28vbynSjsRYP88b0=";
   };
 }
