@@ -8,11 +8,16 @@
     [
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
-
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    loader.grub.device = "/dev/nvme0n1";
+  };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -31,13 +36,6 @@
     };
   };
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    loader.grub.device = "/dev/nvme0n1";
-  };
-
   fileSystems."/" =
     {
       device = "/dev/disk/by-uuid/0859f92e-45a6-4d0a-8407-9abe48064305";
@@ -53,7 +51,5 @@
   swapDevices =
     [{ device = "/dev/disk/by-uuid/9d7b4da7-a99d-4826-ac73-49d64202633e"; }];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
 }
