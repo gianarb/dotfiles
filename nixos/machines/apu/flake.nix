@@ -22,7 +22,7 @@
         };
     };
     deploy.nodes.apu = {
-      hostname = "192.168.1.161";
+      hostname = "apu";
       sshUser = "root";
 
       profiles.system = {

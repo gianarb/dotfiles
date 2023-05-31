@@ -53,6 +53,11 @@
     extraConfig = ''
       ieee80211ac=1
       wmm_enabled=1
+      ignore_broadcast_ssid=1
+      auth_algs=1
+      wpa=2
+      wpa_key_mgmt=WPA-PSK
+      rsn_pairwise=CCMP
     '';
   };
 
@@ -69,7 +74,9 @@
       script = ''
         ${iptables}/bin/iptables -w -t nat -I POSTROUTING -s 192.168.12.0/24 ! -o wlan-ap0 -j MASQUERADE
         ${iptables}/bin/iptables -w -I FORWARD -i wlan-ap0 -s 192.168.12.0/24 -j ACCEPT
+        ${iptables}/bin/iptables -w -I FORWARD -i wlan-ap0 -s 192.168.1.0/24 -j ACCEPT
         ${iptables}/bin/iptables -w -I FORWARD -i wlan-station0 -d 192.168.12.0/24 -j ACCEPT
+        ${iptables}/bin/iptables -w -I FORWARD -i wlan-station0 -d 192.168.1.0/24 -j ACCEPT
       '';
     };
 
