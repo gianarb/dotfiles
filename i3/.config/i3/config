@@ -179,6 +179,11 @@ bindsym $mod+Print exec "sleep 0.4; scrot -q 100 -s ${HOME}'/Pictures/Screenshot
 # Screenshot current focused window
 bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'"
 
+# Arrange displays for home configuration
+bindsym $mod+Shift+a exec --no-startup-id $HOME/.dotfiles/bin/i3-desk.sh
+bindsym $mod+Shift+s exec --no-startup-id $HOME/.dotfiles/bin/i3-laptop.sh
+
+
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)
@@ -206,10 +211,6 @@ for_window [class="Pavucontrol"] floating enable, border normal
 for_window [class="zoom"] floating enable
 for_window [class="obs"] floating enable
 #for_window [class="pinentry-gtk-2"] popup_during_fullscreen smart
-
-# Arrange displays for home configuration
-bindsym $mod+Shift+a exec --no-startup-id $HOME/.screenlayout/home.sh
-bindsym $mod+Shift+s exec --no-startup-id $HOME/.screenlayout/reset.sh
 
 # Shutdown, Reboot, etc..
 set $mode_system System (l) lock \t (e) logout \t (s) suspend \t (h) hibernate \t (r) reboot \t (Shift+s) shutdown

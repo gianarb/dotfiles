@@ -27,10 +27,8 @@ $stow bash
 $stow vim
 $stow gdb
 $stow dunst
-$stow screenlayout
 $stow alacritty
 $stow gh
 $stow nixpkgs
-$stow ssh
 $stow rssnix
 popd
