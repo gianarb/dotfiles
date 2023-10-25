@@ -18,6 +18,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
 Plug 'mattn/webapi-vim'
