@@ -8,11 +8,13 @@ in
   imports = [
     <nixos-hardware/lenovo/thinkpad/x1/9th-gen>
     ./hardware-configuration.nix
-    ../../applications/i3.nix
+    ../../roles/desktop.nix
+
     ../../applications/tailscale.nix
     ../../applications/qemu.nix
-    ../../roles/desktop.nix
+    ../../applications/i3.nix
     ../../applications/nix.nix
+
     ../../users/gianarb
   ];
 
@@ -35,18 +37,19 @@ in
 
   networking.hostName = "trenta"; # Define your hostname.
   networking.networkmanager.enable = true;
-  networking.firewall.enable = true;
+  networking.firewall.enable = false;
   # This is the TCP port I want to use to reach my laptop in my internal network.
   networking.firewall.interfaces.enp5s0.allowedTCPPorts = [ 10123 ];
-
-  # tailscale workaround https://github.com/tailscale/tailscale/issues/4432
-  networking.firewall.checkReversePath = "loose";
 
   location.provider = "geoclue2";
   services.geoclue2.enable = true;
 
   programs.ssh.startAgent = true;
   services.fwupd.enable = true;
+  services.udisks2.enable = true;
+
+  virtualisation.docker.enable = true;
+  virtualisation.docker.enableOnBoot = false;
 
   environment.variables = {
     EDITOR = "vim";
