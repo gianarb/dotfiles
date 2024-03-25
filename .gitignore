@@ -15,3 +15,5 @@ nvim/plugged/
 vim/.vim/plugged
 vim/autoload/
 vim/plugged/
+
+gh/.config/gh/hosts.yml
