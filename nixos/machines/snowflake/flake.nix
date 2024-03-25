@@ -1,10 +1,11 @@
 {
   description = "A very basic flake";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs_unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     deploy-rs.url = "github:serokell/deploy-rs";
   };
-  outputs = { self, nixpkgs, deploy-rs }: {
+  outputs = { self, nixpkgs, nixpkgs_unstable, deploy-rs }: {
 
     nixosConfigurations = {
       blackhole =
@@ -19,6 +20,9 @@
           system = "x86_64-linux";
           overlay-lab = final: prev: {
             lab = self.packages.${prev.system};
+            unstable = import nixpkgs_unstable {
+              system = prev.system;
+            };
           };
         in
         nixpkgs.lib.nixosSystem {
@@ -41,7 +45,7 @@
     };
 
     deploy.nodes.snowflake = {
-      hostname = "192.168.1.50";
+      hostname = "192.168.1.5";
       sshUser = "root";
 
       profiles.system = {
