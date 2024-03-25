@@ -11,7 +11,7 @@
 			"settings": {}
 		},
     "nix": {
-      "command": "rnix-lsp",
+      "command": "nil",
       "filetypes": [
         "nix"
       ]
@@ -36,18 +36,21 @@
   "coc.source.around.enable": false,
   "coc.preferences.useTmuxTerminal": true,
   "coc.preferences.extensionUpdateCheck": "daily",
-  "rust-analyzer.diagnostics.enable": true,
-  "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"],
-  "rust-analyzer.inlayHints.typeHints.enable": true,
-  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": true,
-  "rust-analyzer.debug.runtime": "vimspector",
-  "rust-analyzer.checkOnSave.command": "clippy",
-  "rust-analyzer.server.path": "/run/current-system/sw/bin/rust-analyzer",
+  "javascript.suggestionActions.enabled": true,
+  "typescript.suggestionActions.enabled": true,
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true,
+
   "snippets.userSnippetsDirectory": "~/.vim/mysnippets",
   "grammarly.diagnostic": {
     "[markdown]": {
       "ignore": ["inlineCode", "code"]
     }
   },
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "svelte.enable-ts-plugin": false,
+
+  "python.linting.flake8Enabled": true,
+  "pyright.organizeimports.provider": "isort",
+  "python.formatting.provider": "black",
 }

@@ -26,6 +26,8 @@ Plug 'mattn/webapi-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'evanleck/vim-svelte'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
