@@ -201,7 +201,7 @@ exec i3-config-wizard
 #       xprop | grep -i 'class'
 for_window [class="Brave"] move workspace 2
 for_window [class="Chromium"] move workspace 2
-for_window [class="Postman"] move workspace 3
+for_window [class="bruno"] move workspace 3
 for_window [class="Slack"] move workspace 9
 for_window [class="Telegram"] move workspace 9
 for_window [class="Spotify"] move workspace 8
@@ -231,8 +231,6 @@ for_window [class="^.*"] border pixel 1
 exec --no-startup-id nm-applet --sm-disable
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox
-
-
 
 ## Volume control
 
