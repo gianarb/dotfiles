@@ -3,32 +3,46 @@ let
   unstable = import <unstable> { config = { allowUnfree = true; }; };
 in
 {
-  services.lorri.enable = true;
   environment.systemPackages = with pkgs; [
-    kubectl
-    unstable.rustup
-    unstable.rust-analyzer
-    pkgs.cargo-watch
+    age
 
-    # useful to play with perf and framegraph in Rust context
-    inferno
-    cargo-flamegraph
-    rust-analyzer
-
+    go
     gopls
+    gotools
 
     jq
     direnv
+    nix-direnv
     nixfmt
     ripgrep
-    nodejs-16_x
+    nodejs
     fzf
     gitAndTools.gh
+
+    kubectl
+    terraform
+    terraform-ls
+    kubectl
+    azure-cli
+    kind
+    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+
+    cargo
+    cargo-watch
+    rustc
+    rustfmt
+    rust-analyzer
+
+    process-compose
   ];
   environment.variables = {
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
+
+  environment.pathsToLink = [
+    "/share/nix-direnv"
+  ];
 
 }
 

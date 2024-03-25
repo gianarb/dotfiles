@@ -4,31 +4,45 @@ let
 in
 {
   imports = [
-    ./../applications/vscode.nix
     ./../applications/3dprinting.nix
     ./base.nix
     ./devtools.nix
   ];
+
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-extra
+      noto-fonts-emoji
+      noto-fonts-cjk
+      font-awesome
+    ];
+  };
+
 
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.gutenprint pkgs.epson-escpr2 pkgs.brlaser pkgs.hll2375dw-cups ];
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
-  services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
+  services.dbus.enable = true;
 
   hardware.bluetooth = {
     enable = true;
     settings.general.Enable = "Source,Sink,Media,Socket";
   };
   services.blueman.enable = true;
-  hardware.bluetooth.package = pkgs.bluezFull;
+  hardware.bluetooth.package = pkgs.bluez;
 
   # Enable sound.
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
+  sound.enable = true;
 
   environment.systemPackages = with pkgs; [
+    arduino
+    ncurses
+    zlib
     lldb
     dunst
     libnotify
@@ -45,6 +59,7 @@ in
     gnomeExtensions.appindicator
     xournal
     scrot
+    signal-desktop
     blueman
     adwaita-qt
     gnome3.adwaita-icon-theme
@@ -57,7 +72,6 @@ in
     brightnessctl
     calibre
     unstable.aerc
-    python39Packages.goobook
     zoom-us
     libreoffice
     alacritty
@@ -65,8 +79,10 @@ in
     wireshark
     obs-studio
     spotify
-    rnix-lsp
+    bruno
+    nil
     remmina
+    drawio
   ];
 
 }
