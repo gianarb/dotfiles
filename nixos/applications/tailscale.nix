@@ -7,7 +7,8 @@ in
   services.tailscale.package = unstable.tailscale;
 
   # tailscale workaround https://github.com/tailscale/tailscale/issues/4432
-  networking.firewall.checkReversePath = "loose";
+  #networking.firewall.checkReversePath = "loose";
+  services.tailscale.useRoutingFeatures = "client";
 
   networking.firewall.trustedInterfaces = [ "tailscale0" ];
   networking.firewall.allowedUDPPorts = [ config.services.tailscale.port ];
