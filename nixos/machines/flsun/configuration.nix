@@ -90,6 +90,15 @@
     enable = true;
     address = "0.0.0.0";
     settings = {
+      "power hass_switch"= {
+        type = "homeassistant";
+        protocol = "http";
+        address = "192.168.1.5";
+        port = 80;
+        device = "switch.flsun";
+        token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxNDY0OTVhZjQ5MDc0YjNmYmYxNjQzYjdhYzQyODlkZCIsImlhdCI6MTcyMTQ5MTk4MiwiZXhwIjoyMDM2ODUxOTgyfQ.UXMN2mXaQPxYmLYamdVxKJ55LsSM99q_-Za38uwROY8";
+        domain = "switch";
+      };
       octoprint_compat = { };
       history = { };
       authorization = {
