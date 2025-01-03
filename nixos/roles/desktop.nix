@@ -4,7 +4,6 @@ let
 in
 {
   imports = [
-    ./../applications/3dprinting.nix
     ./base.nix
     ./devtools.nix
   ];
@@ -21,12 +20,14 @@ in
   };
 
 
+  services.upower.enable = true;
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.gutenprint pkgs.epson-escpr2 pkgs.brlaser pkgs.hll2375dw-cups ];
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
-
+  services.avahi.nssmdns4 = true;
   services.dbus.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.accounts-daemon.enable = true;
 
   hardware.bluetooth = {
     enable = true;
@@ -36,11 +37,23 @@ in
   hardware.bluetooth.package = pkgs.bluez;
 
   # Enable sound.
-  hardware.pulseaudio.enable = true;
   sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
+  };
+
+  # https://nixos.wiki/wiki/PCManFM
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
 
   environment.systemPackages = with pkgs; [
-    arduino
     ncurses
     zlib
     lldb
@@ -48,13 +61,12 @@ in
     libnotify
     acpi
     alsaUtils
-    pulseaudio
     pavucontrol
     usbutils
     xclip
-    rssnix
     feh
-    gnome3.nautilus
+    cifs-utils
+    pcmanfm
     networkmanagerapplet
     gnomeExtensions.appindicator
     xournal
@@ -67,22 +79,35 @@ in
     gparted
     vlc
     dropbox-cli
-    brave
+    unstable.brave
     keepassxc
     brightnessctl
     calibre
     unstable.aerc
+    #unstable.orca-slicer
+    orca-slicer
+    unstable.freecad
     zoom-us
     libreoffice
     alacritty
     weechat
     wireshark
-    obs-studio
+
+    (wrapOBS {
+        plugins = with pkgs.obs-studio-plugins; [
+            obs-backgroundremoval
+        ];
+    })
     spotify
-    bruno
     nil
     remmina
     drawio
   ];
+
+  services.udev = {
+    extraRules = ''
+      SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640"
+    '';
+  };
 
 }

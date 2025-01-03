@@ -15,7 +15,6 @@
       tmux
       file
       bind
-      python311
       gnumake
       unzip
       zip
