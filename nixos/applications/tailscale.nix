@@ -1,17 +1,20 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 let
   unstable = import <unstable> { config = { allowUnfree = true; }; };
 in
 {
-  services.tailscale.enable = true;
-  services.tailscale.package = unstable.tailscale;
+  services.resolved.enable = true;
+  networking.useNetworkd = true;
+  networking.useDHCP = false;
 
-  # tailscale workaround https://github.com/tailscale/tailscale/issues/4432
-  #networking.firewall.checkReversePath = "loose";
-  services.tailscale.useRoutingFeatures = "client";
+  services.tailscale = {
+    enable = false;
+    package = unstable.tailscale;
+    useRoutingFeatures = "both";
+  };
 
   networking.firewall.trustedInterfaces = [ "tailscale0" ];
   networking.firewall.allowedUDPPorts = [ config.services.tailscale.port ];
 
-  environment.systemPackages = with pkgs; [ unstable.tailscale ];
+  environment.systemPackages = [ unstable.tailscale ];
 }
