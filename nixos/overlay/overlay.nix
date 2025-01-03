@@ -4,13 +4,14 @@
   hll2375dw-cups = self.callPackage ./hll2375dw-cups { };
   rssnix = self.callPackage ./rssnix { };
   wee-slack = super.weechatScripts.wee-slack.overrideAttrs (
-    x: rec {
-      version = "a4e1c79d3bffa82628bcb91a4121ed5f7600d1e1";
+    oldAttrs: rec {
+      version = "e610b39aee2d9a49d080924d47d96c5d140f66ac";
       src = super.fetchFromGitHub {
+        inherit version;
         owner = "wee-slack";
         repo = "wee-slack";
-        rev = "a4e1c79d3bffa82628bcb91a4121ed5f7600d1e1";
-        sha256 = "sha256-cp6vdLzK+0hKRs/wtvvmIGzdhSv37Vy1X1IlOmxWOEY=";
+        rev = version;
+        sha256 = "sha256-Jl4DmehVdGzPu21zTmzb0Wv6CDt4iDulBj8pMPVxO/s=";
       };
     }
   );
