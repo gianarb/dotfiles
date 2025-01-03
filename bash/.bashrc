@@ -4,10 +4,12 @@ export PATH="$HOME/.dotfiles/bin:$HOME/.dotfiles/vendor/bin:$PATH:/opt/bin:/$HOM
 export PATH=${PATH}:${HOME}/.cargo/bin
 export PATH=${PATH}:/usr/local/go/bin
 export PATH=${PATH}:${GOPATH}/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 
 export HOMEBREW_BUNDLE_FILE=$HOME/.dotfiles/homebrew/Brewfile
 
-export EDITOR=vim
+export EDITOR=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 
 for rc in $(ls ${DOTFILES}/bashrc.d/[0-9]*sh | sort -n); do
@@ -26,7 +28,8 @@ alias ll='ls ${LS_OPTS} -lsah'
 alias myip='curl --silent ipinfo.io/ip'
 alias less='less --RAW-CONTROL-CHARS'
 alias ls='ls ${LS_OPTS}'
-alias vi=vim
+alias vi=nvim
+alias vim=nvim
 alias clipc=pbcopy
 alias port_in_use='netstat -tulpn | grep LISTEN'
 
@@ -42,3 +45,7 @@ if [ -n "$TMUX" ] && [ -n "$DIRENV_DIR" ]; then
     unset "${!DIRENV_@}"  # unset env vars starting with DIRENV_
 fi
 eval "$(direnv hook bash)"
+
+export PC_PORT_NUM=9999
+
+export HISTCONTROL="ignoreboth"
