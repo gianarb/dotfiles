@@ -1,9 +1,5 @@
 # Edit this configuration file to define what should be installed on your system.  Help is available in the configuration.nix(5) man page and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, lib, pkgs, ... }:
-let
-  unstable = import <unstable> { config = { allowUnfree = true; }; };
-  nixos-hardware = import <nixos-hardware> { };
-in
 {
   imports = [
     <nixos-hardware/lenovo/thinkpad/x1/9th-gen>
@@ -11,23 +7,16 @@ in
     ../../roles/desktop.nix
 
     ../../applications/tailscale.nix
+    ../../applications/languagetool.nix
+    ../../applications/gnome.nix
     ../../applications/qemu.nix
-    ../../applications/i3.nix
     ../../applications/nix.nix
 
     ../../users/gianarb
   ];
 
-  fonts = {
-    fontDir.enable = true;
-    fonts = with pkgs; [
-      noto-fonts
-      noto-fonts-extra
-      noto-fonts-emoji
-      noto-fonts-cjk
-      font-awesome
-    ];
-  };
+  services.tailscale.useRoutingFeatures = "client";
+  services.ollama.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ (import ../../overlay/overlay.nix { }) ];
@@ -35,21 +24,47 @@ in
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 
+  networking.extraHosts = ''
+  '';
+
+  environment.systemPackages = [
+    (pkgs.python312.withPackages(ps: with ps; [openpyxl]))
+  ];
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_15;
+    ensureDatabases = [ "general" ];
+    enableTCPIP = true;
+    authentication = pkgs.lib.mkOverride 10 ''
+      #type database  DBuser  auth-method
+      local all       all     trust
+
+      # ipv4
+      host  all      all     127.0.0.1/32   trust
+      # ipv6
+      host all       all     ::1/128        trust
+    '';
+  };
+
   networking.hostName = "trenta"; # Define your hostname.
   networking.networkmanager.enable = true;
-  networking.firewall.enable = false;
-  # This is the TCP port I want to use to reach my laptop in my internal network.
-  networking.firewall.interfaces.enp5s0.allowedTCPPorts = [ 10123 ];
-
+  systemd.services.NetworkManager-wait-online = {
+    serviceConfig = {
+      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
+    };
+  };
+  networking.firewall.enable = true;
+  environment.pathsToLink = [ "/libexec" ];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.docker = {
+    enable = true;
+  };
   location.provider = "geoclue2";
   services.geoclue2.enable = true;
-
   programs.ssh.startAgent = true;
   services.fwupd.enable = true;
   services.udisks2.enable = true;
-
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableOnBoot = false;
 
   environment.variables = {
     EDITOR = "vim";
@@ -57,6 +72,10 @@ in
       lib.mkForce [ "${pkgs.gnome3.adwaita-icon-theme}/share/icons" ];
     TERMINAL = "alacritty";
   };
+
+  services.logind.extraConfig = ''
+    RuntimeDirectorySize=10G
+  '';
 
   systemd.user.services.dropbox = {
     description = "Dropbox";
@@ -83,6 +102,8 @@ in
     man.enable = true;
     dev.enable = true;
   };
+
+  services.gvfs.enable = true;
 
   system.stateVersion = "20.09"; # Did you read the comment?
 }
