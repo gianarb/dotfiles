@@ -9,17 +9,6 @@
     ../../users/gianarb
   ];
 
-  fonts = {
-    fontDir.enable = true;
-    fonts = with pkgs; [
-      noto-fonts
-      noto-fonts-extra
-      noto-fonts-emoji
-      noto-fonts-cjk
-      font-awesome
-    ];
-  };
-
   services.udev.extraRules = ''
       # keyboard disable autosuspand
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="04b4", ATTR{idProduct}=="6001", ATTR{power/autosuspend}="-1"
