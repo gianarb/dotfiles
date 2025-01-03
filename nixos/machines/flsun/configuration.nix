@@ -30,7 +30,7 @@
   services.klipper.settings.delta_calibrate.height6_pos = lib.mkForce "43607.000,34688.000,34688.000";
 
   services.klipper.settings.printer.minimum_z_position = lib.mkForce "-10";
-  services.klipper.settings.printer.delta_radious = lib.mkForce 141.553523;
+  services.klipper.settings.printer.delta_radius = lib.mkForce 141.553523;
 
   services.klipper.settings.stepper_a.angle = lib.mkForce 210.181908;
   services.klipper.settings.stepper_a.arm_length = lib.mkForce 280.000000;
