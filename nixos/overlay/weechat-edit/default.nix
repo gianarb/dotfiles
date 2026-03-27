@@ -5,8 +5,8 @@ stdenv.mkDerivation {
   version = "c1f6966d32f8c54a480fa60b20eb9e82c4a16a33";
 
   src = fetchurl {
-    url = "https://raw.githubusercontent.com/keith/edit-weechat/c1f6966d32f8c54a480fa60b20eb9e82c4a16a33/edit.py";
-    sha256 = "03snznglqfdmalj828xpj62k87lcw0905ybbyxzpa0qr5sdlilfh";
+    url = "https://raw.githubusercontent.com/keith/edit-weechat/f5a8ab1e8345a8b13d7c13445968b66addbbe1bb/edit.py";
+    sha256 = "sha256-BDuVNV6ODCPrM6ti/lK7HrBPuoZA7QTC3b/zrwJ/g5w=";
   };
 
   dontUnpack = true;
